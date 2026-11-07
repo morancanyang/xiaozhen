@@ -1,0 +1,16 @@
+{
+  "name": "zongyu-mixeduse",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.cjs",
+    "check": "node --check src/model.js && node --check src/app.js"
+  },
+  "dependencies": {
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.0"
+  }
+}

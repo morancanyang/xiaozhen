@@ -1,0 +1,84 @@
+{
+  "name": "晴空游乐园",
+  "version": "1.0.0",
+  "standalone": true,
+  "parcel": [
+    112,
+    112
+  ],
+  "checks": 32,
+  "render_engine": "CYCLES",
+  "samples": 64,
+  "blend_reopened_and_verified": true,
+  "renders": [
+    {
+      "file": "outputs\\blender-overview.png",
+      "pixels": [
+        3840,
+        2880
+      ]
+    },
+    {
+      "file": "outputs\\blender-wheel.png",
+      "pixels": [
+        1920,
+        1440
+      ]
+    },
+    {
+      "file": "outputs\\blender-coaster.png",
+      "pixels": [
+        1920,
+        1280
+      ]
+    },
+    {
+      "file": "outputs\\blender-carousel.png",
+      "pixels": [
+        1920,
+        1280
+      ]
+    },
+    {
+      "file": "outputs\\blender-pirate.png",
+      "pixels": [
+        1920,
+        1280
+      ]
+    },
+    {
+      "file": "outputs\\blender-night.png",
+      "pixels": [
+        1920,
+        1440
+      ]
+    }
+  ],
+  "files": [
+    {
+      "file": "晴空游乐园.html",
+      "bytes": 874382,
+      "sha256": "597ca962234f97212857d48646520d6e455227de07ef6edfdef729ebbc7c77c4"
+    },
+    {
+      "file": "晴空游乐园.glb",
+      "bytes": 1213284,
+      "sha256": "aba4aaacdbcff267906119432d81f68a46f41837771c875334873890dfc98005"
+    },
+    {
+      "file": "晴空游乐园.blend",
+      "bytes": 4002147,
+      "sha256": "ee15f35bff8a8f72bad2a9861a573dbb118dc70dfa607bde645a6571a47d4ac0"
+    },
+    {
+      "file": "amusement-park-module.mjs",
+      "bytes": 18100,
+      "sha256": "465477135b388cab2de0156482719b22e06fd4bd9c357248fff3ecddf93580bc"
+    },
+    {
+      "file": "town-integration.example.mjs",
+      "bytes": 682,
+      "sha256": "af363415886fe3a9890a89db63cfee518d3c505d110b77c072ba05ad32c7db4f"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"name":"xiaozhen-source","version":"1.0.0","private":true,"type":"module","scripts":{"start":"node city-atlas/server.mjs","check":"npm --prefix city-atlas run check && node scripts/check-runtime.mjs"},"devDependencies":{"three":"0.180.0","esbuild":"0.25.0"}}

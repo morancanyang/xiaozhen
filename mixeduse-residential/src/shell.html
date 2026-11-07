@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#e9e8e0"><title>棕屿里 · 千人小镇建筑工坊</title><style>__STYLE__</style></head>
+<body>
+<div id="viewport" aria-label="可旋转、平移和缩放的三维住宅小区"></div>
+<div id="loading"><span class="loading-mark">序</span><p>正在构筑，窗里的日常。</p><small id="load-message">加载建筑与光线…</small></div>
+<header><a class="brand" href="#" id="brand-home"><span class="brand-mark"><svg viewBox="0 0 40 40"><path d="M6 32V14l9-5v23m6 0V8l12-4v28M3 34h34"/></svg></span><span>千人小镇<small>ARCHITECTURE ATELIER</small></span></a><div class="edition">独立建筑藏品 <span>NO. 019</span></div><button id="capture" class="quiet-button" title="保存当前模型画面">保存画面 ↗</button></header>
+<nav class="views" aria-label="建筑观察视角"><button data-view="overview" class="active">建筑总览</button><button data-view="facade">正立面</button><button data-view="side">侧立面</button><button data-view="lobby">住宅入口</button><button data-view="entrance">沿街商铺</button><button data-view="roof">屋顶观察</button></nav>
+<main class="intro"><div class="eyebrow"><i></i> ZONGYU RESIDENCES / 棕屿里</div><h1>窗里的家，<br>街角的日常<span>。</span></h1><p>米白与浅棕，竖向飘窗。<br>楼上是家，楼下是街角的小店。</p><div class="specs"><span>112 × 112 m <small>方形地块</small></span><span>06 <small>沿街商铺</small></span></div></main>
+<aside class="panel" aria-label="场景控制"><div class="panel-heading"><div><small>LIGHT & LIFE</small><h2>光线与日常</h2></div><button id="collapse" aria-expanded="true" aria-controls="panel-body" title="折叠控制面板">−</button></div><div id="panel-body">
+<div class="time-tabs"><button data-time="morning">◒<span>晨光</span></button><button data-time="day" class="active">☀<span>日间</span></button><button data-time="evening">◐<span>黄昏</span></button><button data-time="night">☾<span>夜景</span></button></div>
+<div class="time-label"><strong id="time-label">10:30</strong><span id="light-description">晴日 · 柔和阴影</span></div>
+<label class="field">细节与画质<select id="quality"><option value="high">精细 · 完整建筑细节</option><option value="medium">均衡 · 日常浏览</option><option value="low">流畅 · 轻量显示</option></select></label>
+<label class="toggle"><span>枝叶、窗帘与遮阳布</span><input id="wind" type="checkbox" role="switch" checked></label>
+<label class="range-field" for="wind-strength"><span>风的力度</span><input id="wind-strength" type="range" min="0" max="1.5" step=".05" value=".45"><output id="wind-value">轻风</output></label>
+<label class="range-field" for="speed"><span>时光速度</span><input id="speed" type="range" min="0" max="3" step=".25" value="1"><output id="speed-value">1.00×</output></label>
+<label class="toggle"><span>商铺门开合演示</span><input id="doors" type="checkbox" role="switch" checked></label><button id="projection" class="export-button">切换为透视观察 ↗</button><button id="pause" class="primary">Ⅱ 暂停动态</button>
+<div class="model-info"><span>建筑总高</span><b>约 76 m</b><span>空间结构</span><b>22 层住宅 · 6 间商铺</b><span>地块状态</span><b><i class="dot"></i> 独立模型 · 可接入</b></div>
+<button id="export" class="export-button">导出完整模型 <span>GLB ↗</span></button>
+</div></aside>
+<div class="vertical-tools"><button id="reset" title="恢复建筑总览" aria-label="恢复建筑总览">⌂</button><button id="zoom-in" title="放大" aria-label="放大">＋</button><button id="zoom-out" title="缩小" aria-label="缩小">−</button></div>
+<footer><span><i class="dot"></i> 棕屿里 <small>ZONGYU / 112</small></span><span class="gestures">拖拽旋转 <i>·</i> 右键平移 <i>·</i> 滚轮缩放</span><button id="stats" title="实时场景信息">实时三维</button></footer>
+<div id="toast" role="status"></div>
+<script>__APP__</script></body></html>

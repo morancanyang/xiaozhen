@@ -1,0 +1,23 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101e30"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22/%3E"><title>上海中心 · 云端之上</title><style>__STYLE__</style></head><body>
+<div id="viewport"></div><div id="loading"><span>SHANGHAI TOWER</span><strong>构筑云端之上</strong><i></i><small id="load-status">正在准备建筑模型…</small></div>
+<header><a class="brand" href="#" aria-label="上海中心展示"><svg viewBox="0 0 30 45"><path d="M8 41C3 27 20 17 16 3M21 41c-4-15 8-28-5-38M4 42h22M9 34h13M10 26h12M13 18h9M15 10h5"/></svg><span>上海中心<small>SHANGHAI TOWER</small></span></a><div class="top-meta"><span>中国 · 上海 · 陆家嘴</span><i></i><span>建筑典藏 / 001</span></div><button id="save-png" class="outline">保存画面 <span>↗</span></button></header>
+<main class="title"><div class="eyebrow"><i></i> BETWEEN EARTH & SKY</div><h1>云端<span>之上</span></h1><p>让城市的向上想象，<br>在一束暮光里缓缓展开。</p><div class="title-rule"></div><small>银蓝幕墙 / 螺旋上升 / 黄昏蓝调</small></main>
+<nav class="view-nav" aria-label="观察视角"><button class="active" data-view="overview">01 <span>完整总览</span></button><button data-view="hero">02 <span>云端仰望</span></button><button data-view="facade">03 <span>幕墙细节</span></button><button data-view="entry">04 <span>入口广场</span></button><button data-view="crown">05 <span>螺旋楼冠</span></button></nav>
+<aside><div class="panel-heading"><div><span class="eyebrow">LIGHT & ATMOSPHERE</span><h2>此刻，蓝调上海</h2></div><button id="collapse" aria-label="收起设置" aria-expanded="true">−</button></div><div id="panel-content">
+<div class="time-selector"><button data-time="day">日光</button><button data-time="sunset">日落</button><button data-time="blue" class="active">蓝调</button><button data-time="night">夜色</button></div>
+<div class="clock"><span id="time-label">18:32</span><small id="time-caption">天空渐暗，城市亮起</small></div>
+<label class="select-label" for="quality">细节画质</label><select id="quality"><option value="high" selected>电影 · 完整细节</option><option value="medium">精致 · 均衡表现</option><option value="low">流畅 · 轻量浏览</option></select>
+<div class="toggle"><label for="clouds">云层与薄雾</label><input type="checkbox" id="clouds" checked role="switch"></div>
+<div class="toggle"><label for="lights">室内灯光</label><input type="checkbox" id="lights" checked role="switch"></div>
+<div class="toggle"><label for="people">广场生活</label><input type="checkbox" id="people" checked role="switch"></div>
+<div class="toggle"><label for="wind">风与飞鸟</label><input type="checkbox" id="wind" checked role="switch"></div>
+<div class="toggle"><label for="lapse">时光流转</label><input type="checkbox" id="lapse" role="switch"></div>
+<div class="speed"><label for="speed">动态速度</label><input type="range" id="speed" min=".25" max="3" step=".25" value="1"><span id="speed-label">1×</span></div>
+<button id="orbit" class="primary">▷ <span>开始建筑巡游</span> ↗</button>
+<div class="secondary"><button id="pause">Ⅱ 暂停动态</button><button id="reset">↺ 重置视角</button></div>
+<div class="extra"><button id="boundary">地块边界</button><button id="backdrop">陆家嘴远景</button><button id="stats-button">性能</button></div>
+</div></aside>
+<section class="specs"><div><strong>632<small>m</small></strong><span>原建筑参考高度</span></div><div><strong>96<small>m</small></strong><span>小镇展示高度</span></div><div><strong>112<small>×112 m</small></strong><span>标准地块适配</span></div><div><strong>120<small>°</small></strong><span>螺旋扭转</span></div></section>
+<footer><span>左键旋转 · 右键 / Shift 平移 · 滚轮缩放</span><div><button id="export-glb">导出 GLB ↓</button><button id="export-data">建模数据 ↓</button><button id="help">使用与接入 ⓘ</button></div><span class="footer-index">01 — SHANGHAI COLLECTION</span></footer>
+<div id="stats" hidden></div><div id="toast" role="status"></div><dialog id="guide"><button id="close-guide" aria-label="关闭说明">×</button><span class="eyebrow">SHANGHAI TOWER / GUIDE</span><h2>一座可以带走的地标</h2><p>左键旋转、右键或 Shift + 左键平移、滚轮缩放。触屏使用单指旋转、双指缩放和平移。空格暂停动态，H 恢复总览。</p><p>632 米是原建筑参考高度；模型默认展示高度为 96 米，场地为 112 × 112 米。建筑为程序化建筑演绎，并非测绘或施工模型。</p><p>模型与独立展示环境分离。GLB 保存建筑、广场与当前静态人物，不包含天空、远景、摄影灯光或实时程序动画。</p><p>页面提供 QianrenLandmarks.createShanghaiTower 接口。通过同源的 ?mode=asset 模式或独立 ES 模块接入已有城市，由宿主统一提供 THREE、光照和时间轴。</p><label class="select-label" for="resolution">截图分辨率</label><select id="resolution"><option value="screen">当前画布</option><option value="3840">4K · 3840 × 2160</option><option value="7680">8K · 7680 × 4320</option></select><p class="fine">实时玻璃采用物理材质与环境反射近似。8K 导出取决于设备缓冲限制；可在 Blender 中继续离线渲染。</p></dialog>
+<script>__APP__</script></body></html>

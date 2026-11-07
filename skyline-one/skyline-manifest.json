@@ -1,0 +1,147 @@
+{
+  "id": "skyline-one",
+  "name": "云际中心",
+  "version": "1.0.0",
+  "units": "m",
+  "upAxis": "Y",
+  "front": "+Z",
+  "pivot": "ground-center",
+  "footprint": {
+    "width": 112,
+    "depth": 112
+  },
+  "nativeFootprint": 112,
+  "scale": 1,
+  "height": 224,
+  "floors": 55,
+  "embedded": false,
+  "coordinateSpace": "native-local-metres; multiply by scale for host metres",
+  "bounds": {
+    "min": [
+      -56,
+      -4.5,
+      -56
+    ],
+    "max": [
+      56,
+      224,
+      56
+    ]
+  },
+  "animatedBounds": {
+    "min": [
+      -56,
+      -4.5,
+      -56
+    ],
+    "max": [
+      56,
+      251,
+      56
+    ]
+  },
+  "excavations": [
+    {
+      "id": "garage",
+      "min": [
+        -47,
+        -4.5,
+        -39
+      ],
+      "max": [
+        -35,
+        0,
+        -12
+      ]
+    }
+  ],
+  "entrances": {
+    "public": {
+      "position": [
+        0,
+        0,
+        56
+      ],
+      "direction": [
+        0,
+        0,
+        1
+      ],
+      "width": 10
+    },
+    "vehicle": {
+      "position": [
+        56,
+        0,
+        39
+      ],
+      "direction": [
+        1,
+        0,
+        0
+      ],
+      "width": 7
+    },
+    "service": {
+      "position": [
+        -56,
+        0,
+        -44
+      ],
+      "direction": [
+        -1,
+        0,
+        0
+      ],
+      "width": 7
+    }
+  },
+  "buildingIds": [
+    "tower",
+    "podium"
+  ],
+  "buildings": [
+    {
+      "id": "tower",
+      "name": "云际塔楼",
+      "x": 0,
+      "z": -6,
+      "w": 38,
+      "d": 36,
+      "height": 224,
+      "floors": 52
+    },
+    {
+      "id": "podium",
+      "name": "云际商业裙房",
+      "x": 0,
+      "z": -6,
+      "w": 64,
+      "d": 56,
+      "height": 18,
+      "floors": 3
+    }
+  ],
+  "components": [
+    {
+      "id": "tower",
+      "name": "超高层塔楼"
+    },
+    {
+      "id": "podium",
+      "name": "商业与双层大堂"
+    },
+    {
+      "id": "landscape",
+      "name": "云际广场与退台花园"
+    },
+    {
+      "id": "roof",
+      "name": "停机坪与机电层"
+    },
+    {
+      "id": "site",
+      "name": "道路与地下车库"
+    }
+  ]
+}

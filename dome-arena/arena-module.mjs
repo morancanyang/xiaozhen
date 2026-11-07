@@ -1,0 +1,127 @@
+/** Procedural metric arena. Uses the host's THREE and render loop. */
+export function createArenaComplex({THREE,blockSize=112,quality='high',embedded=true,seed=2026,coarse=false}={}){
+ if(!THREE?.Group)throw new Error('Host THREE is required');if(!(blockSize>0))throw new Error('Invalid blockSize');
+ const root=new THREE.Group();root.name='DOME-ARENA';root.scale.setScalar(blockSize/112);
+ const groups=new Map(),materials={},batches=new Map(),gs=new Set(),ms=new Set(),ts=new Set(),detail=[],people=[],cars=[],doors=[],fans=[],flags=[],birds=[],windShaders=[];
+ for(const id of ['site','architecture','structure','roof','interior','landscape','lights','life']){const g=new THREE.Group();g.name=id;g.userData={id,name:({site:'场地与配套',architecture:'穹光体育馆',structure:'钢桁架系统',roof:'银色流线穹顶',interior:'比赛大厅与看台',landscape:'公共广场与绿化',lights:'投光灯塔',life:'场馆日常'})[id]};groups.set(id,g);root.add(g);}
+ const manifest={id:'dome-arena',name:'穹光体育中心',version:'1.0.0',units:'m',upAxis:'Y',front:'+Z',pivot:'ground-center',footprint:{width:blockSize,depth:blockSize},scale:blockSize/112,height:38.4*blockSize/112,buildingHeight:33*blockSize/112,coordinateSpace:'native-local-metres; use root.localToWorld for scaled world coordinates',bounds:{min:[-56,-.4,-56],max:[56,38.4,56]},animatedBounds:{min:[-56,-.4,-56],max:[56,41,56]},buildings:[{id:'architecture',name:'穹光综合体育馆',x:0,z:-6,w:78,d:66,height:33,floors:3}],entrances:{public:{position:[0,0,56],direction:[0,0,1],width:14},service:{position:[-56,0,-35],direction:[-1,0,0],width:6},dropoff:{position:[56,0,37],direction:[1,0,0],width:6}},lightFixtures:[],seatCount:0,embedded};
+ let escalator=null,scoreboard=null,scoreSlide=-1;let disposed=false,dynamics=true,time=0,windTime=0,night=0,level=quality,roofVisible=true,activity={people:true,traffic:true,wind:true};
+ const random=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296;};
+ const G=g=>(gs.add(g),g),M=m=>(ms.add(m),m),geo={};geo.box=G(new THREE.BoxGeometry(1,1,1));geo.cylinder=G(new THREE.CylinderGeometry(.5,.5,1,10));geo.sphere=G(new THREE.SphereGeometry(.5,12,8));geo.leaf=G(new THREE.IcosahedronGeometry(.5,1));geo.ring=G(new THREE.TorusGeometry(.5,.012,6,48));
+ function grain(color){const c=document.createElement('canvas');c.width=c.height=128;const x=c.getContext('2d');x.fillStyle=color;x.fillRect(0,0,128,128);const im=x.getImageData(0,0,128,128);for(let i=0;i<im.data.length;i+=4){const n=(random()-.5)*8;for(let k=0;k<3;k++)im.data[i+k]+=n;}x.putImageData(im,0,0);const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(12,12);t.anisotropy=4;ts.add(t);return t;}
+ function mat(name,color,opts={}){const m=M(new THREE.MeshStandardMaterial({color,roughness:.7,...opts}));m.name=name;materials[name]=m;return m;}
+ mat('paving',0xffffff,{map:grain('#d6d9d5'),roughness:.9});mat('stone',0xb5bebd);mat('concrete',0x8f9b9d);mat('steel',0xe1e6de,{metalness:.72,roughness:.28});mat('dark-steel',0x344e5d,{metalness:.7,roughness:.35});mat('glass',0x287b93,{metalness:.48,roughness:.14,transparent:true,opacity:.67,depthWrite:false});mat('skylight',0x83aeb7,{metalness:.45,roughness:.12,transparent:true,opacity:.55,side:THREE.DoubleSide});
+ for(let i=0;i<4;i++)mat('silver-'+i,[0xb4c2c8,0xbcc9ce,0xb6c4ca,0xb9c7cd][i],{metalness:.85,roughness:.24+i*.025,side:THREE.DoubleSide});
+ mat('copper',0xb58a59,{metalness:.78,roughness:.3});mat('warm-stone',0xcebc9f);mat('roof-edge',0x4c6c7b,{metalness:.7,roughness:.3});mat('navy',0x173e59);mat('teal',0x299e9a);mat('court',0xc3a278,{map:grain('#d7b688'),roughness:.7});mat('paint',0xeaece3);mat('court-blue',0x315c6b);mat('wood',0xa57b4e);mat('grass',0x738c6b);mat('soil',0x777e6a);mat('leaf',0x35694d);mat('leaf-light',0x88a761);mat('bark',0x777162);mat('asphalt',0xffffff,{map:grain('#263e4a'),roughness:.98});mat('lamp',0xe4f2ee,{emissive:0xc3e9ff,emissiveIntensity:.08});mat('warm-light',0xf0e6c7,{emissive:0xffce83,emissiveIntensity:.1});mat('skin',0xc8a88c);mat('cloth',0x3e7583);mat('cloth-light',0xc5b9a5);mat('black',0x243a42);mat('car',0xb7c9ce,{metalness:.55,roughness:.24});mat('rubber',0x1b2c31);mat('water',0x5a949e,{metalness:.45,roughness:.16});
+ const mx=new THREE.Matrix4(),p=new THREE.Vector3(),q=new THREE.Quaternion(),s=new THREE.Vector3();
+ function part(type,m,pos,sc,rot=0,owner='site',tier=0){const key=[type,m,owner,tier].join('|');if(!batches.has(key))batches.set(key,{type,m,owner,tier,items:[]});batches.get(key).items.push({p:pos,s:sc,r:Array.isArray(rot)?rot:[0,rot,0]});}
+ const box=(m,x,y,z,w,h,d,r=0,o='site',t=0)=>part('box',m,[x,y,z],[w,h,d],r,o,t);
+ const cyl=(m,x,y,z,w,h,d,o='site',t=0)=>part('cylinder',m,[x,y,z],[w,h,d],0,o,t);
+ function beam(m,a,b,width=.16,owner='structure',tier=0){const va=new THREE.Vector3(...a),vb=new THREE.Vector3(...b),length=va.distanceTo(vb),mid=va.clone().add(vb).multiplyScalar(.5),quat=new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0,1,0),vb.sub(va).normalize());part('cylinder',m,mid.toArray(),[width,length,width],new THREE.Euler().setFromQuaternion(quat).toArray().slice(0,3),owner,tier);}
+ function mesh(type,m,pos,sc,parent,rot=[0,0,0]){const o=new THREE.Mesh(geo[type],materials[m]);o.position.fromArray(pos);o.scale.fromArray(sc);o.rotation.set(...rot);o.castShadow=m!=='glass';o.receiveShadow=true;parent.add(o);return o;}
+ function custom(name,positions,indices,material,owner,uv=null){const g=G(new THREE.BufferGeometry());g.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));if(uv)g.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));g.setIndex(indices);g.computeVertexNormals();const o=new THREE.Mesh(g,material);o.name=name;o.castShadow=true;o.receiveShadow=true;groups.get(owner).add(o);return o;}
+ function label(text,pos,w,h,owner='architecture',rotation=0){const c=document.createElement('canvas');c.width=1024;c.height=256;const x=c.getContext('2d');x.fillStyle='#254b5a';x.fillRect(0,0,1024,256);x.fillStyle='#e8efea';x.font='500 78px "Microsoft YaHei",sans-serif';x.textAlign='center';x.textBaseline='middle';x.fillText(text,512,134,980);const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;ts.add(t);const material=M(new THREE.MeshStandardMaterial({map:t,roughness:.65,emissive:0xc0dfeb,emissiveIntensity:.08}));material.name='sign:'+text;const o=new THREE.Mesh(G(new THREE.PlaneGeometry(w,h)),material);o.position.fromArray(pos);o.rotation.y=rotation;groups.get(owner).add(o);return o;}
+ function roofPoint(x,z,offset=0){const r=Math.min(1,Math.hypot(x/39,z/33));return [x,12.8+20*Math.pow(Math.max(0,Math.cos(r*Math.PI/2)),.85)+offset,z-6];}
+ box('paving',0,-.2,0,112,.4,112);box('stone',0,.06,0,110,.12,110);
+ // PHASE A: a metric elliptic roof shell and lower volume.
+ const roofData=Array.from({length:5},()=>({p:[],i:[],uv:[]}));
+ function tile(r0,r1,a0,a1,slot){const d=roofData[slot],start=d.p.length/3;for(const [r,a] of [[r0,a0],[r1,a0],[r1,a1],[r0,a1]]){d.p.push(...roofPoint(Math.cos(a)*39*r,Math.sin(a)*33*r));d.uv.push(a/(Math.PI*2),r);}d.i.push(start,start+2,start+1,start,start+3,start+2);}
+ const bands=coarse?8:23,segments=coarse?32:96;
+ for(let r=0;r<bands;r++)for(let a=0;a<segments;a++){const inner=r/bands,outer=(r+1)/bands,angle=a/segments*Math.PI*2,gap=coarse?0:.00045;tile(inner+gap,outer-gap,angle+gap,angle+Math.PI*2/segments-gap,r<5?4:(a+r)%4);}
+ roofData.forEach((d,i)=>{if(d.p.length)custom(i===4?'Central glazed oculus':'Standing seam roof panels '+i,d.p,d.i,materials[i===4?'skylight':'silver-'+i],'roof',d.uv);});
+ // Ring beams and double-chord roof trusses follow the same analytical surface.
+ for(let a=0;a<96;a++){const t=a/96*Math.PI*2,u=(a+1)/96*Math.PI*2;beam('copper',[39*Math.cos(t),12.7,-6+33*Math.sin(t)],[39*Math.cos(u),12.7,-6+33*Math.sin(u)],.35,'architecture');}
+ for(let z=-28;z<=28;z+=4.67){const half=39*Math.sqrt(1-(z/33)**2),steps=18;
+   for(let i=0;i<steps;i++){const x=-half+2*half*i/steps,xx=-half+2*half*(i+1)/steps,a=roofPoint(x,z,-.55),b=roofPoint(xx,z,-.55),c=roofPoint(x,z,-2.15),d=roofPoint(xx,z,-2.15);beam('steel',a,b,.23);beam('steel',c,d,.2);if(!coarse){beam('steel',i%2?a:c,i%2?d:b,.12,'structure',1);beam('dark-steel',a,c,.08,'structure',1);for(const v of [a,c])part('sphere','steel',v,[.3,.3,.3],0,'structure',2);}}
+   for(const x of [-half,half]){const h=roofPoint(x,z,-1)[1];beam('steel',[x,0,z-6],[x,h,z-6],.48,'architecture');box('concrete',x,.4,z-6,1.1,.7,1.1,0,'architecture');}
+ }
+ if(!coarse){
+ for(let x=-30;x<=30;x+=5){const half=33*Math.sqrt(1-(x/39)**2);for(let i=0;i<18;i++){const z=-half+2*half*i/18,zz=-half+2*half*(i+1)/18;beam('steel',roofPoint(x,z,-.75),roofPoint(x,zz,-.75),.12,'structure',1);}}
+ // Standing seams and skylight perimeter are separate fine metal members.
+ for(let a=0;a<48;a++){const angle=a/48*Math.PI*2;for(let r=5;r<23;r++){beam('roof-edge',roofPoint(39*r/23*Math.cos(angle),33*r/23*Math.sin(angle),.035),roofPoint(39*(r+1)/23*Math.cos(angle),33*(r+1)/23*Math.sin(angle),.035),.035,'roof',1);}}
+ for(let a=0;a<72;a++){const t=a/72*Math.PI*2,u=(a+1)/72*Math.PI*2;beam('steel',roofPoint(39*5/23*Math.cos(t),33*5/23*Math.sin(t),.05),roofPoint(39*5/23*Math.cos(u),33*5/23*Math.sin(u),.05),.12,'roof');}
+ // Curtain wall panels on the ellipse, with three occupied public levels.
+ for(let i=0;i<96;i++){const a=i/96*Math.PI*2,b=(i+1)/96*Math.PI*2,mid=(a+b)/2;
+   if(Math.sin(mid)>.98)continue;
+   const x1=38.8*Math.cos(a),z1=-6+32.8*Math.sin(a),x2=38.8*Math.cos(b),z2=-6+32.8*Math.sin(b);
+   if(i%2===0)beam('navy',[x1,.5,z1],[x2,.5,z2],.75,'architecture');if(i%6===0)beam('copper',[x1,.6,z1],[x1,12.6,z1],.2,'architecture');
+   const pts=[x1,.8,z1,x2,.8,z2,x2,12.55,z2,x1,12.55,z1];custom('Facade glass panel '+i,pts,[0,2,1,0,3,2],materials.glass,'architecture',[0,0,1,0,1,1,0,1]);beam('dark-steel',[x1,.4,z1],[x1,12.65,z1],.14,'architecture');
+   for(const y of [.55,4.5,8.5,12.55])beam('steel',[x1,y,z1],[x2,y,z2],.12,'architecture');
+   if(i%8===0){box('dark-steel',x1,1.6,z1,1.4,3,.16,-mid,'architecture');}
+ }
+ }
+ // The court, ring concourses and stepped seating remain visible with roof hidden.
+ box('court',0,.27,-6,36,.22,23,0,'interior');box('court-blue',0,.4,-6,28,.035,15,0,'interior');
+ for(const x of [-14,14])box('paint',x,.425,-6,.065,.02,15,0,'interior');for(const z of [-13.5,1.5])box('paint',0,.425,z,28,.02,.065,0,'interior');box('paint',0,.426,-6,.065,.02,15,0,'interior');part('ring','paint',[0,.44,-6],[7.2,7.2,7.2],[Math.PI/2,0,0],'interior');
+ for(const x of [-14,14]){box('paint',x*.85,.44,-6,4.8,.02,.065,0,'interior');box('steel',x*1.07,2,-6,.14,3.4,.14,0,'interior');box('paint',x*.98,3.3,-6,.08,1,1.8,0,'interior');part('ring','roof-edge',[x*.96,3.05,-6],[.9,.9,.9],[Math.PI/2,0,0],'interior');}
+ for(let row=0;row<16;row++){const r=.58+row*.024,y=1.1+row*.56,outer=r+.022,pos=[],ix=[];
+   for(let j=0;j<=96;j++){const a=j/96*Math.PI*2;pos.push(Math.cos(a)*34*r,y,-6+Math.sin(a)*28*r,Math.cos(a)*34*outer,y,-6+Math.sin(a)*28*outer);if(j<96){const n=j*2;ix.push(n,n+2,n+1,n+1,n+2,n+3);}}
+   custom('Seating terrace '+row,pos,ix,materials.concrete,'interior');
+   if(coarse)continue;const count=Math.round(2*Math.PI*31*r/.68);
+   for(let j=0;j<count;j++){const a=j/count*Math.PI*2;if(Math.abs(Math.sin(a*6))<.16)continue;const x=Math.cos(a)*34*r,z=-6+Math.sin(a)*28*r,rot=Math.atan2(-x,6+z)*-1+Math.PI;const color=(Math.floor(a/Math.PI*6)+row)%4===0?'teal':'navy';box(color,x,y+.4,z,.49,.13,.48,rot,'interior',1);const dx=Math.sin(rot)*-.22,dz=Math.cos(rot)*-.22;box(color,x+dx,y+.67,z+dz,.49,.5,.08,rot,'interior',1);box('dark-steel',x,y+.2,z,.1,.4,.1,0,'interior',2);manifest.seatCount++;}
+ }
+ for(let sector=0;sector<12;sector++){const a=sector/12*Math.PI*2;for(let step=0;step<28;step++){const r=.575+step*.014;box('stone',Math.cos(a)*34*r,.97+step*.32,-6+Math.sin(a)*28*r,1.1,.13,.55,-a,'interior',1);}for(let j=0;j<16;j++){const r=.58+j*.024;beam('dark-steel',[Math.cos(a)*34*r,.9+j*.56,-6+Math.sin(a)*28*r],[Math.cos(a)*34*r,1.9+j*.56,-6+Math.sin(a)*28*r],.05,'interior',1);}}
+ // Main entrance, canopy and accessible approach.
+ box('navy',0,8.3,30.5,34,.28,9,0,'architecture');box('copper',0,8.48,30.5,34,.09,9,0,'architecture');
+ for(const x of [-15,15]){beam('steel',[x,0,34],[x,8.3,34],.22,'architecture');beam('steel',[x,8.25,34],[x,11.7,26],.12,'architecture');}
+ box('glass',0,5.7,26.7,17,10.6,.12,0,'architecture');for(const x of [-8,-4,0,4,8])box('dark-steel',x,5.6,26.9,.1,11,.15,0,'architecture');
+ for(let i=0;i<6;i++){const h=1.2-i*.2;box('warm-stone',0,h/2,28+i*.85,34,h,.85,0,'site');}
+ box('paving',20,.64,30,3,.18,10,[.1,0,0],'site');for(const x of [18.7,21.3]){beam('steel',[x,1.2,25.4],[x,.2,35],.065,'site');for(let z=26;z<35;z+=2)beam('steel',[x,.1,z],[x,1,z],.04,'site');}
+ for(const side of [-1,1]){const o=mesh('box','glass',[side*.85,2.5,27],[1.65,3.5,.1],groups.get('architecture'));o.name='Automatic door '+side;doors.push({mesh:o,side,base:side*.85});}
+ label('穹 光 体 育 中 心',[0,10.5,27.1],23,2.3);label('DOME ARENA',[0,7.4,35.06],17,1.3);label('城市运动 · 全民共享',[0,3.1,52.3],11,1.4,'site');box('stone',0,1.8,52.1,12,3.6,.4);
+ for(const x of [-24,24]){label('入口 / ENTRY',[x,3.5,26],5,.9);box('dark-steel',x,1.5,25.9,5,3,.2,0,'architecture');}
+ // Back-of-house plant and coherent inspection components.
+ for(const x of [-17,-9,9,17]){box('steel',x,1.2,-42,5,2.2,3,0,'site');for(let j=0;j<2;j++){cyl('black',x-1+j*2,2.35,-42,1.4,.15,1.4);const f=new THREE.Group();f.position.set(x-1+j*2,2.45,-42);groups.get('site').add(f);for(let k=0;k<3;k++)mesh('box','steel',[Math.cos(k*2.094)*.3,0,Math.sin(k*2.094)*.3],[.6,.05,.14],f,[0,-k*2.094,0]);fans.push(f);}}
+ for(const x of [-38,38]){box('stone',x,1.8,-32,4,3.6,5,0,'architecture');box('dark-steel',x,1.5,-29.4,1.5,2.8,.08,0,'architecture');}
+ // The parcel has no second municipal road frame: only rear and side service lanes.
+ box('asphalt',0,.11,-47,104,.1,6);for(const x of [-47,47])box('asphalt',x,.11,-6,6,.1,82);
+ for(let x=-40;x<=40;x+=8)box('paint',x,.17,-47,3,.02,.1);for(const x of [-47,47])for(let z=-36;z<34;z+=9)box('paint',x,.17,z,.1,.02,3);
+ function tree(x,z,size=1){cyl('bark',x,3.1*size,z,.3*size,6.2*size,.3*size,'landscape');box('stone',x,.25,z,3.1,.4,3.1,0,'landscape');cyl('soil',x,.48,z,2.6,.06,2.6,'landscape');for(let j=0;j<(coarse?5:65);j++){const a=j*2.4,r=Math.sqrt(random())*2.2*size;part('leaf',j%3?'leaf':'leaf-light',[x+Math.sin(a)*r,(6.6+random()*2)*size,z+Math.cos(a)*r],[.95*size,.65*size,1.1*size],[random(),a,random()],'landscape',1);}part('sphere','leaf',[x,7*size,z],[4.7*size,4*size,4.7*size],0,'landscape',-1);}
+ for(let a=-39;a<=39;a+=13){tree(a,-53,.85);if(Math.abs(a)>9)tree(a,48,.9);}for(let z=-28;z<=24;z+=13)for(const x of [-53,53])tree(x,z,.8);
+ for(const x of [-39,39])for(const z of [36,-37]){box('stone',x,.35,z,9,.6,5,0,'landscape');box('grass',x,.72,z,8.5,.3,4.5,0,'landscape');}
+ for(const x of [-32,-21,21,32]){box('wood',x,.7,42,3,.15,.7,0,'landscape');box('wood',x,1,41.7,3,.55,.1,0,'landscape');for(const a of [-1,1])box('steel',x+a,.4,42,.12,.7,.6,0,'landscape');}
+ for(const x of [-42,42]){box('dark-steel',x,.7,42,.7,1.4,.7);cyl('navy',x-2,.55,43,.25,1.1,.25);}
+ for(let x=-20;x<=20;x+=4)box('stone',x,.045,43,.025,.02,22,0,'site',2);for(let z=36;z<55;z+=3)box('stone',0,.045,z,100,.02,.025,0,'site',2);
+ for(const [x,z] of [[-32,35],[32,35],[-43,-38],[43,-38]]){box('black',x,.14,z,1.5,.04,.6);for(let i=0;i<8;i++)box('steel',x-.6+i*.17,.17,z,.035,.02,.5,0,'site',2);}
+ for(let i=0;i<6;i++)part('ring','steel',[-30+i*1.4,.6,52],[1,1.1,1],0,'site',1);
+ // Four lattice floodlight towers with a fixture manifest for host-managed lights.
+ for(const x of [-49,49])for(const z of [-43,43]){cyl('concrete',x,.45,z,2.2,.9,2.2,'lights');for(const side of [-1,1])beam('steel',[x+side*.35,.8,z],[x+side*.18,36,z],.14,'lights');
+   for(let y=1;y<36;y+=2){beam('dark-steel',[x-.35,y,z],[x+.35,y+2,z],.065,'lights',1);beam('steel',[x-.35,y,z],[x+.35,y,z],.06,'lights',1);box('dark-steel',x+.5,y,z,.05,.07,.55,0,'lights',2);}
+   box('steel',x,35,z,3,.15,2,0,'lights');for(const side of [-1,1])box('steel',x+side*1.5,35.5,z,.07,1,2,0,'lights',1);
+   box('dark-steel',x,37,z,6,.22,.4,0,'lights');for(let i=0;i<5;i++)for(let j=0;j<2;j++){box('dark-steel',x-2.4+i*1.2,36.6+j,z,.85,.65,.55,0,'lights');box('lamp',x-2.4+i*1.2,36.6+j,z+(z>0?-.3:.3),.7,.5,.05,0,'lights');}
+   manifest.lightFixtures.push({id:'flood-'+x+'-'+z,position:[x,37,z],target:[0,0,-6],power:1200});
+ }
+ if(!coarse){for(const x of [-25,25])for(const z of [-16,4]){beam('dark-steel',[x,19,z],[x,24,z],.07,'structure');box('dark-steel',x,19,z,5,.12,.8,0,'structure');for(let j=-2;j<=2;j++)box('lamp',x+j,18.8,z,.6,.12,.5,0,'interior');}
+ scoreboard=label('DOME ARENA  00 : 00',[0,17.3,-21],9,3,'interior');beam('dark-steel',[-4,24,-21],[-4,18,-21],.08,'structure');beam('dark-steel',[4,24,-21],[4,18,-21],.08,'structure');}
+ for(const x of [-10,10])for(const z of [38,51]){cyl('dark-steel',x,2.7,z,.1,5.4,.1);box('warm-light',x,5.4,z,1,.15,.35);}
+ // A continuous escalator on the side concourse, outside the seating bowl.
+ for(const x of [-35.2,-32.8]){beam('dark-steel',[x,.5,-4],[x,6.5,8],.18,'interior');beam('steel',[x,1.5,-4],[x,7.5,8],.07,'interior');}
+ escalator=new THREE.InstancedMesh(geo.box,materials.steel,28);escalator.name='Moving escalator steps';escalator.castShadow=true;escalator.receiveShadow=true;groups.get('interior').add(escalator);
+ // Flush architectural components into semantic instanced batches.
+ for(const b of batches.values()){const im=new THREE.InstancedMesh(geo[b.type],materials[b.m],b.items.length);im.name=b.owner+':'+b.m+':L'+b.tier;im.castShadow=!['glass','skylight','paint','asphalt','paving'].includes(b.m);im.receiveShadow=true;im.userData={tier:b.tier};b.items.forEach((it,i)=>{p.fromArray(it.p);s.fromArray(it.s);q.setFromEuler(new THREE.Euler(...it.r));mx.compose(p,q,s);im.setMatrixAt(i,mx);});im.computeBoundingSphere();groups.get(b.owner).add(im);if(b.tier)detail.push({mesh:im,tier:b.tier});}
+ for(const key of ['leaf','leaf-light'])materials[key].onBeforeCompile=shader=>{shader.uniforms.arenaWind={value:0};windShaders.push(shader);shader.vertexShader='uniform float arenaWind;\n'+shader.vertexShader;shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\n#ifdef USE_INSTANCING\ntransformed.x+=sin(arenaWind*1.4+instanceMatrix[3].x*.25+instanceMatrix[3].z*.2)*.08*(position.y+.6);\n#endif');};
+ const life=groups.get('life');
+ for(let i=0;i<44;i++){const g=new THREE.Group();g.name='Visitor '+i;life.add(g);mesh('sphere','skin',[0,1.65,0],[.34,.4,.34],g);mesh('box',i%3?'cloth':'cloth-light',[0,1.1,0],[.43,.65,.27],g);const legs=[];for(const x of [-.13,.13]){const pivot=new THREE.Group();pivot.position.set(x,.78,0);g.add(pivot);mesh('box','black',[0,-.35,0],[.15,.7,.18],pivot);legs.push(pivot);}people.push({group:g,legs,i});}
+ const wheelG=G(new THREE.CylinderGeometry(.29,.29,.18,12));wheelG.rotateZ(Math.PI/2);
+ for(let i=0;i<3;i++){const g=new THREE.Group();g.name='Service or dropoff EV '+i;life.add(g);mesh('box','car',[0,.75,0],[1.9,.7,4.2],g);mesh('box','glass',[0,1.25,-.2],[1.7,.65,2.2],g);const wheels=[];for(const x of [-.95,.95])for(const z of [-1.3,1.3]){const w=new THREE.Mesh(wheelG,materials.rubber);w.position.set(x,.3,z);g.add(w);wheels.push(w);}cars.push({group:g,wheels,i});}
+ for(const x of [-17,-13]){mesh('cylinder','steel',[x,4.5,47],[.08,9,.08],life);const flag=mesh('box',x===-17?'navy':'teal',[x+.7,7.8,47],[1.4,1.7,.03],life);flags.push(flag);}
+ for(let i=0;i<5;i++){const g=new THREE.Group();g.name='Bird';for(const side of [-1,1])mesh('box','dark-steel',[side*.35,0,0],[.7,.05,.16],g,[0,0,side*.18]);life.add(g);birds.push(g);}
+ const fountain=mesh('box','water',[27,.45,49],[12,.05,3],groups.get('landscape'));mesh('box','stone',[27,.25,49],[13,.4,4],groups.get('landscape'));const jets=[];for(let i=0;i<4;i++)jets.push(mesh('cylinder','skylight',[23+i*2.5,1.3,49],[.08,1.7,.08],life));
+ function poly(points,u){let total=0;const lengths=[];for(let i=1;i<points.length;i++){const d=Math.hypot(points[i][0]-points[i-1][0],points[i][1]-points[i-1][1]);lengths.push(d);total+=d;}let t=u*total;for(let i=0;i<lengths.length;i++){if(t<=lengths[i]||i===lengths.length-1){const a=points[i],b=points[i+1],f=t/lengths[i];return{x:a[0]+(b[0]-a[0])*f,z:a[1]+(b[1]-a[1])*f,r:Math.atan2(b[0]-a[0],b[1]-a[1])};}t-=lengths[i];}}
+ function update(delta=0){if(disposed)return;const dt=dynamics&&Number.isFinite(delta)?Math.max(0,Math.min(delta,.25)):0;time+=dt;if(activity.wind)windTime+=dt;windShaders.forEach(s=>s.uniforms.arenaWind.value=windTime);
+   for(const a of people){const u=(time*.007+a.i/44)%1,stop=u>.46&&u<.55;const v=u<.46?u/.46*.5:u<.55?.5:.5+(u-.55)/.45*.5;const points=a.i%3===0?[[-5,54],[-5,39],[0,34],[0,27],[0,34],[-5,39],[-5,54]]:a.i%3===1?[[-40,40],[40,40],[42,52],[-40,52],[-40,40]]:[[-42,30],[-42,-37],[42,-37],[42,30],[30,36],[-42,36],[-42,30]];const p=poly(points,v);a.group.position.set(p.x,p.z<33&&Math.abs(p.x)<17?Math.max(.14,1.3-(p.z-27)*.235):.14,p.z);a.group.rotation.y=p.r;a.legs.forEach((l,i)=>l.rotation.x=stop?0:Math.sin(time*5+a.i+i*Math.PI)*.36);}
+   for(const a of cars){const t=(time+a.i*28)%84,u=t<24?t/24*.45:t<34?.45:.45+(t-34)/50*.55;const p=poly([[47,34],[46,-40],[40,-46],[-40,-46],[-46,-40],[-46,28],[-47,30],[-48,28],[-48,-40],[-40,-48],[40,-48],[48,-40],[48,28],[47,34]],u);a.group.position.set(p.x,.17,p.z);a.group.rotation.y=p.r;if(!(t>=24&&t<34))a.wheels.forEach(w=>w.rotation.x+=dt*8);}
+   if(escalator){for(let i=0;i<28;i++){const u=(i/28+time*.045)%1;mx.makeScale(1.65,.16,.53);mx.setPosition(-34,.7+u*6,-4+u*12);escalator.setMatrixAt(i,mx);}escalator.instanceMatrix.needsUpdate=true;escalator.computeBoundingSphere();}
+   if(scoreboard){const slide=Math.floor(time/12)%3;if(slide!==scoreSlide){scoreSlide=slide;const c=scoreboard.material.map.image,x=c.getContext('2d');x.fillStyle='#254b5a';x.fillRect(0,0,c.width,c.height);x.fillStyle='#e8efea';x.textAlign='center';x.textBaseline='middle';x.font='500 74px "Microsoft YaHei",sans-serif';x.fillText(['DOME ARENA  00 : 00','全民健身 · OPEN COURT','穹光体育中心 · WELCOME'][slide],c.width/2,c.height/2,980);scoreboard.material.map.needsUpdate=true;}}
+   const near=activity.people&&people.some(a=>Math.hypot(a.group.position.x,a.group.position.z-27)<4);doors.forEach(d=>d.mesh.position.x+=(d.base+d.side*(near?1.5:0)-d.mesh.position.x)*Math.min(1,dt*5));fans.forEach(f=>f.rotation.y+=dt*5);flags.forEach((f,i)=>f.rotation.y=Math.sin(windTime*2+i)*.15);
+   birds.forEach((b,i)=>{const t=windTime*.045+i*1.26;b.position.set(Math.cos(t)*35,34+i*1.2,-6+Math.sin(t)*31);b.rotation.set(Math.sin(windTime*5+i)*.2,-t,0);});jets.forEach((j,i)=>{const h=1.6+Math.sin(time*2+i)*.25;j.scale.y=h;j.position.y=.47+h/2;});fountain.material.roughness=.13+.015*Math.sin(time*.6);
+ }
+ function sync(){people.forEach(a=>a.group.visible=!coarse&&activity.people&&(level==='high'||a.i<(level==='medium'?28:10)));cars.forEach(a=>a.group.visible=!coarse&&activity.traffic);birds.forEach((b,i)=>b.visible=!coarse&&activity.wind&&(level==='high'||i<2));}
+ function setQuality(v){if(!['high','medium','low'].includes(v))throw new Error('Unknown quality');level=v;detail.forEach(d=>d.mesh.visible=d.tier<0?v==='low'||coarse:!coarse&&(v==='high'||v==='medium'&&d.tier<2));sync();}
+ function setTimeOfDay(v){night=typeof v==='number'?THREE.MathUtils.clamp(v,0,1):v==='night'?1:v==='evening'?.4:0;materials.lamp.emissiveIntensity=.08+night*4;materials['warm-light'].emissiveIntensity=.1+night*3;}
+ function setDynamicsEnabled(v){dynamics=!!v;}function setActivity(v={}){Object.assign(activity,v);sync();}function setRoofVisible(v){roofVisible=!!v;groups.get('roof').visible=roofVisible;}
+ function exportScene(){root.updateMatrixWorld(true);const geometries={},mats={},objects=[];root.traverseVisible(o=>{if(!o.isMesh)return;const g=o.geometry,m=o.material;if(!geometries[g.uuid])geometries[g.uuid]={positions:Array.from(g.attributes.position.array),indices:g.index?Array.from(g.index.array):null,uv:g.attributes.uv?Array.from(g.attributes.uv.array):null};if(!mats[m.uuid])mats[m.uuid]={name:m.name||o.name,color:m.color.toArray(),roughness:m.roughness??.7,metalness:m.metalness??0,emissive:m.emissive?.toArray()||[0,0,0],emissiveIntensity:m.emissiveIntensity||0,opacity:m.opacity,transparent:m.transparent,texture:m.map?.image?.toDataURL?m.map.image.toDataURL():null,repeat:m.map?.repeat.toArray()||[1,1]};let owner=o;while(owner!==root&&!owner.userData.id)owner=owner.parent;for(let i=0;i<(o.isInstancedMesh?o.count:1);i++){if(o.isInstancedMesh){o.getMatrixAt(i,mx);mx.premultiply(o.matrixWorld);}else mx.copy(o.matrixWorld);objects.push({g:g.uuid,m:m.uuid,matrix:mx.toArray(),owner:owner.userData.id||'site'});}});return{format:'dome-arena-v1',manifest,snapshotSpace:'world',geometries,materials:mats,objects};}
+ function dispose(){if(disposed)return;disposed=true;root.removeFromParent();root.traverse(o=>{if(o.isInstancedMesh)o.dispose();});gs.forEach(g=>g.dispose());ms.forEach(m=>m.dispose());ts.forEach(t=>t.dispose());groups.clear();batches.clear();root.clear();}
+ setQuality(quality);update(0);return{root,groups,manifest,update,setQuality,setTimeOfDay,setDynamicsEnabled,setActivity,setRoofVisible,exportScene,dispose,get disposed(){return disposed;},get quality(){return level;},get simulationTime(){return time;},get actorCount(){return people.length+cars.length+birds.length;},get roofVisible(){return roofVisible;}};
+}
+export default createArenaComplex;

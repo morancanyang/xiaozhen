@@ -1,0 +1,191 @@
+{
+  "id": "zongyu-mixeduse",
+  "name": "棕屿里",
+  "version": "1.0.0",
+  "units": "m",
+  "upAxis": "Y",
+  "front": "+Z",
+  "footprint": {
+    "width": 112,
+    "depth": 112
+  },
+  "connectionLevel": 0,
+  "buildings": [
+    {
+      "id": "ZONGYU-TOWER",
+      "name": "棕屿里住宅",
+      "width": 78,
+      "depth": 18,
+      "x": 0,
+      "z": 24,
+      "floors": 23,
+      "residentialFloors": 22,
+      "height": 75.89999999999999,
+      "units": 3
+    }
+  ],
+  "shops": [
+    {
+      "id": "SHOP-1",
+      "name": "棕屿咖啡",
+      "x": -35,
+      "z": 39.1
+    },
+    {
+      "id": "SHOP-2",
+      "name": "禾麦面包",
+      "x": -26,
+      "z": 39.1
+    },
+    {
+      "id": "SHOP-3",
+      "name": "邻里便利",
+      "x": -17,
+      "z": 39.1
+    },
+    {
+      "id": "SHOP-4",
+      "name": "花间日记",
+      "x": 17,
+      "z": 39.1
+    },
+    {
+      "id": "SHOP-5",
+      "name": "一页书屋",
+      "x": 26,
+      "z": 39.1
+    },
+    {
+      "id": "SHOP-6",
+      "name": "浅棕茶事",
+      "x": 35,
+      "z": 39.1
+    }
+  ],
+  "treeSites": [
+    [
+      -49,
+      -40
+    ],
+    [
+      49,
+      -40
+    ],
+    [
+      -49,
+      -7
+    ],
+    [
+      49,
+      -7
+    ],
+    [
+      -49,
+      43
+    ],
+    [
+      49,
+      43
+    ]
+  ],
+  "residentialFloors": 22,
+  "commercialFloors": 1,
+  "unitsCount": 3,
+  "containsRoads": false,
+  "containsPeople": false,
+  "integration": {
+    "factory": "createMixedUseResidential",
+    "module": "mixeduse-module.mjs",
+    "example": "integration-example.mjs",
+    "hostOwns": [
+      "THREE",
+      "renderer",
+      "scene",
+      "camera",
+      "animationLoop"
+    ],
+    "methods": [
+      "update",
+      "setQuality",
+      "setTimeOfDay",
+      "getBounds",
+      "exportGLB",
+      "exportScene",
+      "dispose"
+    ]
+  },
+  "verification": {
+    "passed": 29,
+    "file": "outputs/verification.json"
+  },
+  "render": {
+    "status": "complete",
+    "engine": "CYCLES",
+    "device": "GPU",
+    "devices": [
+      "NVIDIA GeForce RTX 5060 Laptop GPU"
+    ],
+    "blender_version": "5.2.2 LTS",
+    "samples": 64,
+    "blend": "C:\\Users\\33864\\Desktop\\千人小镇\\mixeduse-residential\\棕屿里.blend",
+    "renders": [
+      {
+        "view": "overview",
+        "path": "C:\\Users\\33864\\Desktop\\千人小镇\\mixeduse-residential\\outputs\\blender-overview.png",
+        "resolution": [
+          7680,
+          4320
+        ],
+        "samples": 64
+      },
+      {
+        "view": "facade",
+        "path": "C:\\Users\\33864\\Desktop\\千人小镇\\mixeduse-residential\\outputs\\blender-facade.png",
+        "resolution": [
+          3840,
+          2880
+        ],
+        "samples": 64
+      },
+      {
+        "view": "shops",
+        "path": "C:\\Users\\33864\\Desktop\\千人小镇\\mixeduse-residential\\outputs\\blender-shops.png",
+        "resolution": [
+          3840,
+          2880
+        ],
+        "samples": 64
+      },
+      {
+        "view": "entry",
+        "path": "C:\\Users\\33864\\Desktop\\千人小镇\\mixeduse-residential\\outputs\\blender-entry.png",
+        "resolution": [
+          3840,
+          2880
+        ],
+        "samples": 64
+      },
+      {
+        "view": "twilight",
+        "path": "C:\\Users\\33864\\Desktop\\千人小镇\\mixeduse-residential\\outputs\\blender-twilight.png",
+        "resolution": [
+          3840,
+          2880
+        ],
+        "samples": 64
+      }
+    ],
+    "visible_gui": true,
+    "source_snapshot": "C:\\Users\\33864\\Desktop\\千人小镇\\mixeduse-residential\\outputs\\scene.json",
+    "model_batches": 155,
+    "model_objects": 13073,
+    "vertices": 459887,
+    "triangles": 213624
+  },
+  "sha256": {
+    "棕屿里.html": "c889d34c97dc8d49ff6d6f311602c4736ad6d11379c1559e12f424150d38243d",
+    "棕屿里.glb": "b66d084c7dab71790378e2922eaaa49703d6dcaec0b7d72a28c9c7b55a2af5e0",
+    "棕屿里.blend": "e8c7ffdafb51c03326236ea46eb96453f176d367e3d10059a7f7fe651d98de2c",
+    "mixeduse-module.mjs": "f7a02d62c296b1e78956c16760ad8ffdeda148624be958cf92b83327eff8a2b3"
+  }
+}

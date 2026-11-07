@@ -1,0 +1,76 @@
+import json,math
+from pathlib import Path
+from playwright.sync_api import sync_playwright
+ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'outputs/free-view';OUT.mkdir(exist_ok=True,parents=True);checks=[]
+def check(name,value):
+    checks.append({'check':name,'passed':bool(value)});print(('PASS ' if value else 'FAIL ')+name,flush=True)
+    if not value:raise AssertionError(name)
+def distance(a,b):return math.sqrt(sum((x-y)**2 for x,y in zip(a,b)))
+def position(page):return page.evaluate('cityApp.camera().position.toArray()')
+def motion(page,key,ms=300):
+    page.evaluate('cityApp.freeView.resetInput()');before=position(page);page.keyboard.down(key);page.wait_for_timeout(ms);page.keyboard.up(key);page.wait_for_timeout(250);return before,position(page)
+def set_speed(page,value):page.locator('#free-speed').evaluate('(el,v)=>{el.value=v;el.dispatchEvent(new Event("input",{bubbles:true}))}',value)
+def enter(page):page.locator('[data-view=free]').click();page.wait_for_function('cityApp.state.freeView');page.wait_for_timeout(80)
+def shortcut(page,id):
+    if page.locator('#panel-content').is_hidden():page.locator('#collapse').click()
+    page.locator(id).click()
+with sync_playwright() as p:
+    browser=p.chromium.launch(channel='msedge',headless=True,args=['--enable-webgl','--enable-unsafe-swiftshader'])
+    page=browser.new_page(viewport={'width':1600,'height':1000});errors=[]
+    page.on('pageerror',lambda e:errors.append(str(e)));page.on('console',lambda m:errors.append(m.text) if m.type=='error' else None)
+    page.goto('http://127.0.0.1:5173',wait_until='networkidle');page.wait_for_function('window.cityApp?.ready',timeout=60000);page.wait_for_timeout(1200)
+    shortcut(page,'#skyline-view');page.wait_for_function('Math.abs(cityApp.controls().target.x+112)<.00001&&Math.abs(cityApp.controls().target.z+73)<.00001',timeout=15000);page.wait_for_timeout(200)
+    before=position(page);entry_position=before.copy();target=page.evaluate('cityApp.controls().target.toArray()');enter(page)
+    check('free mode preserves entry position',distance(before,position(page))<.01)
+    check('orbit disabled and close-up perspective enabled',page.evaluate('!cityApp.controls().enabled&&cityApp.camera().isPerspectiveCamera&&cityApp.camera().near===.15'))
+    check('free mode has instructions speed and exit controls',page.locator('#free-view-hud').is_visible() and page.locator('#projection').is_disabled())
+    forward=page.evaluate('cityApp.camera().getWorldDirection(cityApp.camera().position.clone()).toArray()')
+    a,b=motion(page,'KeyW');check('W moves in viewing direction',sum((y-x)*d for x,y,d in zip(a,b,forward))>1)
+    a,b=motion(page,'KeyS');check('S moves backward',sum((y-x)*d for x,y,d in zip(a,b,forward))<-1)
+    a,b=motion(page,'KeyA');check('A strafes',distance(a,b)>1)
+    a,b=motion(page,'KeyD');check('D strafes',distance(a,b)>1)
+    a,b=motion(page,'KeyE');check('E rises',b[1]>a[1]+1)
+    a,b=motion(page,'KeyQ');check('Q descends',b[1]<a[1]-1)
+    a,b=motion(page,'KeyW');normal=distance(a,b);page.evaluate('cityApp.freeView.resetInput()');a=position(page);page.keyboard.down('Shift');page.keyboard.down('KeyW');page.wait_for_timeout(300);page.keyboard.up('KeyW');page.keyboard.up('Shift');page.wait_for_timeout(250);b=position(page);check('Shift accelerates movement',distance(a,b)>normal*2)
+    # Stop all input, then rotate on the canvas without a pointer-lock permission flow.
+    page.evaluate('cityApp.freeView.resetInput()');before=position(page);q=page.evaluate('cityApp.camera().quaternion.toArray()')
+    page.mouse.move(850,430);page.mouse.down();page.mouse.move(1000,370,steps=10);page.mouse.up();page.wait_for_timeout(100)
+    check('drag rotates camera without moving its position',distance(before,position(page))<.01 and page.evaluate('cityApp.camera().quaternion.toArray()')!=q)
+    old=page.evaluate('cityApp.freeView.speed');page.mouse.wheel(0,-200);page.wait_for_timeout(100);check('wheel changes movement speed',page.evaluate('cityApp.freeView.speed')>old)
+    set_speed(page,8);check('speed slider updates readout',page.evaluate('cityApp.freeView.speed===8') and page.locator('#free-speed-value').inner_text()=='8 m/s')
+    before=position(page);page.locator('#zoom-in').click();check('zoom button advances free camera',distance(before,position(page))>7)
+    page.locator('#pause').click();t=page.evaluate('cityApp.skyline.simulationTime');page.locator('canvas').click(position={'x':800,'y':380});a,b=motion(page,'KeyD');check('camera works while city animation is paused',distance(a,b)>1 and page.evaluate('cityApp.skyline.simulationTime')==t);page.locator('#pause').click()
+    page.keyboard.down('KeyW');page.wait_for_timeout(120);page.evaluate('window.dispatchEvent(new Event("blur"))');before=position(page);page.wait_for_timeout(350);check('lost window focus clears held keys and drift',distance(before,position(page))<.01);page.keyboard.up('KeyW')
+    page.locator('#help').click();before=position(page);page.keyboard.down('KeyW');page.wait_for_timeout(180);page.keyboard.up('KeyW');check('help dialog suspends free movement',distance(before,position(page))<.01);page.keyboard.press('Escape');check('first Escape closes help while retaining free mode',page.evaluate('cityApp.state.freeView') and not page.locator('#guide').evaluate('(e)=>e.open'))
+    page.keyboard.press('Escape');check('Escape restores entry position target and orbit controls',not page.evaluate('cityApp.state.freeView') and distance(position(page),entry_position)<.1 and distance(page.evaluate('cityApp.controls().target.toArray()'),target)<.01 and page.evaluate('cityApp.controls().enabled&&cityApp.camera().near===5'))
+    page.keyboard.press('KeyF');check('F enters free view',page.evaluate('cityApp.state.freeView'));page.keyboard.press('KeyF');check('F exits free view',not page.evaluate('cityApp.state.freeView'))
+    page.locator('#projection').click();ortho=position(page);enter(page);check('entry from orthographic view uses perspective',page.evaluate('cityApp.camera().isPerspectiveCamera'));page.locator('#free-view-exit').click();check('exit restores orthographic mode and position',page.evaluate('cityApp.camera().isOrthographicCamera') and distance(ortho,position(page))<.01);page.locator('#projection').click()
+    page.evaluate("cityApp.select('QR-010')");page.locator('#focus-building').click();page.wait_for_timeout(2000);enter(page);check('free mode reveals surrounding buildings',page.evaluate('cityApp.plan.buildings.every(b=>cityApp.scene.getObjectByName(b.id).visible)'));page.locator('#free-view-exit').click();check('exit restores single-building isolation',page.evaluate("cityApp.plan.buildings.every(b=>cityApp.scene.getObjectByName(b.id).visible===(b.id==='QR-010'))"))
+    page.locator('#home').click();page.wait_for_timeout(2000);enter(page);shortcut(page,'#hospital-view');page.wait_for_function('Math.abs(cityApp.controls().target.x-252)<.1',timeout=15000);check('hospital shortcut exits free mode cleanly',not page.evaluate('cityApp.state.freeView'))
+    enter(page);shortcut(page,'#skyline-view');page.wait_for_function('Math.abs(cityApp.controls().target.x+112)<.1',timeout=15000);check('landmark shortcut exits free mode cleanly',not page.evaluate('cityApp.state.freeView'))
+    enter(page);page.locator('[data-view=street]').click();page.wait_for_timeout(2400);check('street preset exits free mode',not page.evaluate('cityApp.state.freeView'))
+    enter(page);page.locator('#home').click();page.wait_for_timeout(1900);check('home restores city overview from free mode',not page.evaluate('cityApp.state.freeView') and page.locator('[data-view=overview]').get_attribute('class')=='active')
+    shortcut(page,'#skyline-view');page.wait_for_function('Math.abs(cityApp.controls().target.x+112)<.1',timeout=15000);enter(page)
+    # Capture an actual close-up camera pose and verify floor protection.
+    page.evaluate('''()=>{const c=cityApp.camera();c.position.set(-42,112,13);c.lookAt(-112,106,-76);cityApp.freeView.enter(c);}''');page.wait_for_timeout(3600);page.screenshot(path=str(OUT/'free-desktop.png'))
+    page.evaluate('cityApp.camera().position.y=.85');a,b=motion(page,'KeyQ',250);check('camera remains above ground',b[1]>=.8 and b[1]<1)
+    page.keyboard.press('Escape')
+    # Real multi-touch events exercise simultaneous movement and looking on a phone.
+    mobile=browser.new_context(viewport={'width':390,'height':844},is_mobile=True,has_touch=True,device_scale_factor=1);mp=mobile.new_page();mp.on('pageerror',lambda e:errors.append(str(e)))
+    mp.goto('http://127.0.0.1:5173',wait_until='networkidle');mp.wait_for_function('window.cityApp?.ready',timeout=60000);mp.wait_for_timeout(1200);shortcut(mp,'#skyline-view');mp.wait_for_function('Math.abs(cityApp.controls().target.x+112)<.1',timeout=15000);enter(mp);session=mobile.new_cdp_session(mp)
+    def center(selector):
+        r=mp.locator(selector).bounding_box();return {'x':r['x']+r['width']/2,'y':r['y']+r['height']/2}
+    def touch(kind,points):session.send('Input.dispatchTouchEvent',{'type':kind,'touchPoints':points})
+    m=center('#free-move-pad');l=center('#free-look-pad');before=position(mp);q=mp.evaluate('cityApp.camera().quaternion.toArray()')
+    touch('touchStart',[{**m,'id':1},{**l,'id':2}]);touch('touchMove',[{'x':m['x'],'y':m['y']-27,'id':1},{'x':l['x']+25,'y':l['y']-8,'id':2}]);mp.wait_for_timeout(350);touch('touchEnd',[]);mp.wait_for_timeout(350)
+    check('two touch joysticks move and look simultaneously',distance(before,position(mp))>1 and mp.evaluate('cityApp.camera().quaternion.toArray()')!=q)
+    before=position(mp);mp.wait_for_timeout(450);check('releasing joysticks stops movement',distance(before,position(mp))<.06)
+    up=center('[data-free-rise=up]');before=position(mp);touch('touchStart',[{**up,'id':3}]);mp.wait_for_timeout(300);touch('touchEnd',[]);mp.wait_for_timeout(250);check('phone rise button raises camera',position(mp)[1]>before[1]+1)
+    before=position(mp);touch('touchStart',[{'x':130,'y':320,'id':4},{'x':240,'y':320,'id':5}]);touch('touchMove',[{'x':105,'y':320,'id':4},{'x':265,'y':320,'id':5}]);touch('touchEnd',[]);check('phone pinch advances camera',distance(before,position(mp))>1)
+    touch('touchStart',[{**m,'id':6}]);touch('touchMove',[{'x':m['x'],'y':m['y']-25,'id':6}]);mp.wait_for_timeout(120);touch('touchCancel',[]);mp.wait_for_timeout(350);before=position(mp);mp.wait_for_timeout(350);check('touch cancellation clears movement',distance(before,position(mp))<.06)
+    mp.wait_for_timeout(3500);mp.screenshot(path=str(OUT/'free-mobile.png'))
+    check('mobile page has no horizontal overflow',mp.evaluate('document.documentElement.scrollWidth===390'))
+    check('touch controls and exit remain visible without overlap',mp.evaluate('''()=>{const h=document.querySelector('#free-view-hud').getBoundingClientRect(),p=document.querySelector('#free-move-pad').getBoundingClientRect(),e=document.querySelector('#free-view-exit').getBoundingClientRect();return p.bottom<h.top&&e.left>0&&e.right<innerWidth&&h.bottom<innerHeight-65}'''))
+    mp.locator('#free-view-exit').click();check('phone exit restores orbit mode',not mp.evaluate('cityApp.state.freeView') and mp.locator('#free-touch-controls').is_hidden())
+    check('no browser or WebGL errors',not errors)
+    report={'checks':checks,'errors':errors,'metrics':page.evaluate('cityApp.metrics()'),'browser':browser.version};(OUT/'verification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf8');mobile.close();browser.close();print(json.dumps({'passed':len(checks)}))

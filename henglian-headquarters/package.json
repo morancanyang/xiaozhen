@@ -1,0 +1,15 @@
+{
+  "name": "henglian-corporate-headquarters",
+  "private": true,
+  "version": "2.0.0",
+  "scripts": {
+    "build": "node build.cjs"
+  },
+  "dependencies": {
+    "three": "0.187.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  },
+  "type": "module"
+}

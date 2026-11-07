@@ -1,0 +1,206 @@
+{
+  "build.cjs": {
+    "bytes": 1973,
+    "sha256": "22ed010616da12580160b49e2bbff8420167c5b7d2ba968090b18ecb7047d9fd"
+  },
+  "outputs/01-rough.png": {
+    "bytes": 271295,
+    "sha256": "47e721b3abb32b14e51dfc0b1b51be099c2356886edc39b3fd58ad70540db385"
+  },
+  "outputs/02-crown.png": {
+    "bytes": 369986,
+    "sha256": "d1fbd3d04cf9e43db27482f48fe83da84c8ab42313e8f44f5e22943d58b816f4"
+  },
+  "outputs/02-entry.png": {
+    "bytes": 687722,
+    "sha256": "181f6fec67e310a6fd9f9e614e3e7bb84c001b4d17879c03de2c7204cc7d8690"
+  },
+  "outputs/02-facade.png": {
+    "bytes": 683794,
+    "sha256": "70120b440f05d0fc2a39f9525df50f53551c2c2778f2617a358e2dec08d7aa10"
+  },
+  "outputs/02-hero.png": {
+    "bytes": 801393,
+    "sha256": "2e8016f2df65cffb44d5fd842da05f97a5f3ff1e318b7de37f2d8305e2409c6c"
+  },
+  "outputs/02-overview.png": {
+    "bytes": 355169,
+    "sha256": "51c625c7338b4d21cae3771bab58e697f2f6d854b7bc5235c0aacd563dbb987e"
+  },
+  "outputs/blender-crown.png": {
+    "bytes": 2335422,
+    "sha256": "569dfbd13bf7ac56ebe1a864083be35a089aaba0bebc39c5dd0f8a751de0d542"
+  },
+  "outputs/blender-entry.png": {
+    "bytes": 2760741,
+    "sha256": "ad69e1f3bf2f9931e3e9185936d61f67daa223e47474654d6eac6ce8b120eee3"
+  },
+  "outputs/blender-facade.png": {
+    "bytes": 2694493,
+    "sha256": "219a90e6a902f62011ababa6a19abebb34c4dc62116dd9249eb5aae5e5bdb445"
+  },
+  "outputs/blender-hero-8k.png": {
+    "bytes": 33498008,
+    "sha256": "4336d0a86e52b4b876a674d4062277af6b1d8571a60cb00b602b8c628cee24ab"
+  },
+  "outputs/blender-overview.png": {
+    "bytes": 2464155,
+    "sha256": "1d40059b11401323488b7cf4cbab47aef5ec015c5604f7ef469adaecd4be53db"
+  },
+  "outputs/blender-result.json": {
+    "bytes": 748,
+    "sha256": "2618354e2a83199c225dad2e872d4e913fe99037bfaa1eed27c9e1da5e926978"
+  },
+  "outputs/browser-4k.png": {
+    "bytes": 1170309,
+    "sha256": "d8a692784c16a806de647e70a0fe07f4a41fd8f149e335741e67fef073da1021"
+  },
+  "outputs/final-crown.png": {
+    "bytes": 256634,
+    "sha256": "b53cf768d0360cee7232c75748aa3b9f84cd3897e9c4339295de4f23d091a37e"
+  },
+  "outputs/final-entry.png": {
+    "bytes": 533996,
+    "sha256": "a14ae8917b2d45325112f3eb7d650c7e5182639a41a1a81fe81892d46be75ca8"
+  },
+  "outputs/final-facade.png": {
+    "bytes": 524520,
+    "sha256": "d283cb2a228f65cb653df591b688f33df91dd5e54596f7e5afe7cf84af8b5f84"
+  },
+  "outputs/final-hero.png": {
+    "bytes": 633805,
+    "sha256": "e3ad9738cfd3e8c95564b332f586d552065fab24b0d58bbbf9f723640d18e2c7"
+  },
+  "outputs/final-mobile.png": {
+    "bytes": 91543,
+    "sha256": "763aa0c6b40d2ecd2040c2085e4c995469ed2d94c3e78bfd4f5ac1157d6f4562"
+  },
+  "outputs/final-overview.png": {
+    "bytes": 316984,
+    "sha256": "fb5912156e034c2fc95cb9b46b077d3ac294097bbf098b12082aaf7be8a06231"
+  },
+  "outputs/integration-demo.png": {
+    "bytes": 95309,
+    "sha256": "544fd153b1a929442472f5ea00ba4cf2554db43a87376f276297bcceea76461e"
+  },
+  "outputs/mcp-result.json": {
+    "bytes": 2180,
+    "sha256": "fecc9187a42a3a54e87cabb8b8ed706399cd0fb012c1206899e60ca4ca867cba"
+  },
+  "outputs/review.json": {
+    "bytes": 830,
+    "sha256": "a371d9762dc0646808b17ad2f619cfe4102be8ab4f464bef129e55efc1dce274"
+  },
+  "outputs/scene.json": {
+    "bytes": 7341601,
+    "sha256": "47784a98399309684a723140d239929cf9d2339b95cb8c75c20d4695fcab962c"
+  },
+  "outputs/verification.json": {
+    "bytes": 3342,
+    "sha256": "4f95628acaf0797d9be502e3fb07e9f445321da2c5062a8b1452b685d20d6d0e"
+  },
+  "outputs/上海中心-实时巡游.webm": {
+    "bytes": 4110092,
+    "sha256": "c60241dc11be852d53a0f8ba38be35505d5717313d598cf029c81faf32a435d7"
+  },
+  "package.json": {
+    "bytes": 241,
+    "sha256": "66418dd2da12e9a8acc4ad96764383d18d277dd9cbfef9df37951815be5f8ae8"
+  },
+  "README.md": {
+    "bytes": 7749,
+    "sha256": "2b53ae39ad8cd33227f7dd660047a7aad5f9d8e41f8c33346095f1bf559c2a4c"
+  },
+  "shanghai-tower-module.mjs": {
+    "bytes": 17006,
+    "sha256": "38a800ee5166d6253e1966edeee05ee5507bc609d8c77acc33fd4dd9ac46462c"
+  },
+  "src/app.js": {
+    "bytes": 19518,
+    "sha256": "c6baa0baefa58b8eb6db784276d86f1e4165e745c812facc61353177abf4672f"
+  },
+  "src/demo.js": {
+    "bytes": 2688,
+    "sha256": "311447cdbb519a4f3b57b88f1283c103cb54b8fee2edd9ba68d789f7b7bc6e6f"
+  },
+  "src/model.js": {
+    "bytes": 17006,
+    "sha256": "38a800ee5166d6253e1966edeee05ee5507bc609d8c77acc33fd4dd9ac46462c"
+  },
+  "src/shell.html": {
+    "bytes": 5623,
+    "sha256": "af6ebda7da8735f6689027e87a007993c271fd19b60d8c89de4fc04e176133ff"
+  },
+  "src/style.css": {
+    "bytes": 9160,
+    "sha256": "4dbe54ba8484eb2e9463340c4cd8d01f6cf85900fd67fdd09f63d977f38eb90a"
+  },
+  "THREE-LICENSE.txt": {
+    "bytes": 1081,
+    "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+  },
+  "tools/blender_mcp.py": {
+    "bytes": 2796,
+    "sha256": "5c9b75a30f812ddc6dccbc21e5b6ca17f06a72bf7a89932946363925d432f378"
+  },
+  "tools/blender_render.py": {
+    "bytes": 11437,
+    "sha256": "adf7d9f106190d9d707d1bd1b466dc002f88d5ebb09e075323e05f7b630a6264"
+  },
+  "tools/capture_video.py": {
+    "bytes": 1478,
+    "sha256": "c950839368247bc0c799d356d8e49729308a5cc1759cf5f3349a7b29453f414f"
+  },
+  "tools/package_delivery.py": {
+    "bytes": 4107,
+    "sha256": "4d56d149d741d87736bcd91a76951c8ee5c815623f82984332801ff146b6575e"
+  },
+  "tools/preview.mjs": {
+    "bytes": 846,
+    "sha256": "6178dcf454074ae80cfc0de5f5f1267c7527055dc274f94765c23a9ef2c46e6c"
+  },
+  "tools/requirements.txt": {
+    "bytes": 30,
+    "sha256": "1f64a68affedbb5d01225b12e48cf6faad5b43dc50d196e21b48b06c4dc7e02e"
+  },
+  "tools/review.py": {
+    "bytes": 1629,
+    "sha256": "4aa511ee030a10c692e30ab2ef3a4dab857df618b879ab78be46b0f73eef4fcf"
+  },
+  "tools/run_mcp.py": {
+    "bytes": 1439,
+    "sha256": "97b24a9c683fc11cf7cdff79e46aa9c06c132cfd9831e894a3ca57235ec36a38"
+  },
+  "tools/verify.py": {
+    "bytes": 6900,
+    "sha256": "d153488a701f674d52e4c7099c262d65bc1a4e2bc8d7b8f1f16e4aa6efad9a5e"
+  },
+  "tools/verify_touch.py": {
+    "bytes": 2109,
+    "sha256": "92711410db8db99ae40f0b73ff51d1109e35a8f762b750b758a5982dc01517d4"
+  },
+  "town-integration.example.mjs": {
+    "bytes": 836,
+    "sha256": "e45a9ee0bd954d7d174a98c8f982a331f21024c85d5c7bff63e14eecc05a37ce"
+  },
+  "上海中心.blend": {
+    "bytes": 5424752,
+    "sha256": "f26ea56193b26b9efc437baf522d46325c9ee718da598f1a85bd195b280d5d36"
+  },
+  "上海中心.glb": {
+    "bytes": 2799516,
+    "sha256": "d4310938f42ef30e1e75d95796309a7aee38b9e53627793bb955ec983401694e"
+  },
+  "上海中心.html": {
+    "bytes": 783390,
+    "sha256": "f7b8c9fd922f4b91f331b6a3aee0648f835adc9d70b96466d9ffe4f46841f2fd"
+  },
+  "交付与检查记录.txt": {
+    "bytes": 2100,
+    "sha256": "eac9aab1a88626627c06e41f82a21c91498c16c01a2cf1a2531412c35d97b939"
+  },
+  "接入演示.html": {
+    "bytes": 706084,
+    "sha256": "87518025e9ef36abd2c5a1f747486c38eacfe3e17d54514d0b1f3240e71315ff"
+  }
+}

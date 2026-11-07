@@ -1,0 +1,27 @@
+from pathlib import Path
+import shutil,json
+ROOT=Path(__file__).resolve().parents[1];DIST=ROOT/'dist'
+shutil.copyfile(ROOT.parent/'chengxu-courtyard/src/model.js',DIST/'courtyard-model.js')
+shutil.copyfile(ROOT.parent/'chengxu-courtyard/courtyard-manifest.json',DIST/'courtyard-manifest.json')
+p=DIST/'city.js';s=p.read_text(encoding='utf8').replace("'BLK-6','BLK-9']);","'BLK-6','BLK-9','BLK-14']);").replace("side*bx===252&&[70,210].includes(bz)","side*bx===252&&[-70,70,210].includes(bz)");p.write_text(s,encoding='utf8')
+p=DIST/'main.js';s=p.read_text(encoding='utf8')
+s="import {installCourtyard} from './courtyard-site.js';\nlet courtyardIntegration;\nconst courtyardActivities={people:true,birds:true,mechanical:true};\n"+s
+s=s.replace('officeIntegration=installOffice(city);','officeIntegration=installOffice(city);courtyardIntegration=installCourtyard(city);')
+s=s.replace('let skylineEnv=null,',"courtyardIntegration.model.root.traverse(o=>{if(o.material?.metalness>.25)skylineReflective.add(o.material);});\nlet skylineEnv=null,")
+s=s.replace("'jiheng-landmark-office'].includes", "'jiheng-landmark-office','chengxu-residential-courtyard'].includes")
+s=s.replace('while(o.parent&& !o.userData.id)o=o.parent;', 'while(o.parent&&!city.groups.has(o.userData.id))o=o.parent;')
+s=s.replace("const setGardenQuality=", "const setCourtyardQuality=courtyardIntegration.model.setQuality;\ncourtyardIntegration.model.setQuality=value=>{setCourtyardQuality(value);replacements.forEach((saved,id)=>{if(id.startsWith('CHENGXU-'))saved.original.forEach(o=>o.visible=false);});};\nconst setGardenQuality=")
+s=s.replace('officeIntegration.model.setTimeOfDay(p.night*t);','officeIntegration.model.setTimeOfDay(p.night*t);courtyardIntegration.model.setTimeOfDay(p.night*t);')
+s=s.replace("state.quality=e.target.value;", "state.quality=e.target.value;courtyardIntegration.model.setQuality({cinema:'high',balanced:'medium',fast:'low'}[state.quality]);")
+s=s.replace('officeIntegration.model.update(dt);','officeIntegration.model.update(dt);courtyardIntegration.model.setDynamicsEnabled(!state.paused);courtyardIntegration.model.setActivity({wind:state.wind,people:state.traffic&&courtyardActivities.people,birds:courtyardActivities.birds,mechanical:courtyardActivities.mechanical});courtyardIntegration.model.update(dt);')
+s=s.replace('if(modules.length)data.modules=modules;', "if(!onlyId||onlyId.startsWith('CHENGXU-')){const m=courtyardIntegration.model;modules.push({id:m.manifest.id,blockId:courtyardIntegration.site.blockId,position:m.root.position.toArray(),source:'./courtyard-model.js',snapshotSpace:'world',snapshot:m.exportScene(onlyId)});}\n  if(modules.length)data.modules=modules;")
+s=s.replace('window.cityApp={','window.cityApp={courtyard:courtyardIntegration.model,courtyardSite:courtyardIntegration.site,courtyardActivities,')
+s=s.replace('const quality=slabIntegration.model.quality,gardenQuality=', 'const courtyardQuality=courtyardIntegration.model.quality,quality=slabIntegration.model.quality,gardenQuality=')
+s=s.replace("slabIntegration.model.setQuality('high');gardenIntegration", "courtyardIntegration.model.setQuality('high');slabIntegration.model.setQuality('high');gardenIntegration")
+s=s.replace('finally{slabIntegration.model.setQuality(quality);','finally{courtyardIntegration.model.setQuality(courtyardQuality);slabIntegration.model.setQuality(quality);')
+s+='''\n$('#courtyard-view').onclick=()=>{exitFreeView();stopTour();showBuildings();$('.scene-caption').classList.add('hidden');$('#selection').classList.add('hidden');highlight.visible=false;const sphere=new THREE.Box3().setFromObject(courtyardIntegration.model.root).getBoundingSphere(new THREE.Sphere()),target=sphere.center,half=THREE.MathUtils.degToRad(perspective.fov/2),angle=Math.min(half,Math.atan(Math.tan(half)*perspective.aspect)),offset=new THREE.Vector3(150,145,180).normalize().multiplyScalar(sphere.radius/Math.sin(angle)*1.1);if(camera.isOrthographicCamera){const h=sphere.radius*1.1/Math.min(1,innerWidth/innerHeight);Object.assign(camera,{top:h,bottom:-h,left:-h*innerWidth/innerHeight,right:h*innerWidth/innerHeight,zoom:1});camera.updateProjectionMatrix()}flyTo(target.clone().add(offset),target);if(innerWidth<700){$('#panel-content').hidden=true;$('#collapse').textContent='+';$('#collapse').setAttribute('aria-expanded','false')}};
+for(const key of Object.keys(courtyardActivities))$('#courtyard-'+key).onchange=e=>courtyardActivities[key]=e.target.checked;
+'''
+p.write_text(s,encoding='utf8')
+p=DIST/'index.html';s=p.read_text(encoding='utf8').replace('<button id="garden-view"', '<button id="courtyard-view" class="hospital-jump">澄序住区 · BLK-14 ↗</button><details class="park-controls"><summary>澄序住区动态</summary><label class="skyline-flight-toggle"><span>庭院居民</span><input id="courtyard-people" type="checkbox" checked role="switch"></label><label class="skyline-flight-toggle"><span>庭院飞鸟</span><input id="courtyard-birds" type="checkbox" checked role="switch"></label><label class="skyline-flight-toggle"><span>屋顶风机</span><input id="courtyard-mechanical" type="checkbox" checked role="switch"></label></details><button id="garden-view"');p.write_text(s,encoding='utf8')
+p=ROOT/'package.json';d=json.loads(p.read_text(encoding='utf8'));d['scripts']['check']+=' && node --check dist/courtyard-model.js && node --check dist/courtyard-site.js';p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n',encoding='utf8')

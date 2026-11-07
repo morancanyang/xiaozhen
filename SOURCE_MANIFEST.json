@@ -1,0 +1,4146 @@
+{
+  "projects": [
+    "amusement-park",
+    "chengxu-courtyard",
+    "city-atlas",
+    "community-track",
+    "dome-arena",
+    "henglian-headquarters",
+    "hospital-campus",
+    "jiheng-office",
+    "mall-complex",
+    "mixeduse-residential",
+    "nuanting-garden",
+    "quiet-city-park",
+    "residential-garden",
+    "river-corridor",
+    "shanghai-tower",
+    "skyline-one",
+    "slab-residential",
+    "university-campus"
+  ],
+  "count": 824,
+  "bytes": 14434118,
+  "files": [
+    {
+      "path": "amusement-park/amusement-park-module.mjs",
+      "bytes": 18100,
+      "sha256": "465477135b388cab2de0156482719b22e06fd4bd9c357248fff3ecddf93580bc"
+    },
+    {
+      "path": "amusement-park/build.cjs",
+      "bytes": 1595,
+      "sha256": "a34978c4a6f4f59a2fc8eb2e6e84158ba11ab5cebdec685c92738ea4e1b0ee2e"
+    },
+    {
+      "path": "amusement-park/package.json",
+      "bytes": 303,
+      "sha256": "199d461825fdf9e30af8cbf2a6b94cf7ff789ea93f6d37a1154bfe5ce4cdffea"
+    },
+    {
+      "path": "amusement-park/src/app.js",
+      "bytes": 18796,
+      "sha256": "2d5efd58037163b3dd38769f2a8e45512051cc43fba6301cf4b0d466af8c9f1e"
+    },
+    {
+      "path": "amusement-park/src/demo.js",
+      "bytes": 2529,
+      "sha256": "219c75ddf32bb3fd91e2f5e8bd9300e7e490c633529003d4c32807c261a197f1"
+    },
+    {
+      "path": "amusement-park/src/model.js",
+      "bytes": 18100,
+      "sha256": "465477135b388cab2de0156482719b22e06fd4bd9c357248fff3ecddf93580bc"
+    },
+    {
+      "path": "amusement-park/src/shell.html",
+      "bytes": 6206,
+      "sha256": "d6a6e9a4fa5f40d08a8191c9e7de21b691dc30dd603606b4333f9a4c829c6f61"
+    },
+    {
+      "path": "amusement-park/src/style.css",
+      "bytes": 11847,
+      "sha256": "3fcd1022dd4c74c06350965b3cc3f5ef46ded9550754b78f81ff179342e517fa"
+    },
+    {
+      "path": "amusement-park/THREE-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    {
+      "path": "amusement-park/tools/blender_mcp.py",
+      "bytes": 2844,
+      "sha256": "ca48d4135ccce95dd9689471b825790021b8ae32bcd68949139eebf54011f568"
+    },
+    {
+      "path": "amusement-park/tools/blender_render.py",
+      "bytes": 11638,
+      "sha256": "109c18c633e8dbeefc33741dabf71e82c490898ce169b8ee3124e6e7d14d758b"
+    },
+    {
+      "path": "amusement-park/tools/requirements.txt",
+      "bytes": 44,
+      "sha256": "917da3858081b93c07cbbc56a6daa4cbe8301440b1e1930752d10a29667016ad"
+    },
+    {
+      "path": "amusement-park/tools/run_blender_mcp.py",
+      "bytes": 1281,
+      "sha256": "21bfdcbd0b46ce9cfe93e452c951cb6450db52bdd0c0abfbf5823e4a4599e5e7"
+    },
+    {
+      "path": "amusement-park/tools/verify.py",
+      "bytes": 8263,
+      "sha256": "28ded833db84a112284e7c9ffe701526aec055e851cfd8ffa2f5ff12f4078a2d"
+    },
+    {
+      "path": "amusement-park/town-integration.example.mjs",
+      "bytes": 682,
+      "sha256": "af363415886fe3a9890a89db63cfee518d3c505d110b77c072ba05ad32c7db4f"
+    },
+    {
+      "path": "amusement-park/交付清单.json",
+      "bytes": 1796,
+      "sha256": "1d8fc4840eb83e26835ef9cef146915c729a19f5f3d2a02f113eeed52d94b600"
+    },
+    {
+      "path": "amusement-park/使用与接入说明.md",
+      "bytes": 4777,
+      "sha256": "be533da8dfa53c7a3793430ac08b2d437bd1e57ab90ffd046043f35852528319"
+    },
+    {
+      "path": "chengxu-courtyard/build.cjs",
+      "bytes": 1090,
+      "sha256": "72d53e406570c71de20eecf3d62db9764d9b8051aadd0619d63a30d261796ea6"
+    },
+    {
+      "path": "chengxu-courtyard/courtyard-manifest.json",
+      "bytes": 7577,
+      "sha256": "da3dbe2a5b3e86af467fe865fa1a2b8c9ba2d7cec3edf23d45e1d4aea8d348de"
+    },
+    {
+      "path": "chengxu-courtyard/integration-example.mjs",
+      "bytes": 1420,
+      "sha256": "a42a4ba500b90dbaf18f88c845ed80cbc517ae05cffd4a69ab83231572e803a6"
+    },
+    {
+      "path": "chengxu-courtyard/model.mjs",
+      "bytes": 25568,
+      "sha256": "eee6fe725ef10cd037c58899b9b0e3e276fbb6da344e6a748155e76cb92737e2"
+    },
+    {
+      "path": "chengxu-courtyard/package.json",
+      "bytes": 204,
+      "sha256": "c264dd1b54395842fec390aaf57ce07dbefddeb4c6f4e83646afeccd0e3d8d19"
+    },
+    {
+      "path": "chengxu-courtyard/README.md",
+      "bytes": 5106,
+      "sha256": "57cc11b967643875326ea7a95f40be157ceefc61ae509c3158574dd5700fd856"
+    },
+    {
+      "path": "chengxu-courtyard/src/app.js",
+      "bytes": 17695,
+      "sha256": "17d13f70e128f65b4cb29974145aec328b0ecd155faf8ffe5a859dbaf822c96c"
+    },
+    {
+      "path": "chengxu-courtyard/src/model.js",
+      "bytes": 25568,
+      "sha256": "eee6fe725ef10cd037c58899b9b0e3e276fbb6da344e6a748155e76cb92737e2"
+    },
+    {
+      "path": "chengxu-courtyard/src/shell.html",
+      "bytes": 4269,
+      "sha256": "f09431964e22295f2913750aa0c88523b386f3677a33f79837561387e0b8372d"
+    },
+    {
+      "path": "chengxu-courtyard/src/style.css",
+      "bytes": 7557,
+      "sha256": "8171d40623f0f704e7d3eece2a1cd052ee44118ce5041af77d47629dd53a2c99"
+    },
+    {
+      "path": "chengxu-courtyard/THREE-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+    },
+    {
+      "path": "chengxu-courtyard/tools/blender_import.py",
+      "bytes": 10794,
+      "sha256": "2af4e6d984c435b6bbf6402f10794118954de47640a5112255ee8a865f587bbd"
+    },
+    {
+      "path": "chengxu-courtyard/tools/blender_mcp.py",
+      "bytes": 2505,
+      "sha256": "583a3ae2df285c81f24d012cf19927b1c008403dd1793c566e3e2e6510a3108c"
+    },
+    {
+      "path": "chengxu-courtyard/tools/configure_blender.py",
+      "bytes": 2974,
+      "sha256": "afc0cfec172ded503a55822f033b156669b9e8f2881bf05367ef078541a23fde"
+    },
+    {
+      "path": "chengxu-courtyard/tools/export_buildings.py",
+      "bytes": 1089,
+      "sha256": "e0dd6646dedccb3e758fb3beff8b45bdd8437dac1c44b088b5bf4c54d55d98ba"
+    },
+    {
+      "path": "chengxu-courtyard/tools/inspect_model.py",
+      "bytes": 2742,
+      "sha256": "bee65748c245fd78445a43bff8eb13a5fe6d3c2c65ff6ff8ef610e5dad45d2b3"
+    },
+    {
+      "path": "chengxu-courtyard/tools/package_delivery.py",
+      "bytes": 2459,
+      "sha256": "b631e480a0aa8d297f2759969a035e2ca37d199a2b0261971b0707f542575d3b"
+    },
+    {
+      "path": "chengxu-courtyard/tools/refine_viewer.py",
+      "bytes": 5916,
+      "sha256": "7de1c18b654b52efa59156c507ee0b22428300acbb2d714ffe98ea97cd5f3fd1"
+    },
+    {
+      "path": "chengxu-courtyard/tools/render_blender.py",
+      "bytes": 6824,
+      "sha256": "3dcba0b4f8b38d698e571d1100091b2455b9309ed583bb01b411ae136b66012d"
+    },
+    {
+      "path": "chengxu-courtyard/tools/run_blender_mcp.py",
+      "bytes": 1475,
+      "sha256": "e645e7f0ec8f43ccfd98f9a37f53d7a2c55e5d799a1232fae8f3114c01836def"
+    },
+    {
+      "path": "chengxu-courtyard/tools/setup.py",
+      "bytes": 1257,
+      "sha256": "086b38ad43b89921821a398f285996fa88600938cc9d0f35051db9c59860db9d"
+    },
+    {
+      "path": "chengxu-courtyard/tools/show_scene.py",
+      "bytes": 619,
+      "sha256": "5fd75d008a66a6735ddeba7bad561665263853d65e075e4472159cf03e9d3cd0"
+    },
+    {
+      "path": "chengxu-courtyard/tools/verify.py",
+      "bytes": 8262,
+      "sha256": "65d305d9d79601691ccd94f27c50d74cf6c3a01f61b7441957346768dcd8f037"
+    },
+    {
+      "path": "chengxu-courtyard/tools/verify_blender.py",
+      "bytes": 2548,
+      "sha256": "de3c4363eec55630b2921039231928bca56e32c7de4875e020c5aeb52915ca26"
+    },
+    {
+      "path": "chengxu-courtyard/tools/verify_integration.py",
+      "bytes": 3156,
+      "sha256": "8501872cf6ac8e11b01ba3ab98c63cadf4b8034960bedbfdeb3f3f4f7baa00b9"
+    },
+    {
+      "path": "city-atlas/dist/arena-model.js",
+      "bytes": 25620,
+      "sha256": "545c81b906adcaa8ad97414e9cc813d955fd56e5283ae5d5e77439a9ef63aac3"
+    },
+    {
+      "path": "city-atlas/dist/arena-site.js",
+      "bytes": 3860,
+      "sha256": "8213ffe60a77c775828fbb4d7aced1cda4196defd1623fc6a3d62cc8bde5640a"
+    },
+    {
+      "path": "city-atlas/dist/city.js",
+      "bytes": 20811,
+      "sha256": "39df7b839bb847aafdea9694725695f8e11a50cdc3143124e2bacd4f50ad90f6"
+    },
+    {
+      "path": "city-atlas/dist/courtyard-manifest.json",
+      "bytes": 7577,
+      "sha256": "da3dbe2a5b3e86af467fe865fa1a2b8c9ba2d7cec3edf23d45e1d4aea8d348de"
+    },
+    {
+      "path": "city-atlas/dist/courtyard-model.js",
+      "bytes": 25568,
+      "sha256": "eee6fe725ef10cd037c58899b9b0e3e276fbb6da344e6a748155e76cb92737e2"
+    },
+    {
+      "path": "city-atlas/dist/courtyard-site.js",
+      "bytes": 4017,
+      "sha256": "7518b15bda2b3f3ade768508c502a7fe61e695cbeb44187dbcf20040b7b97c82"
+    },
+    {
+      "path": "city-atlas/dist/forest-model.js",
+      "bytes": 16713,
+      "sha256": "fe3e5ba1411ed9e205bc4504ccc80fc2010710ae23d0b35d82afbd7bc536c832"
+    },
+    {
+      "path": "city-atlas/dist/forest-site.js",
+      "bytes": 3928,
+      "sha256": "5b0da5c5ab94d1e55cba493f22c4f2268faaad92794aca0f782899f41ab1f359"
+    },
+    {
+      "path": "city-atlas/dist/free-view.js",
+      "bytes": 7331,
+      "sha256": "211409070221bd49cea0b40675002926914734116b95dcc914dd3bf9919c6fb7"
+    },
+    {
+      "path": "city-atlas/dist/garden-manifest.json",
+      "bytes": 4548,
+      "sha256": "3d18648bad0df70919a12db571f1ef3f4cb5414a9b2159d6d61f71efc02f604f"
+    },
+    {
+      "path": "city-atlas/dist/garden-model.js",
+      "bytes": 30899,
+      "sha256": "63f3142981b75b84a21b8756bcd1523331971db689399e3de506d7ab935adde3"
+    },
+    {
+      "path": "city-atlas/dist/garden-site.js",
+      "bytes": 4845,
+      "sha256": "aad2fed08f94435c68c65cad268f46023b8b1c4aaca51f7784532fd25581ad7c"
+    },
+    {
+      "path": "city-atlas/dist/headquarters-ecology.js",
+      "bytes": 8788,
+      "sha256": "ce5a7a7eb11a18c191a28d6b1709056c6926b46410cf93380e59b6914d7529a1"
+    },
+    {
+      "path": "city-atlas/dist/headquarters-manifest.json",
+      "bytes": 6925,
+      "sha256": "e94f8be1451395fc42c55cfc122e6f48da7de6eb0f84a84ba2dad87f98a404dd"
+    },
+    {
+      "path": "city-atlas/dist/headquarters-model.js",
+      "bytes": 26269,
+      "sha256": "d8e173b7412275f3c2fe61b93c5fe98455332e6b13eaaf9096ac5664711d2d39"
+    },
+    {
+      "path": "city-atlas/dist/headquarters-site.js",
+      "bytes": 4205,
+      "sha256": "f34b1fdc9d220b0614bfd0942766f93973d664be3b15d98b88ef33f4c87e3374"
+    },
+    {
+      "path": "city-atlas/dist/headquarters-stairs.js",
+      "bytes": 3938,
+      "sha256": "153c44fef782dd7e652d4a449cc7daf1cdb8a816b6839dc1b8239a9aa3034373"
+    },
+    {
+      "path": "city-atlas/dist/hospital-model.js",
+      "bytes": 24847,
+      "sha256": "6ea0ba32452be57e4c5810c5bf8b11c70bfc7b05cc9261d6dbe23f729e0e88ca"
+    },
+    {
+      "path": "city-atlas/dist/hospital-site.js",
+      "bytes": 4403,
+      "sha256": "7c17ec183ce345786438ce5a8def577172e1aa67e4674112680dd830200b9d9a"
+    },
+    {
+      "path": "city-atlas/dist/index.html",
+      "bytes": 14453,
+      "sha256": "53ee6b69a3bf3ff051466198f13ea17ce88f8ee1f4de89c8b0a51fc170b9091c"
+    },
+    {
+      "path": "city-atlas/dist/main.js",
+      "bytes": 61846,
+      "sha256": "7d87ea6501ca4d805df6b81eb1e9085af3e2120807633fed4d85ea78835f90a5"
+    },
+    {
+      "path": "city-atlas/dist/mall-model.js",
+      "bytes": 29473,
+      "sha256": "a11fc19301034e5c6898f0ca5c24e260fc178205699a361e682a49224d0a97af"
+    },
+    {
+      "path": "city-atlas/dist/mall-site.js",
+      "bytes": 4648,
+      "sha256": "4c317c4aeeac8b1ee3de29ad6b7a6566538e0e957c9fafaa1a2d09caa308127e"
+    },
+    {
+      "path": "city-atlas/dist/mixed-model.js",
+      "bytes": 21498,
+      "sha256": "f7a02d62c296b1e78956c16760ad8ffdeda148624be958cf92b83327eff8a2b3"
+    },
+    {
+      "path": "city-atlas/dist/mixed-site.js",
+      "bytes": 1383,
+      "sha256": "13746fabe89e1bc31c00172b0e3e163ac97f89a27b17d7c3dc70b8e74fcf0133"
+    },
+    {
+      "path": "city-atlas/dist/office-manifest.json",
+      "bytes": 4531,
+      "sha256": "52573b545f4557d53f7d2682943459837f7455459c930b9eadd537fae4b89eb7"
+    },
+    {
+      "path": "city-atlas/dist/office-model.js",
+      "bytes": 28687,
+      "sha256": "e89a2efb4b016f29c3ded454bb19be44c598f54f22020602fd7979306afeb7d5"
+    },
+    {
+      "path": "city-atlas/dist/office-site.js",
+      "bytes": 4338,
+      "sha256": "37f8611e3e5f8e36aeb0947a00c2d0eaf140b1f7c6e29d258f6ad2e1c1e1f780"
+    },
+    {
+      "path": "city-atlas/dist/park-model.js",
+      "bytes": 18100,
+      "sha256": "465477135b388cab2de0156482719b22e06fd4bd9c357248fff3ecddf93580bc"
+    },
+    {
+      "path": "city-atlas/dist/park-site.js",
+      "bytes": 3791,
+      "sha256": "edc3f65fc8c64b860a4f61ad64ed70a615a5c5a23108c844a9791fe6e370e3d2"
+    },
+    {
+      "path": "city-atlas/dist/render-budget.js",
+      "bytes": 10007,
+      "sha256": "954ecd285384d066e5f801f2bdc1c1694f815970debebc0cae5b4f2f0a30a1db"
+    },
+    {
+      "path": "city-atlas/dist/residential-model.js",
+      "bytes": 14929,
+      "sha256": "a0480aa1b098280ba21293e08e2d02562155ae9232eccf5a30be920297d66224"
+    },
+    {
+      "path": "city-atlas/dist/residential-site.js",
+      "bytes": 3400,
+      "sha256": "82cf40fd4b4d0aeab1fecafb71c1b881b535113ac2b1faf8f6b400fb3b0acc84"
+    },
+    {
+      "path": "city-atlas/dist/river-model.js",
+      "bytes": 21114,
+      "sha256": "544ebc70c232dfce2388d151f102918302cd2086cfa21fba80d99f80455c4e88"
+    },
+    {
+      "path": "city-atlas/dist/river-pass.js",
+      "bytes": 5616,
+      "sha256": "aaf96a4bb2c4f19c633c7affb3038c217be7f8c015f5002a048c0561493a442f"
+    },
+    {
+      "path": "city-atlas/dist/river-site.js",
+      "bytes": 1186,
+      "sha256": "3eefba96c363522a8ad01b4dce71e44c1c48d8ea0ebb33fb8b476122e7f29b0e"
+    },
+    {
+      "path": "city-atlas/dist/shanghai-model.js",
+      "bytes": 17029,
+      "sha256": "b9194da6ef3f0195119e7c3e9acf1c7241e06a8d6bd770101ece750ab4ceb6e3"
+    },
+    {
+      "path": "city-atlas/dist/shanghai-site.js",
+      "bytes": 3838,
+      "sha256": "c9cd3df7f3d21d1a28f22957430ac1ef43b371e96bc6ccf468917bc5b754fba1"
+    },
+    {
+      "path": "city-atlas/dist/skyline-model.js",
+      "bytes": 31564,
+      "sha256": "07a464c2f976dfcb9439c7e02a9e802a014b631275c0d7bedf234b1c6619f1ee"
+    },
+    {
+      "path": "city-atlas/dist/skyline-site.js",
+      "bytes": 3011,
+      "sha256": "08d8e6c845b4dfa6831d0cf5c0c7bc1aa180708a3abbfd1253e41d136ce1a24c"
+    },
+    {
+      "path": "city-atlas/dist/slab-model.js",
+      "bytes": 23073,
+      "sha256": "97528e2770eff1f2ed8d01338630db2ced59ce665a779520a6e7df1d033f82c6"
+    },
+    {
+      "path": "city-atlas/dist/slab-site.js",
+      "bytes": 1381,
+      "sha256": "fc638d8bf1f7e8514cc027eb55828de03a42663743757c959f4582306c2f8491"
+    },
+    {
+      "path": "city-atlas/dist/sports-manifest.json",
+      "bytes": 1545,
+      "sha256": "35f9a0fb5175f9eec422d71d494400a058ac8b26493b11184f3884f65b7fb1bb"
+    },
+    {
+      "path": "city-atlas/dist/sports-model.js",
+      "bytes": 16516,
+      "sha256": "380cc746f2344ef53a07ec15af012e8499c81d2f6704c2bbe711f16a2414fe50"
+    },
+    {
+      "path": "city-atlas/dist/sports-site.js",
+      "bytes": 3351,
+      "sha256": "bb7fe7fa4395e67189859a7f3a828a7aa40be690e358ba7054baf09846f06468"
+    },
+    {
+      "path": "city-atlas/dist/style.css",
+      "bytes": 16403,
+      "sha256": "04d8ab4c8f9d75a8f509c36b28a2e5b94a2e44feb4d22163fd16c5ee0ac0d5f8"
+    },
+    {
+      "path": "city-atlas/dist/university-model.js",
+      "bytes": 19904,
+      "sha256": "a6f63d64bd22c832ce7cd23770bd7b983ca5e34caab3848fad7c0eb9f9d07315"
+    },
+    {
+      "path": "city-atlas/dist/university-site.js",
+      "bytes": 3877,
+      "sha256": "d641182e576dfa92c9a1d528363d6048d133e755af7afbda123143ebaefdb67b"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/Addons.js",
+      "bytes": 11810,
+      "sha256": "979673de5762be09c14a1cb57d591ffd4657564bd9e5b27f03e8fa2319ae4bde"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/animation/AnimationClipCreator.js",
+      "bytes": 4543,
+      "sha256": "0afb4c1b147420e7104a2c1d7f0e2ca19fef030572e95a10f53ebc09397c4dc5"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/animation/CCDIKSolver.js",
+      "bytes": 13341,
+      "sha256": "1963816dbdb97ba9d330a209bf8a02a125dd52a0e0ab7f58e8f8b359131a97f2"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/capabilities/WebGL.js",
+      "bytes": 2555,
+      "sha256": "02d6f471f7cfe5f70b27fcef39e0ba236229a79365c45071e193d4a32495e8a1"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/capabilities/WebGPU.js",
+      "bytes": 1485,
+      "sha256": "cdf50407d9fa4ce1af66fd380b030069262ee896eee64dde233bd22339556b5a"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/controls/ArcballControls.js",
+      "bytes": 86910,
+      "sha256": "da2699e2d18c89c89eb8819ca5c33be066b92098bcc0dbb14b2b4e522b1a349f"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/controls/DragControls.js",
+      "bytes": 9493,
+      "sha256": "d0fdb1c9e05b9aa8ed05fcfad91765ea4c5f2c9cb3bf3b5047bf8265cd256ad1"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/controls/FirstPersonControls.js",
+      "bytes": 9320,
+      "sha256": "de17f83cb367173936a163c14dd1d2fff245e81e0b936169b95ee107eb440e5f"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/controls/FlyControls.js",
+      "bytes": 8890,
+      "sha256": "18578f439f1cbf6eb9135687c846ad54f025f9db9cffb077a92a1d9324a67526"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/controls/MapControls.js",
+      "bytes": 1694,
+      "sha256": "864e2f414975958ce90a029783a5e010877954e53eb8f5ed11221b41c09756f9"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/controls/OrbitControls.js",
+      "bytes": 38703,
+      "sha256": "b97879c748170baadeb3fb84cea1ffdf4674e283dc06042f34e2acb95a76042c"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/controls/PointerLockControls.js",
+      "bytes": 5899,
+      "sha256": "aad3f59b92727fc9741b8e4ccdc9d2290bb5ca05562baaa3eff78d1dd92b18b7"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/controls/TrackballControls.js",
+      "bytes": 21662,
+      "sha256": "34e097b83260d8f40d23473bc7511889909660f89de9734e46928df9128fd2a8"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/controls/TransformControls.js",
+      "bytes": 49397,
+      "sha256": "621fb8894c0f748c2be2a6ff8a6bdd72c18a22b24ddfe21d506514544df5c84e"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/csm/CSM.js",
+      "bytes": 13838,
+      "sha256": "42da3b2e5ffb737797511a246bcf94a0b873e695cbf413a4fda1db55c0d4a284"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/csm/CSMFrustum.js",
+      "bytes": 4673,
+      "sha256": "33ef4ce3f310df0532120f564eb392ce3936148d54628a8d2f713fcd347baa52"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/csm/CSMHelper.js",
+      "bytes": 6896,
+      "sha256": "77ddc71c67d2adc334510ad3d9af1c3dda443d4becf15ef891713abf441fdf81"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/csm/CSMShader.js",
+      "bytes": 11034,
+      "sha256": "9dfe9b052f75607919afb05f0109cdb1cba54138552cbec574052be26105bae2"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/csm/CSMShadowNode.js",
+      "bytes": 13839,
+      "sha256": "c232f690abd92aa7cae90bb1eaeb4062e273e958ed705d016caf0c058b764e8a"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/curves/CurveExtras.js",
+      "bytes": 15979,
+      "sha256": "4f2a7fe5bc59ccea70576c24cd9845cf41ea2c358e006057c007c4e34cf95a88"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/curves/NURBSCurve.js",
+      "bytes": 3888,
+      "sha256": "bef2607618a7778455e71a1f0bd206951c382d313e2e245808cc7d3533d60fb6"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/curves/NURBSSurface.js",
+      "bytes": 2687,
+      "sha256": "a7ff303addd765da8c85ceabb2e3248a970144021cd52b2cb8f177e34aeaa244"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/curves/NURBSUtils.js",
+      "bytes": 10802,
+      "sha256": "c6bd7c4137d585098923f189687898ea3e8762ea3ecbe255d749a56353894379"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/curves/NURBSVolume.js",
+      "bytes": 2945,
+      "sha256": "c51db69b23db33911d4e9b666b33143a71f41554c56b7d4f6dd60974bee5cb4a"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/effects/AnaglyphEffect.js",
+      "bytes": 4440,
+      "sha256": "793faad57fefb15ea69b6df50f7d44fa73307a122f6edd2ee68cb23f0f41419c"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/effects/AsciiEffect.js",
+      "bytes": 7638,
+      "sha256": "7c00d4a71515c3ebb7c04bd6a3e37d34d9d9f9805211f910b03f64e039a5b4e3"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/effects/OutlineEffect.js",
+      "bytes": 12661,
+      "sha256": "de63c6fb974db81c9e919f8fba8005158ab4b0d17ef18e15a7c0544bb81ccb98"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/effects/ParallaxBarrierEffect.js",
+      "bytes": 3502,
+      "sha256": "aa52a8c6b1464548f7fab21a7a272e23311273093462dcc209c39019fc1c1055"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/effects/StereoEffect.js",
+      "bytes": 2180,
+      "sha256": "a4a510d7a8c3513054bd7fd72f9b6d48fd688748d8d31e0ccf725ed2d18b9972"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/environments/DebugEnvironment.js",
+      "bytes": 2621,
+      "sha256": "e311ce2332fc924087beaedac01ba8e1f5b1ff7971f138fcdd5db96df0a15abd"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/environments/RoomEnvironment.js",
+      "bytes": 4899,
+      "sha256": "c20f0b4677f6128a138d7152b85cbef9091f4f45cdfa05adca04d40c1697c7ae"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/exporters/DRACOExporter.js",
+      "bytes": 8453,
+      "sha256": "ac47c5a121169029098bb2dbb2d682f94b674df05d588c06d1adfcd60e952539"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/exporters/EXRExporter.js",
+      "bytes": 14639,
+      "sha256": "39c9b80eae62993666e42a7b9a850db528f339750d1524dce848c9a21ea8084d"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/exporters/GLTFExporter.js",
+      "bytes": 86392,
+      "sha256": "e7c29444454eb321b39e4c8b3062944f4fd5299a0e7483e9cb8c0594cdec829f"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/exporters/KTX2Exporter.js",
+      "bytes": 8408,
+      "sha256": "17b70d30641a9aa2c191fbe5fc37651458aa882780e22d9f7823e555cac24781"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/exporters/OBJExporter.js",
+      "bytes": 6070,
+      "sha256": "2df529483eec685ec5c9a52f6a370acc654592aeeb495a8e862d8bb6d3d5063e"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/exporters/PLYExporter.js",
+      "bytes": 13523,
+      "sha256": "96c99104d93303d0dc3679a9f873f86e7a22fa827f4c896c152d36496e57df88"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/exporters/STLExporter.js",
+      "bytes": 4884,
+      "sha256": "6508e5f79d120c7fdb677430342179609b27f59942dd6a2e215eef3ff60a7e60"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/exporters/USDZExporter.js",
+      "bytes": 27840,
+      "sha256": "68e6e23074420b6bdeb49264389957fa351aa9042636187b34a6b1247971e5d5"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/geometries/BoxLineGeometry.js",
+      "bytes": 3088,
+      "sha256": "9010ca7e6d5c5277096db75960001ba774862b89731a4dd8b2e98d54f717ebf3"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/geometries/ConvexGeometry.js",
+      "bytes": 1710,
+      "sha256": "f52f4c5f0cc42eaef25d7330e912693ae1d7a9b0df0a599cd35f5854e9ecb34e"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/geometries/DecalGeometry.js",
+      "bytes": 10112,
+      "sha256": "0c6893ccd5a5d3e3aa95a92db4c30172d03d89e97e146de334244c8476fd20b2"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/geometries/ParametricFunctions.js",
+      "bytes": 2938,
+      "sha256": "7d533863edda651735af91c613927b7681bbe5179fce1141fcfe6592ea3f88d9"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/geometries/ParametricGeometry.js",
+      "bytes": 3820,
+      "sha256": "9ade22d2268f975ed5d3e3c2437e8999d532b7fdb8465c72aa46953ab760fafe"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/geometries/RoundedBoxGeometry.js",
+      "bytes": 6476,
+      "sha256": "c1b7c9bd2cddff2e3f3a0723f618a3d364a47450e3d25771d21faed88410bec8"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/geometries/TeapotGeometry.js",
+      "bytes": 18855,
+      "sha256": "31ce94a5efe7ff4dbda886b258bcab5a16e2d0e329c9f041eddf3007d2783401"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/geometries/TextGeometry.js",
+      "bytes": 2901,
+      "sha256": "2585a4ecd9718e32fa862af729f75819d4021ce17501c99265889623f2791554"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/helpers/LightProbeHelper.js",
+      "bytes": 3613,
+      "sha256": "4132065826d84fbc326f37e0e5b44899f84ce1c7b08fbb905795eca8005259d3"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/helpers/LightProbeHelperGPU.js",
+      "bytes": 2216,
+      "sha256": "4df215c5721890b6b53bcebe790f6800c0cf78754937d589817412eaed6fb0ea"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/helpers/OctreeHelper.js",
+      "bytes": 2804,
+      "sha256": "328f298a83ad77209ba4e18a52b3bbd8597da1a1e89b1443736ce2cb0581067f"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/helpers/PositionalAudioHelper.js",
+      "bytes": 4384,
+      "sha256": "027531f7208bea6c63281465cb95ca9a1246cd0b7ea3e1e9d605ae813abdf67b"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/helpers/RapierHelper.js",
+      "bytes": 1298,
+      "sha256": "dba49036b1b4019e545a41ebcfcd7b7c7f5ba1c0a5f3f32737b4960d093304a4"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/helpers/RectAreaLightHelper.js",
+      "bytes": 2971,
+      "sha256": "72b07967bcc24220fc5d5ed018f810c4a8c64a073d97c38f2160ce5ec389c1a4"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/helpers/TextureHelper.js",
+      "bytes": 5355,
+      "sha256": "2367537802cb353bb20d5233fdcf01c4cdefa3629bb5740bbf0767922ca0220f"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/helpers/TextureHelperGPU.js",
+      "bytes": 4753,
+      "sha256": "9d268939aa8eb43cb786880172a9b2c4ea9fa870427477df91b291a156b0dac2"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/helpers/VertexNormalsHelper.js",
+      "bytes": 3458,
+      "sha256": "666a1219d95010e4d5d290f08774af2c327b7bcd368ebdec29a111805c8b7ecc"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/helpers/VertexTangentsHelper.js",
+      "bytes": 2955,
+      "sha256": "b0d38d36af91eb8f5a119cae0a12861f2d0d27f35a1bdf70462fb53976a752eb"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/helpers/ViewHelper.js",
+      "bytes": 10999,
+      "sha256": "7c5d31edf44b1d5b7fb56b4ac7256a4fc62c445ccc964569ff072a39b002d32f"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/interactive/HTMLMesh.js",
+      "bytes": 14092,
+      "sha256": "30d8b009f09d065f44d964a53a78ddc239f81ca204bb457b6f0777db59eeef15"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/interactive/InteractiveGroup.js",
+      "bytes": 5809,
+      "sha256": "e475297351472f48052dbec790611abe34b12f8ebf82dda5fa118197851da43a"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/interactive/SelectionBox.js",
+      "bytes": 7756,
+      "sha256": "f464368ee27b55b5f7efe073dcfc70a25e1e13b58414c7f0881b6fe601ee99df"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/interactive/SelectionHelper.js",
+      "bytes": 3623,
+      "sha256": "0fa9844f28ac464913d0a3ddbbe9045e466863e0e4bf71e5fdcb33e0d47ece2a"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/ammo.wasm.js",
+      "bytes": 393768,
+      "sha256": "3fa63c584d4732f72b954c5ea105f1faca99559c95c57ce7bb738d3497f98228"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/basis/basis_transcoder.js",
+      "bytes": 57529,
+      "sha256": "8478b5b6d6b74e7d3082b89f6417321d8d1dc0307f2b30d4484bb11b441696a1"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/basis/README.md",
+      "bytes": 1448,
+      "sha256": "930b11bbbb742b2525491b0964f0462d63d8b21383c0623ec4c98c43d53723c6"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/chevrotain.module.min.js",
+      "bytes": 157440,
+      "sha256": "026047366a9bdd0961eb79857fd5d84db204589942193012aabe7e3bee381045"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/demuxer_mp4.js",
+      "bytes": 3527,
+      "sha256": "8dce48fc3ef10e2459fe127cbc2ac7a9b51d22c6b42e4c31a6377eaeefeda318"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/draco/draco_decoder.js",
+      "bytes": 719410,
+      "sha256": "30e4d486fa020737af10e3c56197693e5b904bdc05b8bfa5d7b06751dec6da04"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/draco/draco_encoder.js",
+      "bytes": 928718,
+      "sha256": "d5c653caf242556ddff9370e86979b8b5c6131bc196be388698a85dc2e1bb59b"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/draco/draco_wasm_wrapper.js",
+      "bytes": 58763,
+      "sha256": "e8049906ef3f8f75d3456c22a3f31bfdfe5b5b5bd09ccdec613b9e9a49d554d8"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/draco/gltf/draco_decoder.js",
+      "bytes": 512465,
+      "sha256": "8625489da79a805f4f2a7d511c3e52d8b4085608a9d2a4d5f4f9de5db0aea04f"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/draco/gltf/draco_encoder.js",
+      "bytes": 954360,
+      "sha256": "6d4132d7b68d26d20a43a1ed59ff4b4a694fbaad41b339158db050dbd0e68f56"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/draco/gltf/draco_wasm_wrapper.js",
+      "bytes": 58456,
+      "sha256": "8bb2952d2ba7d67e1414f8df819410cb0434a666be53f671fff75f68843d76f6"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/draco/README.md",
+      "bytes": 1489,
+      "sha256": "8b9d277bf5743f4ce8d85d63c16690071b53f81796e877d4d395af943bde02a0"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/ecsy.module.js",
+      "bytes": 45516,
+      "sha256": "f3ad24a3c35afaa75b0d84898ab8f25e86ddc3f48a7adb05432a3e506518cb32"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/fflate.module.js",
+      "bytes": 89384,
+      "sha256": "209a4412eb48ce609edb4391992a792ffcc3983d30ee7e2b0b89a8c470f3cd8a"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/ktx-parse.module.js",
+      "bytes": 19932,
+      "sha256": "f40c491f6c44dde511268121f778a0050e73b1a15fd844c1ae2c78c73213eafc"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/lil-gui.module.min.js",
+      "bytes": 29526,
+      "sha256": "5e31e7fc4d3a1268550b948463eabe06c7a6c03c158ccb99c78616d2c9682518"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/lottie_canvas.module.js",
+      "bytes": 476971,
+      "sha256": "4f83b7691f4ba3c4e4c7eec45af7c55814012cab3683811dc5eda088e12cbe5a"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/meshopt_decoder.module.js",
+      "bytes": 24848,
+      "sha256": "784315b6959c85459eab77f51776158cc381d7e7d77b919ff7c4935f088a7c5c"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/mikktspace.module.js",
+      "bytes": 48525,
+      "sha256": "a27a8e3c71d2d47eab93c57e84d9190925df42cdbd820e07be15c8edc789c7ca"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/motion-controllers.module.js",
+      "bytes": 13492,
+      "sha256": "4bf534b98dbb0f3e90b1332ac4d49c7d7747253768970abc7e4133b7700b75b1"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/opentype.module.js",
+      "bytes": 467478,
+      "sha256": "6897287898532ec3b9e33e1db73bdd9fd3c6131101ea0c0f62da000a0584b2fb"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/potpack.module.js",
+      "bytes": 3951,
+      "sha256": "f69a7f3173b088188a936ef203da9fc74175dee3443ca7804a060b3f19efc6c8"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/rhino3dm/rhino3dm.js",
+      "bytes": 142554,
+      "sha256": "d596c47905b9c5b63c418de158f26e3f71b1957aed19478e135e05801c6fcb85"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/rhino3dm/rhino3dm.module.js",
+      "bytes": 142396,
+      "sha256": "62ee449c1f24327fb0b68fc550e261ea5379c844c079a4cd643438001cc97837"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/stats.module.js",
+      "bytes": 3514,
+      "sha256": "2c71a2f70e89c69e46c2e285fb171bac3dcfd498a85400e94ad5aaf6044ffc06"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/surfaceNet.js",
+      "bytes": 5545,
+      "sha256": "a3b63a8038ed712471310583d91ba8c0afb29dfd99ab80e41afca354f69ed4ff"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/tween.module.js",
+      "bytes": 32316,
+      "sha256": "b61c18c59bff9810f43d5750849fde620b225ff4e9013dc51bcece4b027d69a9"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/utif.module.js",
+      "bytes": 100835,
+      "sha256": "728b196cb49f7349abc4055df9ad8e1e99f93fddeb22e1fb2334436c9997adeb"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/libs/zstddec.module.js",
+      "bytes": 39754,
+      "sha256": "5cbf818e842628a4464e748594a6deae18ceddda3c2f541e7b3a0ff5fc7611e2"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/lighting/TiledLighting.js",
+      "bytes": 1002,
+      "sha256": "35194907b01da350968c16226fb59225ea7efd9a88340f0ae6bcdc72d41d2e32"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/lights/LightProbeGenerator.js",
+      "bytes": 7728,
+      "sha256": "e609630d1f399c79dcf4a3f8063c81cb2344a0765df1ddf6335ccca3b40ffa98"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/lights/RectAreaLightTexturesLib.js",
+      "bytes": 314770,
+      "sha256": "8acc50043aebc3ff0f63e21607ef2394cda41d634f92093bcb7ad6f1d1e2eb11"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/lights/RectAreaLightUniformsLib.js",
+      "bytes": 1014,
+      "sha256": "494fef2d731ff1689050cc6040ad78d927c22b9125a12f532beb0374c2811c6e"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/lines/Line2.js",
+      "bytes": 1486,
+      "sha256": "69dd2120d4df14208796acf199f80a64d37e042cfa65dc2b98286694b2954194"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/lines/LineGeometry.js",
+      "bytes": 3479,
+      "sha256": "b7ec6b0011e3b09dc72e17cfd8e8945295cb2bc8c8aa9aa19e47119680bdad7e"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/lines/LineMaterial.js",
+      "bytes": 13228,
+      "sha256": "8450d827153d2509e43513cd123df786d7c8c7cdbfd4c7eea4c9e1621f2a7fb5"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/lines/LineSegments2.js",
+      "bytes": 11277,
+      "sha256": "5d707b4e6056945b3b34cd8291b6afe16c913f6b1e8eac7b6d6892f41c45c26d"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/lines/LineSegmentsGeometry.js",
+      "bytes": 6893,
+      "sha256": "471f0a954a0c9c59d3d151392f424142a9164a722802f63b371971378a84a1b1"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/lines/webgpu/Line2.js",
+      "bytes": 1212,
+      "sha256": "3169cb8dc3d5db876f59907851dfd5e50235585d7b4b8ff127823f9a54f7a56b"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/lines/webgpu/LineSegments2.js",
+      "bytes": 10833,
+      "sha256": "1ffbcd998f32f8dbc96ae7fb72404e6dc6f513e2978819cbed31ed00e9d112c3"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/lines/webgpu/Wireframe.js",
+      "bytes": 2455,
+      "sha256": "ae2ac3aaaa7cc00e68075e21a34663cee9ea84231eec84edb2021ceb1d438061"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/lines/Wireframe.js",
+      "bytes": 2981,
+      "sha256": "0f8b84215e857f83e8ce0e106df0f605469d9b6acf4d72bdbb3ae887f71f8ea6"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/lines/WireframeGeometry2.js",
+      "bytes": 1081,
+      "sha256": "b540ca152b38de6197849e9cc51a669f93b3ae4822c6030c589e9914320ced50"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/3DMLoader.js",
+      "bytes": 40107,
+      "sha256": "4b352a95652be521500514e0429a3aa7b7e63bb2735e1aab52a6f218bb2d8284"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/3MFLoader.js",
+      "bytes": 38685,
+      "sha256": "6349856a12e93c791bf2f53cfc988f96d7c33e16adb027f51e3e73116d2471a5"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/AMFLoader.js",
+      "bytes": 11440,
+      "sha256": "bfb1a2463ae0b0286a90ef44f16d4ac7f81c654f334ba296e1415dedd3ffc99b"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/BVHLoader.js",
+      "bytes": 10649,
+      "sha256": "597e148c7afb516db8522ac0d0cb05f775c13aaf665623fa25b17abbcd55e3ba"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/ColladaLoader.js",
+      "bytes": 85542,
+      "sha256": "a778a6886874e5eff0a6cf1e4a15ec3c38d675d13ad3dcd04c3094eecfaf80d2"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/DDSLoader.js",
+      "bytes": 9070,
+      "sha256": "95a2b4fa7b6fc19cc1b10f3ebd9d5b063b422eb8648af6832145d4320f7ba3da"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/DRACOLoader.js",
+      "bytes": 16781,
+      "sha256": "7a4a51c694a6c9f983be452cc82b365e69ce08424654e3f245b4115e6efef258"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/EXRLoader.js",
+      "bytes": 66746,
+      "sha256": "02d79cb49016456de55a4b3d5b2c5a7d687ba13f1e959f00536a6b1c57c5a607"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/FBXLoader.js",
+      "bytes": 104876,
+      "sha256": "d97724a6bea228003e02c64651d969a9a62003a00be314ef6995c390116f547d"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/FontLoader.js",
+      "bytes": 4960,
+      "sha256": "cf6d6ca53b326c7c97207e5d77efe21735bb1fb1c74c0fbae3d4dee655cded85"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/GCodeLoader.js",
+      "bytes": 6375,
+      "sha256": "af94d2da3dc1145b2a8dc93b7427bd451db0a2c833dfc741b48fd7d9129b3ee8"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/GLTFLoader.js",
+      "bytes": 114739,
+      "sha256": "67ac5551fdafa6e349bd80c8f8e5e39c136d6b2fb1ad647db9abb21dc86f9e4a"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/HDRCubeTextureLoader.js",
+      "bytes": 3731,
+      "sha256": "d67fcb9ec88e27736b55cfd591f86ed8529e61fc5a923328ee52cb499c753407"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/HDRLoader.js",
+      "bytes": 12456,
+      "sha256": "d7053cfc4019f520335ae07e0fe82b4ef5a66b6766e8b253d066616184995e89"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/IESLoader.js",
+      "bytes": 8373,
+      "sha256": "7eebc9cdc4020fafca85bea7d1b26877e9ccf7d3d8928f7ae4344f379d33de57"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/KMZLoader.js",
+      "bytes": 3279,
+      "sha256": "a050e6b8a09f01315cce31f3dcd09b32c662b4814ccb97fda8e4c3b108789e73"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/KTX2Loader.js",
+      "bytes": 34635,
+      "sha256": "c43052b95310199d50935bdc41fcd0fc347f25eac3b4f0245e6e4de1ef6e1d93"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/KTXLoader.js",
+      "bytes": 7199,
+      "sha256": "341fb85c57336832774697e0bd3db4cf7a0c747a1f975f8c87c0cc750dd27b9a"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/LDrawLoader.js",
+      "bytes": 60968,
+      "sha256": "af4ceb50966e1d45ad9620924aff95821fb0aed0a38173a0f7e0e9e786e8b02b"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/LottieLoader.js",
+      "bytes": 3479,
+      "sha256": "c2c54890d397602d7e0818284a7d65a6b41cf8105203b2b3e293970a541d36ec"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/LUT3dlLoader.js",
+      "bytes": 5077,
+      "sha256": "85fdb086de69a1ac1629c8585f454f8540fa10dc9420a29fd08daa788125de5f"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/LUTCubeLoader.js",
+      "bytes": 4629,
+      "sha256": "fa9437999d91f98467d9b8b876b76c9cd450ebf2742bccc74e9a39539120edd4"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/LUTImageLoader.js",
+      "bytes": 4184,
+      "sha256": "c8040476e51bf948317b8161a1c3f8e795ebcdbcdd70055c2f00619841760cf4"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/lwo/IFFParser.js",
+      "bytes": 26740,
+      "sha256": "0908627856138eb83f97e2453badc51c2dfade4034e06ab0db6ec8d6056163ba"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/lwo/LWO2Parser.js",
+      "bytes": 10137,
+      "sha256": "8fd8159c6a4c91a421a667660abbaa83244ead6581586b65abbbe2ab4af5dec6"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/lwo/LWO3Parser.js",
+      "bytes": 9269,
+      "sha256": "6b56d4b581d40a1525f687273231b67c8bc6a4dbdedf7d544e6c8925e63c17c0"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/LWOLoader.js",
+      "bytes": 24674,
+      "sha256": "e049fd86ddcf3f26592c104b2fc0f50dc948ac56819e222a819bc3804ed47bd5"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/MaterialXLoader.js",
+      "bytes": 25738,
+      "sha256": "8ce4415bddffcc1bde4624a8e9a7e63970f9b05985d66f9ccab99d3665c9551e"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/MD2Loader.js",
+      "bytes": 13625,
+      "sha256": "6b63e78ba7c109030bc341442a4704aaacf599e50f47524ca15eff92d94ff7a7"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/MDDLoader.js",
+      "bytes": 3936,
+      "sha256": "6a3f8494e46d636c6a874b789d9bbc80dafd9fc1594e06abda0d1f6ffe94065e"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/MTLLoader.js",
+      "bytes": 11356,
+      "sha256": "f1f8f0c6fcfa09671cb609954ea436521d835606853c110c5aff2dc8188f5e61"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/NRRDLoader.js",
+      "bytes": 14553,
+      "sha256": "415470f2e5a183aea1e84645d3e87b0477cc3793c3caeb53836a513560cc4be4"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/OBJLoader.js",
+      "bytes": 22922,
+      "sha256": "e3ceb6a8ed48ca146049a8f0879c7acbf884d430f2e728779af26c6ea3a57c65"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/PCDLoader.js",
+      "bytes": 16287,
+      "sha256": "034a155605e9ac328598ae2574ebffe9a49b29ad3b64d2e848a1031a8550262b"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/PDBLoader.js",
+      "bytes": 8261,
+      "sha256": "a7125e0ac73bed9d7cfaceaa13c10551e74cef1ff1318501aff82017baf9c83c"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/PLYLoader.js",
+      "bytes": 17700,
+      "sha256": "b824a6dda90cbfb37cabf8e5462ed1673e7693852bc1a6a7bab0465d7b634dfb"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/PVRLoader.js",
+      "bytes": 5411,
+      "sha256": "4e61e0da18ccd3b3aee323320c44270a0eb1b52abf68bf364dfee6ac5fe676ec"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/RGBELoader.js",
+      "bytes": 268,
+      "sha256": "6c08f9c441040a61a188ad7711078da4df48f8c5ac3b3725dd6f10ac9ff81162"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/STLLoader.js",
+      "bytes": 10715,
+      "sha256": "023ed97f848b633d8bcd53d4db3b996d29d0c644088700691297c552257d480b"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/SVGLoader.js",
+      "bytes": 72749,
+      "sha256": "90aa8d9c60b4f93f2a482669f5761a530479049a5c42f4bcd32575a43d7a119e"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/TDSLoader.js",
+      "bytes": 25190,
+      "sha256": "48e12278385785c313268f7a71b47b49f4bc06e72b8e89b46d6c1758fcbc9e7c"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/TGALoader.js",
+      "bytes": 11818,
+      "sha256": "7560c445146ed4432a340e312672155d86cf54ad3fc7f5571da12cba9512b5c8"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/TIFFLoader.js",
+      "bytes": 1221,
+      "sha256": "c166ff39d8ff1c4bf6c38d2d355f5d5e29516cde712eebee827a0a131cee57a0"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/TTFLoader.js",
+      "bytes": 5553,
+      "sha256": "1dcf427b59394d48c20f85d88e744b0f7d2c81f37614e8a81ae82cbfca91849a"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/UltraHDRLoader.js",
+      "bytes": 15009,
+      "sha256": "c534dbd9a8514ce3a6959ed6da141b413e2e7f1dbe940e27c8f17e697999fb59"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/usd/USDAParser.js",
+      "bytes": 15954,
+      "sha256": "0c67ac7553aa8d2fc3b0ecf2cb68d378f8ef658217adf13deb7a9b8f3be1e962"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/usd/USDCParser.js",
+      "bytes": 137,
+      "sha256": "e4190b1e48edf8ad7d1d3563176694650c0767bb10e6d3886986eec39393e4ce"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/USDLoader.js",
+      "bytes": 4502,
+      "sha256": "183949651c516888a55ae6a68077fc93ae2f1fc5f18071891cf80dcc5cae24e4"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/USDZLoader.js",
+      "bytes": 266,
+      "sha256": "15f6a71479324d99ac12bd9951ee718178c091985559c3c0563225fd911f764b"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/VOXLoader.js",
+      "bytes": 10540,
+      "sha256": "997070b488831d072636cf00092261cc95cad94194b3deb622ac7a579594d6d3"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/VRMLLoader.js",
+      "bytes": 74449,
+      "sha256": "4e7aeb7bbe78809b43f2a357bd4096cd218f7827f8ea529a041a33e0d9fbba41"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/VTKLoader.js",
+      "bytes": 30369,
+      "sha256": "f458762e5d078e2828c235aaa9ddf55a2989064ee2bf3409de90d58a406ba97d"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/loaders/XYZLoader.js",
+      "bytes": 3280,
+      "sha256": "e19780545ea436de1848dea2b6b54a226e82657c9c167ed91584e6bd6b3dcb8e"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/materials/LDrawConditionalLineMaterial.js",
+      "bytes": 4472,
+      "sha256": "efc0b194f69d2cb9e364f203754181e28c6dd645604a0b3d282c56c0f0c7fe40"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/materials/LDrawConditionalLineNodeMaterial.js",
+      "bytes": 3985,
+      "sha256": "acc34cfe0c221db1377b007e37972f2077a084b2044728ed377ac3f5e036be3d"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/materials/MeshGouraudMaterial.js",
+      "bytes": 10106,
+      "sha256": "b6173f3f832965d0ab8a9f4c10378b0be70ddb03e0dde6ec2fc0040dfa1db139"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/materials/MeshPostProcessingMaterial.js",
+      "bytes": 4810,
+      "sha256": "1521f7362f78b9189cbda41668edb7ccda30ccd702bbb225d4ab55633bd09119"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/materials/WoodNodeMaterial.js",
+      "bytes": 19407,
+      "sha256": "453e01ed1a615ffc78ff0fbe7764ba1fe3c9028768c101b2e0417b288c328ea3"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/math/Capsule.js",
+      "bytes": 3543,
+      "sha256": "be54c3c58483a7f6b0184dbc6ffdcea58ac13515a7d9fd19ed675b9edfc5f319"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/math/ColorConverter.js",
+      "bytes": 1487,
+      "sha256": "316925abf09f332ab8f1d55dcb6f55bf491e199360a46ab8f60d721c0904cf5a"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/math/ColorSpaces.js",
+      "bytes": 4290,
+      "sha256": "cc35c01c793cd17ccded7bc8142abffd3ce0d60dd6de8d5d216983bd05aee262"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/math/ConvexHull.js",
+      "bytes": 32980,
+      "sha256": "d5e2e44cf567ba9df37f21c7d2c47336d20f5984ccbe50d063ad50407b32d967"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/math/ImprovedNoise.js",
+      "bytes": 3040,
+      "sha256": "125b6ae120dc991556d345669c5d078fcecf6a26c2ff282fcf52110507439c0f"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/math/Lut.js",
+      "bytes": 6688,
+      "sha256": "04d047d96f17302f2d7a20f439c0583a3e037bc0e7e40c276c1dee618dc9533c"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/math/MeshSurfaceSampler.js",
+      "bytes": 8161,
+      "sha256": "a70ab7a8f28b96cd51f09b7c4d5987167bdc23b91b2a26134766a180751aee43"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/math/OBB.js",
+      "bytes": 13862,
+      "sha256": "3297db79bdf0a33525ef06fe7478fd921dcffb7699df1059e189bbdf2c0fae58"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/math/Octree.js",
+      "bytes": 14863,
+      "sha256": "f71364b8d033e03acef6d33c81198e11595f8053cdceffaf77d3040c541eb536"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/math/SimplexNoise.js",
+      "bytes": 15154,
+      "sha256": "dd1f3c42c1bc9fa1b76c1c0796d352521accf0a3a95cc7d0caf479abc5a444a2"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/misc/ConvexObjectBreaker.js",
+      "bytes": 14856,
+      "sha256": "2ef2e5dd32da4f1af6ed66218675273ac40bda0d69dee8afd5c05ed42dfeea1a"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/misc/GPUComputationRenderer.js",
+      "bytes": 14123,
+      "sha256": "478b7f1e782ffb1282923b445eba530ebe9bcf15095edde907d5b54281051608"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/misc/Gyroscope.js",
+      "bytes": 1617,
+      "sha256": "28b9fd4a34f369860c459a8acbaa0fee774681498db48506740c6a0c6e3d3918"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/misc/MD2Character.js",
+      "bytes": 7389,
+      "sha256": "4f95d34b885241323370dd07c8f6c2177e508085bd70bd1062fa4173f24d9361"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/misc/MD2CharacterComplex.js",
+      "bytes": 15251,
+      "sha256": "1ce5f01eead73cffbdd1b8fbd4c67ebebd38aaaaa22420f6783e3250ffd3beda"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/misc/MorphAnimMesh.js",
+      "bytes": 2349,
+      "sha256": "fae5169247cb264cd7adfd2840ff858df68ad7964016b8b003dff6fd8840bda4"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/misc/MorphBlendMesh.js",
+      "bytes": 8091,
+      "sha256": "6fc95720ed341943284326466cde932a951a785589a091f2fe5ebcda413f86a9"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/misc/ProgressiveLightMap.js",
+      "bytes": 11897,
+      "sha256": "dcd48ef10c8c19a7b1ce54c0e2b0cffd65507669704e66b022c82b688442583e"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/misc/ProgressiveLightMapGPU.js",
+      "bytes": 9915,
+      "sha256": "77ee3e697b8107ec25d027e42a52ade087d41caf350a831abf6a2397b2941f7e"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/misc/RollerCoaster.js",
+      "bytes": 15506,
+      "sha256": "012e2247efe7ef5b79bab6b369b0068bb8eacae2a4b389c415cedf26b269ca2a"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/misc/TubePainter.js",
+      "bytes": 5784,
+      "sha256": "bc6426b078193b1af126ba4db43e3a7e21a5afcdfd2a2b944262a5c22f346b6d"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/misc/Volume.js",
+      "bytes": 13338,
+      "sha256": "d10d0933f351184df7a77d87284f2d9ccf4b922fd8d2ee8adbdae2f4444ef5a4"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/misc/VolumeSlice.js",
+      "bytes": 6525,
+      "sha256": "3cfbfc8eec8ddcedc2d6e9db43fa78daf0daa8b50920ce8182709d4cb4dfdc9f"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/modifiers/CurveModifier.js",
+      "bytes": 10538,
+      "sha256": "c8a773b9d7822e89152621ed41fb264049fd6f67c6c6b999e7348abbc5d32064"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/modifiers/CurveModifierGPU.js",
+      "bytes": 7284,
+      "sha256": "51fd14e423efaeb433bc895546a98bffc55324345ac497163d0c795935e8c0bc"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/modifiers/EdgeSplitModifier.js",
+      "bytes": 6131,
+      "sha256": "d0a1fbdf5e3bb63e585d51a0867290ef4dc4a1118747b6790c5d2b16d48ff518"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/modifiers/SimplifyModifier.js",
+      "bytes": 12918,
+      "sha256": "384a3933f2082e48d06ef301ea6b08c854576ba96582bc1e7a8d8e577d8a0404"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/modifiers/TessellateModifier.js",
+      "bytes": 7079,
+      "sha256": "2bd9ea4902f4134ca1989f7d55e7a50f0a15c2f559ac0add018f24a330f16566"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/objects/GroundedSkybox.js",
+      "bytes": 1973,
+      "sha256": "14ad38d785bb998bba0dc9e74b5d8f93ea45753b24341be539755d8e567ee456"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/objects/Lensflare.js",
+      "bytes": 11110,
+      "sha256": "f313c7d783dd25b29194e51aeed046ff9f52716d226b66984dc90aa925d00447"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/objects/LensflareMesh.js",
+      "bytes": 9714,
+      "sha256": "42f1941c90192dd0db69f879c9cdb868bb8b4ad05a629f189d33983d1663cc6f"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/objects/MarchingCubes.js",
+      "bytes": 40408,
+      "sha256": "fe9c6ace2c079bf540befd164ce492de98c820d8b86a722b1060833d42ad9c80"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/objects/Reflector.js",
+      "bytes": 9476,
+      "sha256": "0908d87a7251268dd6d12310b9633f08fd3be9c6faf2e2a4076fce0e87bdd26d"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/objects/ReflectorForSSRPass.js",
+      "bytes": 11960,
+      "sha256": "04f1656c5afa4a1aa2872c6b067411e87fbbf9947c0d405193961d7ee565c811"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/objects/Refractor.js",
+      "bytes": 10176,
+      "sha256": "512c4ec056b8af3c7aa24f80a74d606dfd10c06697686b2b73df8dbe7f2f9d78"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/objects/ShadowMesh.js",
+      "bytes": 3288,
+      "sha256": "e28c3440a3dfd9377ac52ce38501712b4441216384947954761d9e1481aa4bf5"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/objects/Sky.js",
+      "bytes": 7257,
+      "sha256": "a19982b69e496e52d4cd7072029f0a8e5277203cbebf2277a23267e90b705640"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/objects/SkyMesh.js",
+      "bytes": 7588,
+      "sha256": "9e739a793046dc3ff74b8777194711d1050d8c820e735473534937dca556ce55"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/objects/Water.js",
+      "bytes": 12912,
+      "sha256": "65e1f76c3c0e0726d5370c25e00e1c855365a942fa5490c639371cd4d10bfc74"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/objects/Water2.js",
+      "bytes": 10439,
+      "sha256": "909a75a87bf5a1f3ef27e1eb89b77dac29f770634abaa85228ff90ac89560467"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/objects/Water2Mesh.js",
+      "bytes": 5947,
+      "sha256": "42188494004c8e0cfbd130d17127810fc77e44eb51abcd9d69a75aeacb7b2251"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/objects/WaterMesh.js",
+      "bytes": 6008,
+      "sha256": "1d4b281ff58fab41ac796a8e5b9ab52e66a1cf53da828fc47172ecdb2c868973"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/offscreen/jank.js",
+      "bytes": 645,
+      "sha256": "227fa078e8d6666235671863b3124dfc26a71fded08e8ff64d5faa97269c063a"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/offscreen/offscreen.js",
+      "bytes": 188,
+      "sha256": "5eda897e26a3c75963d7b82bfe89b482c2a1eae83d981b4e8211c8d0d52239d6"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/offscreen/scene.js",
+      "bytes": 2078,
+      "sha256": "1ead6935a1268592c1882f99fd58fdeda1ea76e2afbfdaf98868a92b55d1fb1d"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/physics/AmmoPhysics.js",
+      "bytes": 8534,
+      "sha256": "57216c03dc63313425ad696b74492ad747f671d47b96bcc7882edcd624696669"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/physics/JoltPhysics.js",
+      "bytes": 8387,
+      "sha256": "ce1aee86e2776824904716f73f71ed85ad8ccfd3e861bac19ea8b5035c01481e"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/physics/RapierPhysics.js",
+      "bytes": 10551,
+      "sha256": "5db92e264094715d5218569e6d7bd33efc93edaa300397f14764d0edbd951570"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/AfterimagePass.js",
+      "bytes": 4342,
+      "sha256": "02340b529ce8d16cb4bf147b63c8b1606a9f006e5676270e8c824bbb29bc566f"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/BloomPass.js",
+      "bytes": 6405,
+      "sha256": "e7f548867b0cba463d5c86093ecac4647ba786e777f1fff8003b8422d21db0a7"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/BokehPass.js",
+      "bytes": 5531,
+      "sha256": "5b9b0bc5cee6e24b2417da95f40eb2d178943c2ffbacbc4c2993a89d0597bfb3"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/ClearPass.js",
+      "bytes": 2167,
+      "sha256": "69c525e8e3be28999453177a9d0bd1771d27a4d04378307242802fec84301bcb"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/CubeTexturePass.js",
+      "bytes": 3519,
+      "sha256": "3cc339151ad8deb69cbe7fab5c9d70d3190afc1446554256f4149791f7ff438f"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/DotScreenPass.js",
+      "bytes": 2941,
+      "sha256": "ef8fc81f6697a76abf42fe8a5e16343c7254b8ece68f2f2eb7a20190c86e3fe1"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/EffectComposer.js",
+      "bytes": 8477,
+      "sha256": "4b8c855f28eed2570bed898adc0ab89c585a8a281ecb6d905c09d00697f9f50a"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/FilmPass.js",
+      "bytes": 2684,
+      "sha256": "709a6e640b5ced2449e458d57656173208e81af064e414b9c6f775cbf1287ed2"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/FXAAPass.js",
+      "bytes": 738,
+      "sha256": "aa4e87a28f57e5508405730ee6bc09775b33acd3e87b3b24ef0d722b71e9d33a"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/GlitchPass.js",
+      "bytes": 4303,
+      "sha256": "2eb488f278ddf8065b1438a8187d725b6e0e5feb7daf14e114da0d45a30786d3"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/GTAOPass.js",
+      "bytes": 19890,
+      "sha256": "855fd7953e81c1050a4abea8af4bfeb5ad9b6d879f793a9c650e3768aaec62a3"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/HalftonePass.js",
+      "bytes": 2882,
+      "sha256": "af7b1a9b82992c194d3a59ba15d74b4146231f7fbdc37345d4191ec974726aa9"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/LUTPass.js",
+      "bytes": 2230,
+      "sha256": "aef64d31e2528d25bccc00dd0c2d5aaf0a1d10f8ff9c7b66cfb48aeaba54987f"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/MaskPass.js",
+      "bytes": 4694,
+      "sha256": "7cd08eee9d5d6f5578beaddbdcbe9c384f6873810af27f22ab7db3ceeb127aa3"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/OutlinePass.js",
+      "bytes": 23172,
+      "sha256": "c8a82d251b651fad0317f52663e0f5370998bab20a88a29da5d8702cc2db86d6"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/OutputPass.js",
+      "bytes": 4029,
+      "sha256": "f5b81c96e76b6b28b4b3ba8c41c4aeb982b1e03f3d82883242d951b2ab082fa2"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/Pass.js",
+      "bytes": 4218,
+      "sha256": "444b409c235ead986893c472e720da1b779a56985c7d10b279c7944b52bd61c5"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/RenderPass.js",
+      "bytes": 4112,
+      "sha256": "fd91229aacc5830e3984b0f2bdefcf566163ea028f4c1f1ab233fa6665a133ac"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/RenderPixelatedPass.js",
+      "bytes": 8151,
+      "sha256": "7da0c022251a23fecc717d9b9ae438ba53c31b2e579facae559e6f50ac979444"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/RenderTransitionPass.js",
+      "bytes": 5847,
+      "sha256": "3ab3d709c83527d1a4c41e214d89504f863ce1a99de49f6aab9ef093a3efe3f7"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/SAOPass.js",
+      "bytes": 13085,
+      "sha256": "2e49b9a76d75a408ccb7b11d370debb3fb0012feadb25bea601cb1697f946d91"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/SavePass.js",
+      "bytes": 2978,
+      "sha256": "7625b183efa4270f221f082727062ffd2568088473f0e6292938e52d4dc01a2b"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/ShaderPass.js",
+      "bytes": 3228,
+      "sha256": "e2500a5913b26bbf5148ceaae644c6edcff06a18b01494ee37bf856353d2ab9d"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/SMAAPass.js",
+      "bytes": 50379,
+      "sha256": "1a96804b8cb33ba76a67f9a8e77f2d5e2bf47b1a5c9a8476901aa75e24acb85c"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/SSAARenderPass.js",
+      "bytes": 8150,
+      "sha256": "cd2b8e83b32e806091117dfbeff1f8f4e78df0175a4a3acd865b9989df1c420b"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/SSAOPass.js",
+      "bytes": 13443,
+      "sha256": "59944f833d10330f6bdd205260ad06a8ef2bd12a115e4101d81578b249627e3f"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/SSRPass.js",
+      "bytes": 23254,
+      "sha256": "fc5803bb6c76fc3122cfd0be4b03d8d4cb45eeaf993fb8a2074020ffb6880ff3"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/TAARenderPass.js",
+      "bytes": 6467,
+      "sha256": "9382601b054937b1e55459302a2f6031e576eb090de5aab7521b2e7bc39c8ba2"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/TexturePass.js",
+      "bytes": 2920,
+      "sha256": "402cfcdda8e69db5f0faa778c51b97fc2ec740846a088d169f555fc3403b7d7d"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/postprocessing/UnrealBloomPass.js",
+      "bytes": 14388,
+      "sha256": "d92742959879b461f25348b2abddc7ca0d48527e7718340bcfa29fa771e2799a"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/renderers/CSS2DRenderer.js",
+      "bytes": 6976,
+      "sha256": "dd667941bc67380ecb46c79fa682494e19a7b0a953806f7df24e78cfdfc6270e"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/renderers/CSS3DRenderer.js",
+      "bytes": 11103,
+      "sha256": "ff7e2468e6e2e153d8914fd8c0e2dcf162d40bb985d5541daece3b795f9e365c"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/renderers/Projector.js",
+      "bytes": 20281,
+      "sha256": "88b8f366ec65851bcb86345ada56d7be2933544c84180310ca841f46a0a07a67"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/renderers/SVGRenderer.js",
+      "bytes": 15806,
+      "sha256": "8a63563bc1fab84536e3363aa0839b1bbf94e1849dccebfb740dfd08cf5a669f"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/ACESFilmicToneMappingShader.js",
+      "bytes": 2147,
+      "sha256": "bd2bc30e72d766b9752749807a84325846b9227cce8f89e57c450f4718efbec7"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/AfterimageShader.js",
+      "bytes": 1054,
+      "sha256": "17560bddbecec6bde91568d7275b9201bab25019a17089a449146e377a311d9e"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/BasicShader.js",
+      "bytes": 523,
+      "sha256": "df365e491471e506d3665b58efbaf1e07618f18ade42cfae68843438ec72cc07"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/BleachBypassShader.js",
+      "bytes": 1362,
+      "sha256": "fac26f12bc6fe0377db139bd178f3dbd8fba14e26e8bb8613140cd8e39e6c322"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/BlendShader.js",
+      "bytes": 920,
+      "sha256": "6a437abf3ac314fef109209fc7c8809864d1ee18e52d2864a3f2309ec1b5d394"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/BokehShader.js",
+      "bytes": 5940,
+      "sha256": "c47a17eae9f70405025a5149a68f1265de5d5dba5d61282927fb94b0bb3d0619"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/BokehShader2.js",
+      "bytes": 9871,
+      "sha256": "2ea0fbd9348c676e1392f62b935cc27ac157102df64f19550ce368c662cb3ce3"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/BrightnessContrastShader.js",
+      "bytes": 1275,
+      "sha256": "9c72d86e39c9436d291b92210003073e6c1d8a791f05c723221d799eb4867ac0"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/ColorCorrectionShader.js",
+      "bytes": 1024,
+      "sha256": "f40ee720d3cbfd8526d1f85ce8c4a2832f926e36a34926c6b2fb04d96322c430"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/ColorifyShader.js",
+      "bytes": 834,
+      "sha256": "73993a34f2b5036c618d9bb0c7413cb7a15c3fc9bf2ca5f649a17e4cae4ed45b"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/ConvolutionShader.js",
+      "bytes": 1281,
+      "sha256": "bad71ed02351acb701e62e21a9d11f044c2c689d924d714061edb756fbea8ace"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/CopyShader.js",
+      "bytes": 729,
+      "sha256": "a33057d5ac91c43304c186ac0e8816e62bb2ed471d3a00ff3018dfd5c0389718"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/DepthLimitedBlurShader.js",
+      "bytes": 3952,
+      "sha256": "5fcd9cecf0d7a1cb82553cdd346ff6dd6195c6f372fd9815d7b924149a562f31"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/DigitalGlitch.js",
+      "bytes": 2525,
+      "sha256": "873b9b39114ff174ca533be1e998a8c2db925e2fb9808e953c60167813432c63"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/DOFMipMapShader.js",
+      "bytes": 1092,
+      "sha256": "835cae7d3c44ac9b32143d5e213df29a12571d96406d114ba1bc957e82f36856"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/DotScreenShader.js",
+      "bytes": 1384,
+      "sha256": "baf688b542f69df08d830c6227d4de68147dfce9ffb2c18838e6e22716f29bc0"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/ExposureShader.js",
+      "bytes": 729,
+      "sha256": "df7738aa816a84745550d8d21a4e22908708c9865db1a17a4a7586ca96d143c1"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/FilmShader.js",
+      "bytes": 1133,
+      "sha256": "8da49468c1f058c6d75a5c9a6569f7774b61b6d4e923d14db3ac800e3de5b3dd"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/FocusShader.js",
+      "bytes": 2473,
+      "sha256": "04de4137cc5e838ff1641c3450afca8dc7900954154b38334ed801ab4b66ce1f"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/FreiChenShader.js",
+      "bytes": 3153,
+      "sha256": "5b17d604dc9861f8a424ea07a89c225989e0c922bf2f7a083065fa19b3a8f355"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/FXAAShader.js",
+      "bytes": 6815,
+      "sha256": "b8303d179f9d5d40a052483e8cfb49c29afb6e60396080e472a6950b51700dac"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/GammaCorrectionShader.js",
+      "bytes": 818,
+      "sha256": "e73c9ab25b0262c97838355701154c272c792b71f03756a1f7d504c4fca3ab25"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/GodRaysShader.js",
+      "bytes": 7135,
+      "sha256": "a52d4b0e61e4ccc7a0156fb161ace2bec82460e0e984a8180f487b8302c2e12a"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/GTAOShader.js",
+      "bytes": 11910,
+      "sha256": "d4b06ed5bbb7a177be6b0030986916f6f085721e2745e4632ab1773d02ca743c"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/HalftoneShader.js",
+      "bytes": 8771,
+      "sha256": "812c95e5a1e847dc6b7053685cb20a235b5e58e922b30f44cf1fae650cb4919f"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/HorizontalBlurShader.js",
+      "bytes": 1667,
+      "sha256": "a155715ca3bfe4fd1f9efc51f189fecd5c53160df47dd571a7d5936dc436ab0c"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/HorizontalTiltShiftShader.js",
+      "bytes": 1792,
+      "sha256": "772f0865e95c4ecd7e6b016191b5d544d23ea4f048ff0efdc33898ee52fb3fa2"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/HueSaturationShader.js",
+      "bytes": 1678,
+      "sha256": "5b2f1ee9cdb847c6f8b3196cf9912f12eb1361706e312aa54d0c61578c9886df"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/KaleidoShader.js",
+      "bytes": 1200,
+      "sha256": "353f8b188af4e60ceab61464a09d713aa75534abefcfd3f83003f03016db6191"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/LuminosityHighPassShader.js",
+      "bytes": 1291,
+      "sha256": "5044f780b6e6cf863947f64c36fe1587132f7fbe395ada863cd1e5f0388dcf1e"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/LuminosityShader.js",
+      "bytes": 768,
+      "sha256": "32f164b72b1590a9be95be1ecc768fc496de4337370401267d104b12934d9a84"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/MirrorShader.js",
+      "bytes": 1066,
+      "sha256": "4d8002c804b34d135a54e773bf1808d813b67fc8b1eb688d87907293b1e1404a"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/NormalMapShader.js",
+      "bytes": 1165,
+      "sha256": "66273de182be159471d74beefdc303494c3e3b1d247af390f0882214d4bb8f9a"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/OutputShader.js",
+      "bytes": 1876,
+      "sha256": "353479f77a8d7e2629d49ccac9fc2f5dbfdda5442e0adf867b00377a2fcb0cb2"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/PoissonDenoiseShader.js",
+      "bytes": 6945,
+      "sha256": "e01b574599d31ae3b9f08c6112da72c06bbd536ccbde094fd46e4bebe579e473"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/RGBShiftShader.js",
+      "bytes": 1288,
+      "sha256": "69e7872f4719533013da7ca2a0bbbf9f369bc85a6efb6db76361a75fd4816b8b"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/SAOShader.js",
+      "bytes": 5075,
+      "sha256": "2703a3db32a768b551713926c59376455ea9b0aa47c766e81c6ba8a7f19b22b2"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/SepiaShader.js",
+      "bytes": 1104,
+      "sha256": "6376ed42705801c6a9914f10e8594c2f2ccb7564d1f14d5358752a100c03ece8"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/SMAAShader.js",
+      "bytes": 15002,
+      "sha256": "48ce320a6bf5c33806c4fa13ade7e3ab199f7856838d36b05ae82204db8a1c15"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/SobelOperatorShader.js",
+      "bytes": 2546,
+      "sha256": "553abd07b89b64eeacd67d99be66bd873d63b0dcedd4d5db76dfa8e66b697af9"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/SSAOShader.js",
+      "bytes": 6826,
+      "sha256": "57ec7cc10ad3b6a8aafa97be21eca12972c5597ebc3023de1b37102a56c6b23b"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/SSRShader.js",
+      "bytes": 9856,
+      "sha256": "b1c47a7a4d127ad1a07e09eb5f07dea8efa21395110dfe16452505b9ce75ba92"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/SubsurfaceScatteringShader.js",
+      "bytes": 3270,
+      "sha256": "535307fe6c90f9098a6e010adcfb0de0cd3e43815c7079b307f3b4fd19fd497d"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/TechnicolorShader.js",
+      "bytes": 1043,
+      "sha256": "76069639082a38869d7eff6d7f86ac31304ace10e44161085ec8f4563c73b617"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/ToonShader.js",
+      "bytes": 7147,
+      "sha256": "650cf00e7309e8721218e1cb92c1f1a5870a6161151e1cb54865dfaaa5de5014"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/TriangleBlurShader.js",
+      "bytes": 1467,
+      "sha256": "698fa7e5b42a9d0afb2445705c9bd50e62b0a7dd34d19d74acfcc2120d3d4fd7"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/UnpackDepthRGBAShader.js",
+      "bytes": 1017,
+      "sha256": "f96dcc69d6fff0af549cdcc89c28e87309740644c3fd1a733f44e64ecf374933"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/VelocityShader.js",
+      "bytes": 3173,
+      "sha256": "9511c43bd858727f82e1316e5c6861427e6279c764b053ac3a1033dc075fbf92"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/VerticalBlurShader.js",
+      "bytes": 1639,
+      "sha256": "67792abdf08ba2305fc2a2f45ca151f55b66a82f5aebbe45230246cdb72181d7"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/VerticalTiltShiftShader.js",
+      "bytes": 1779,
+      "sha256": "96bed3fafdea8370d1330dc9854f9d604a6def8554db554368c917ee66403742"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/VignetteShader.js",
+      "bytes": 1054,
+      "sha256": "ca778b3a63faef50c5c2305e7c642916febbdae22f255b2db384ec1b86702642"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/VolumeShader.js",
+      "bytes": 9950,
+      "sha256": "9a81dea61c47aed74c863db76733ab3c42bac3b1fc7b1de85fba9ea0c29b39ef"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/shaders/WaterRefractionShader.js",
+      "bytes": 2046,
+      "sha256": "cad67ed479d112d787281b1ab37561659a50d5fad6ad951a2d9f89a45f229cf5"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/textures/FlakesTexture.js",
+      "bytes": 1422,
+      "sha256": "2bb492f2239267428e872940a73b3d548540542762b7a7b423a6c9ffef5b0177"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/transpiler/AST.js",
+      "bytes": 7334,
+      "sha256": "054fb869af50ede20f991ef716e7847974977e9f740e7d207c09cd11b154aafc"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/transpiler/GLSLDecoder.js",
+      "bytes": 22231,
+      "sha256": "801e5261d83961670f33fb1442b199e0423a77f922ced8ca02f89474e9dc2213"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/transpiler/Linker.js",
+      "bytes": 5065,
+      "sha256": "16381f33bc117d3c8f73b9877b4e6831fdce088f2195321d734f01978533447f"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/transpiler/ShaderToyDecoder.js",
+      "bytes": 1010,
+      "sha256": "56973613971018688e7177b9fb93224f4958fc2bb92c0cd1caadea7796d35a88"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/transpiler/Transpiler.js",
+      "bytes": 1560,
+      "sha256": "2db6478bfe14c8b519f4956d209cef05a99bcf746ddbd911294e645d3ef42383"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/transpiler/TranspilerUtils.js",
+      "bytes": 608,
+      "sha256": "4dfce1d0a3cffcffb864b5985c3019338634e19610446484d89789d5ee7f9e7c"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/transpiler/TSLEncoder.js",
+      "bytes": 17461,
+      "sha256": "d7e1c3f6e6b8de4af8ea7715f40061ae7d75f8ead081404f4aa30f8b6ce20a86"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/transpiler/WGSLEncoder.js",
+      "bytes": 18171,
+      "sha256": "dad1d402b04a2b8837976f95d1ae77e22c95af24d088326acc08be55e0ccb2a2"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/AfterImageNode.js",
+      "bytes": 5981,
+      "sha256": "9d4ca47c1e8678208fb147033369b3c4ece01654c03eb23195c15640bba2a987"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/AnaglyphPassNode.js",
+      "bytes": 2706,
+      "sha256": "015514d08997abe1102c77e8106ab4bd6eb4b552e4e904f475e345a5783603fd"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/AnamorphicNode.js",
+      "bytes": 6983,
+      "sha256": "e9df4b171bd3118602ec4035c4918e1fe8cc7f6e2607f05903dbefff3f57cd24"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/BleachBypass.js",
+      "bytes": 987,
+      "sha256": "0ad018923d435e489d0b24d9ec18bac8ebb9417424aa5e39b8d5bd2cbb37c2a4"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/BloomNode.js",
+      "bytes": 14849,
+      "sha256": "466a4bbaa205ed188fdede889305ab41cb73de4f3c52d53b28306d358da60861"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/boxBlur.js",
+      "bytes": 2740,
+      "sha256": "6c4beb86ccc90907d82aae56bdcdb826609c673fd43564fda7f26fc16ccec533"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/ChromaticAberrationNode.js",
+      "bytes": 5766,
+      "sha256": "3f7b77090634797ae1dad7f1be9af75f19f5baaa64cb744070ed153031d865b1"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/DenoiseNode.js",
+      "bytes": 9763,
+      "sha256": "696df0e8bc5e2fafcd6fd1bc8804b1e60000cc9a06022048a05c7cbc87074c09"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/DepthOfFieldNode.js",
+      "bytes": 14705,
+      "sha256": "3e99f19110111cc62baff2dbe68f8dafb6fde3329c13c72f83f88f94c2769a95"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/DotScreenNode.js",
+      "bytes": 2587,
+      "sha256": "2980257546249dd88810a7baed2091d9e89ff9fcea05e4ffa92fb36fce9935e9"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/FilmNode.js",
+      "bytes": 2330,
+      "sha256": "fbbe0fc4d70a9bbbbb26f946c7386cc60373c5cd1e24a19efef4a0ca80b911f2"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/FXAANode.js",
+      "bytes": 9478,
+      "sha256": "fc6050ed5c728c5e06aff8657d9683d32fe7ba43b0cf89402614748733ec2e62"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/GaussianBlurNode.js",
+      "bytes": 10287,
+      "sha256": "9eda1f2bba3ae8d8044f3426f3628374f92e9881653dd34bf4f45faf48da5837"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/GTAONode.js",
+      "bytes": 15353,
+      "sha256": "5e39fafdbcdcab9159ac2b6c6ca757646101eb944b108c9e5d9f1123f28bd06c"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/hashBlur.js",
+      "bytes": 2310,
+      "sha256": "548cfd10ad9d7c8f3063479c6a6922379cb41bdae1b440ac7e588fa62e86c99b"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/LensflareNode.js",
+      "bytes": 8190,
+      "sha256": "ec3a472c6f7872506aefdc633d93b24a12d933a6e2a8a0b782c4bebd405a2205"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/Lut3DNode.js",
+      "bytes": 2722,
+      "sha256": "efcd4449a652889cdf0f6c263e878b7565a6975df2d9681393b4fd57d0ebfdd7"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/MotionBlur.js",
+      "bytes": 1099,
+      "sha256": "7646495fb9e43921bf62c660d6b30f881805130b12061d42c98430d79d31ac91"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/OutlineNode.js",
+      "bytes": 19791,
+      "sha256": "54688af9de7ca35d6b27a658ee5388da4be76b5ef7d152c8dc94c2802d753d56"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/ParallaxBarrierPassNode.js",
+      "bytes": 2080,
+      "sha256": "94fd3fdb877679e5bff06a8ba71d7e800d424bd557630a3a0700842a6944ea39"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/PixelationPassNode.js",
+      "bytes": 9346,
+      "sha256": "d411027fdf6defc0e26495a08653bf61e59b51feb1d16e6b55950474d851eb11"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/RGBShiftNode.js",
+      "bytes": 2459,
+      "sha256": "eb5bbae9b20bdb253b274fa545afcb333847197cfc848528e4d65bee92371f33"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/Sepia.js",
+      "bytes": 572,
+      "sha256": "b4afc21bd4737938726634782908d067148eaa38ea1c5e851eea9dcd1b61bd69"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/SMAANode.js",
+      "bytes": 68049,
+      "sha256": "279d443e1cc4107836c0cca22167719a0fe40f8bc4f89af4f8178aca76ffb53e"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/SobelOperatorNode.js",
+      "bytes": 4551,
+      "sha256": "e5ad9c6f74769a5898ecf2bfe9a8f8e8136fe65cebd91657ff49347d9db3c200"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/SSAAPassNode.js",
+      "bytes": 8724,
+      "sha256": "749e63dcc826fbbdb3e09faf4319af3672f5dfa2672a2e406bb6079bcc660003"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/SSRNode.js",
+      "bytes": 20241,
+      "sha256": "eb4a942411c24472399548e5f6115449e874e2615ba03ba4d696d986b7b8cb0d"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/StereoCompositePassNode.js",
+      "bytes": 4311,
+      "sha256": "ef833477e8924ad53f3daf65a1fe5be2b85edf8ac78aced389790fdc1833cc88"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/StereoPassNode.js",
+      "bytes": 2970,
+      "sha256": "f7bb1855f8c57d8c188aaad8bd67f8bf774833b65d5ab8c8929b581beb8acb44"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/TRAANode.js",
+      "bytes": 12718,
+      "sha256": "223accf23b573421d258452f0554687eb0708ab78f27b1600661380ba88345a4"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/display/TransitionNode.js",
+      "bytes": 4326,
+      "sha256": "9d5748b419c62c9a13d88e310ef9a6fef494f016507ec5726af4a28a140410ea"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/lighting/TiledLightsNode.js",
+      "bytes": 10189,
+      "sha256": "298d52fb7d41e5dc485168118e253cc337c290c8faebf092a0efdfa058c86dfb"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/math/Bayer.js",
+      "bytes": 3789,
+      "sha256": "e4d60c670f45472cbcea3e57a1e2a2a7457f436a2a9d5e7f4b415377553dff83"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/shadows/TileShadowNode.js",
+      "bytes": 12402,
+      "sha256": "c378e8fe3e93412b36d771eb0da21eb8aa757a0cff29cc729db45f614abf74f2"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/shadows/TileShadowNodeHelper.js",
+      "bytes": 5321,
+      "sha256": "398e4a5ce6e70cf0c5e7acc55e77403247c9c88fc14310b09165994705f5e91b"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/tsl/utils/Raymarching.js",
+      "bytes": 1986,
+      "sha256": "fd80b04f0bfbf438971e34b6547b5983d21e0db90fa44b56388b7de9e8b771fb"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/utils/BufferGeometryUtils.js",
+      "bytes": 35539,
+      "sha256": "fda7e946b8e0b5ab39b779206589e7a1079a22eb24efb89d7223e03fdfb1f751"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/utils/CameraUtils.js",
+      "bytes": 3204,
+      "sha256": "9d3fd8e3dbc94f50a45acf41b18a8f1d14254af403e90a19573036d127567def"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/utils/GeometryCompressionUtils.js",
+      "bytes": 13010,
+      "sha256": "d7af11699ffa07f9f38fb790d00b566bc3582dcbd995bda29f2c299d7180693e"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/utils/GeometryUtils.js",
+      "bytes": 5593,
+      "sha256": "649f315d948f16bf32f43b86b3d96f05c9ffe36304ca6c94cf45ea35084d9864"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/utils/LDrawUtils.js",
+      "bytes": 6054,
+      "sha256": "5fff79b3d490c0ef6a3e351a53ca4050096491d0c83dd84aba737f70b4bc0b3f"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/utils/SceneOptimizer.js",
+      "bytes": 10253,
+      "sha256": "386e9c172a722b554c4a4784d4bb5396108f067321713b5f337413d17ac3be0f"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/utils/SceneUtils.js",
+      "bytes": 8634,
+      "sha256": "d2d1673d80cdb919232f8e22fd341f79ec5b6f1c8d7df3fe884ceb8c8fbedc07"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/utils/ShadowMapViewer.js",
+      "bytes": 5925,
+      "sha256": "ab36713911582642d03ad12291ff5719812605526d3db55892fb82206d00952d"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/utils/ShadowMapViewerGPU.js",
+      "bytes": 5974,
+      "sha256": "48cd746233c09d2e2b83a98c33164cfc07e261a9e6a13b83d62e885da67fc8c9"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/utils/SkeletonUtils.js",
+      "bytes": 11062,
+      "sha256": "0761b1e003917b215d25dd81439d854b36034b5a57ce84c2cfe3b02428d7b253"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/utils/SortUtils.js",
+      "bytes": 3354,
+      "sha256": "a69012ad02b7dbdfca8d5384453a3a17c4c8e7c3fbedfa3b1f948c1ef121bf99"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/utils/UVsDebug.js",
+      "bytes": 3427,
+      "sha256": "67869b5c32f8fc4729b5a2a56d00c5a5db60c1d10f8a169c9cba8e84c1865e92"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/utils/WebGLTextureUtils.js",
+      "bytes": 3068,
+      "sha256": "6a8a2f033b0f39480be0d1a289063a1c66ea58bab14cc49498ca03827aade5ee"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/utils/WebGPUTextureUtils.js",
+      "bytes": 2266,
+      "sha256": "891e8f61ca0d15a31d3415bd81afe9b6eb66a19130059a8cdd40ba1a1c67cb42"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/utils/WorkerPool.js",
+      "bytes": 3110,
+      "sha256": "5ac7095fd566bc9ae48376055fd66edf27cb9ebbf9e1269dc206bfd4933ae9eb"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/webxr/ARButton.js",
+      "bytes": 5485,
+      "sha256": "ad2ded03a4128c6e190e6d1988cc2639805182db9be0f6d331554e234986b6d7"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/webxr/OculusHandModel.js",
+      "bytes": 3795,
+      "sha256": "6e91fb356a486d8e112210ed7e8aab8bcd83a1d8b460dbd359e0f5434c27b7ba"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/webxr/OculusHandPointerModel.js",
+      "bytes": 13518,
+      "sha256": "a59a4d28f2a49ea5e1959f7cd51cd2070572e1ef70f5a3ba831569045fa0b981"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/webxr/Text2D.js",
+      "bytes": 1482,
+      "sha256": "067587052ce215954c5dfb46edee49cfcb61e8425df3535699061c3b9f0af20a"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/webxr/VRButton.js",
+      "bytes": 5866,
+      "sha256": "35a7621bbbe776203dad04cddc79c8e1b166dc3b6757d8b907f97df86d8a9d48"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/webxr/XRButton.js",
+      "bytes": 4959,
+      "sha256": "13ceb022e450bfc8ff48e7af8e39faceacf08fea84a844fb82858a126c4e0249"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/webxr/XRControllerModelFactory.js",
+      "bytes": 9959,
+      "sha256": "657235f1d96605b49a14d58667aadaeb649851b78cf2c8b51de85fed33dfaca8"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/webxr/XREstimatedLight.js",
+      "bytes": 6112,
+      "sha256": "2ca82368577d41ace266b6e96671ef57e3076f49323eefac20736c32a0f47eff"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/webxr/XRHandMeshModel.js",
+      "bytes": 3556,
+      "sha256": "acd1e6836958ce262f70ac64adcd9b365d2136bbdc29c75c3835d3183a6131a1"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/webxr/XRHandModelFactory.js",
+      "bytes": 4260,
+      "sha256": "9a9200e3fcc22aef67a9dea466f7130166a00c5b7b22cd2e9d9a6abd7de617e1"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/webxr/XRHandPrimitiveModel.js",
+      "bytes": 3494,
+      "sha256": "401ec6836ba4ca82f709e07329d6df4f687c91062b532a1e30415fb689ffdb97"
+    },
+    {
+      "path": "city-atlas/dist/vendor/addons/webxr/XRPlanes.js",
+      "bytes": 2455,
+      "sha256": "b6377bb1355796457fa954e69656c26e23b02761628c21cf8dbe03b09ccc4773"
+    },
+    {
+      "path": "city-atlas/dist/vendor/THREE-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    {
+      "path": "city-atlas/dist/vendor/three.core.js",
+      "bytes": 1403455,
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20"
+    },
+    {
+      "path": "city-atlas/dist/vendor/three.module.js",
+      "bytes": 603113,
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
+    },
+    {
+      "path": "city-atlas/package-lock.json",
+      "bytes": 546,
+      "sha256": "ac96f5c474d70bd73d30850b15a48e9d49ed9897f8fff0d042e52b4273132a1b"
+    },
+    {
+      "path": "city-atlas/package.json",
+      "bytes": 1896,
+      "sha256": "4f0cd03ef28186f189cb288e5cdc62af68c4ffa65770eafea5ec6188bec41e4b"
+    },
+    {
+      "path": "city-atlas/README.md",
+      "bytes": 29511,
+      "sha256": "8b9746608698ea248f9f39c1802c3fbee2f8207b789426acee5dfef8c8fe970f"
+    },
+    {
+      "path": "city-atlas/server.mjs",
+      "bytes": 863,
+      "sha256": "96738664edb32870db4336c1db8875e277228390c7a90e81e0a41965eeacdc89"
+    },
+    {
+      "path": "city-atlas/tools/benchmark_performance.py",
+      "bytes": 3656,
+      "sha256": "f08f0131919a7365cb5a3c09262b78b77d3c620954ebe9468829693d3da1ad8a"
+    },
+    {
+      "path": "city-atlas/tools/blender_mcp.py",
+      "bytes": 3602,
+      "sha256": "93981f219272a3f108c404759ddbd5ddfef53b89c3f02213cddcc817052da63b"
+    },
+    {
+      "path": "city-atlas/tools/blender_scene.py",
+      "bytes": 9212,
+      "sha256": "5dc63e77cff0e6206f8be138561c27069e462bd0b28f4e74337aa302f9d631f0"
+    },
+    {
+      "path": "city-atlas/tools/call_blender_mcp.py",
+      "bytes": 1731,
+      "sha256": "6e4ba9130f495ff4cbc4f40f4dc63acf22460542bacb91409e275433c6a89327"
+    },
+    {
+      "path": "city-atlas/tools/check_residential_camera.py",
+      "bytes": 1510,
+      "sha256": "4e79bf87a798087db1395380d64f5c6011ce804936a41f969814f000958913b7"
+    },
+    {
+      "path": "city-atlas/tools/debug_render.py",
+      "bytes": 1056,
+      "sha256": "3f0cd2e9cb7d4c52d2478f27cee9afd30e623ddca789b39afc40f82a684d46f1"
+    },
+    {
+      "path": "city-atlas/tools/inspect_garden_startup.py",
+      "bytes": 861,
+      "sha256": "977db6eab09723a41e6b3e857f14cf6e0e5b85f884295d9771e438fb11722027"
+    },
+    {
+      "path": "city-atlas/tools/inspect_hospital_integration.py",
+      "bytes": 2135,
+      "sha256": "11f654740eb8bc65eea0199c83af4c8f9112055fa55191356e7048d3986fba49"
+    },
+    {
+      "path": "city-atlas/tools/inspect_mall_integration.py",
+      "bytes": 1389,
+      "sha256": "002eaf81c51250a7a2659a753ac08a6a7a7f503f43cba970a331ebadfb8bcafa"
+    },
+    {
+      "path": "city-atlas/tools/inspect_river_integration.py",
+      "bytes": 1282,
+      "sha256": "7ad8194fa330e7c1ef9995318cb6ef87bcfa1691fb0beaa56217b28d92ebb5af"
+    },
+    {
+      "path": "city-atlas/tools/inspect_scene.py",
+      "bytes": 1321,
+      "sha256": "60615fcc37b770f125699a6712565df01e1d234d319eb460422b4683f1b8dd1c"
+    },
+    {
+      "path": "city-atlas/tools/install_courtyard.py",
+      "bytes": 5470,
+      "sha256": "1a0f267c01277985ac4b79f2161464ed350fb82f42dce7ae2f5f3fd81d537888"
+    },
+    {
+      "path": "city-atlas/tools/install_headquarters.py",
+      "bytes": 6474,
+      "sha256": "eb291abf7ca73d238585066257344e44217301a565186043d7d2edf2ef5f3663"
+    },
+    {
+      "path": "city-atlas/tools/requirements.txt",
+      "bytes": 12,
+      "sha256": "4fe75062c5d424bbc86a8cd58c63ab19aeffe4f0a0e100022252c8032e12ee5b"
+    },
+    {
+      "path": "city-atlas/tools/vendor.mjs",
+      "bytes": 1324,
+      "sha256": "20321e926c9e8f37f486d661df03cecdbd582c6dca23374fa5aa0a648587896b"
+    },
+    {
+      "path": "city-atlas/tools/verify_arena_integration.py",
+      "bytes": 9367,
+      "sha256": "3914cf2ba5f6df2c3f9313030281398301a4ef00d719d4d478ca46712e212fe6"
+    },
+    {
+      "path": "city-atlas/tools/verify_courtyard_integration.py",
+      "bytes": 6572,
+      "sha256": "fc39fc172f91b39e0d3837cecf455f8031235ec51be64d7bfeab11c60b2a7a56"
+    },
+    {
+      "path": "city-atlas/tools/verify_forest_integration.py",
+      "bytes": 9494,
+      "sha256": "1a85a9321d7dfc0df14f301e50d65c2af83f5b5b14796d56b78e688f73f1d7ca"
+    },
+    {
+      "path": "city-atlas/tools/verify_free_view.py",
+      "bytes": 11560,
+      "sha256": "e3f31e5a49e70b225fdc597164dd82c483e35ec7df6e51b4a1193d50d9450dd4"
+    },
+    {
+      "path": "city-atlas/tools/verify_garden_integration.py",
+      "bytes": 15619,
+      "sha256": "e321f4307846e9eea429757ccf560579b96e3fd3a6bdc20f54509031dfe6f05d"
+    },
+    {
+      "path": "city-atlas/tools/verify_garden_replacement.py",
+      "bytes": 5434,
+      "sha256": "cd2ef57ba7e6696d6dff5ec009ef090007cb1c17413db078b670efdaeca2e768"
+    },
+    {
+      "path": "city-atlas/tools/verify_headquarters_integration.py",
+      "bytes": 7410,
+      "sha256": "d1794b2ee6893a5b652ba3fac1a61078b8f244729851bf73a8873a086028b80c"
+    },
+    {
+      "path": "city-atlas/tools/verify_hospital_integration.py",
+      "bytes": 8530,
+      "sha256": "bc003d4eefa6f654c83ab8a1aa594220df9984426c724929d74eb965f13a7a64"
+    },
+    {
+      "path": "city-atlas/tools/verify_mall_integration.py",
+      "bytes": 11113,
+      "sha256": "d626b1dab09ad25a96168b7035e1dfe686a3594e8cdc9b2943ec0ff19e04b9e1"
+    },
+    {
+      "path": "city-atlas/tools/verify_mixed_integration.py",
+      "bytes": 8680,
+      "sha256": "f37183e2d60e83f7a9c8e74869cbfd3d959cc3ae78d580b0ad0095b56f2eed41"
+    },
+    {
+      "path": "city-atlas/tools/verify_office_adapter.py",
+      "bytes": 2791,
+      "sha256": "e235a3bb977f6ed19097d9667514db59f9f3139dfa6415b7d67253479fd77fc7"
+    },
+    {
+      "path": "city-atlas/tools/verify_office_integration.py",
+      "bytes": 12925,
+      "sha256": "e455022fa53e06ca2fa51574345148eb9e0e2b517595ca63643d1b0b19434bff"
+    },
+    {
+      "path": "city-atlas/tools/verify_office_logic.py",
+      "bytes": 13199,
+      "sha256": "4f94067aaa4b635a57f634757b630ddcc00d697e4ffc00e884aebab7bce8df2d"
+    },
+    {
+      "path": "city-atlas/tools/verify_office_render.py",
+      "bytes": 3252,
+      "sha256": "cc84a796a894a514e32028e149d4e7182a9d79af37ee4c819191cd9b4adeb176"
+    },
+    {
+      "path": "city-atlas/tools/verify_office_replacement.py",
+      "bytes": 5879,
+      "sha256": "859a648cce165d4c335415bb35cc3a97cd558b05644907cad9b13d19c17319b7"
+    },
+    {
+      "path": "city-atlas/tools/verify_park_integration.py",
+      "bytes": 8094,
+      "sha256": "149dd59035d0a9d4c1771ab8bda818cc3acd1328120f823ad6d8a36147259c0c"
+    },
+    {
+      "path": "city-atlas/tools/verify_performance_ui.py",
+      "bytes": 3813,
+      "sha256": "9fb105932879e1361ed2487e5bb88baf53ee7371c30a19072f6697de6cece79a"
+    },
+    {
+      "path": "city-atlas/tools/verify_render_budget.py",
+      "bytes": 7021,
+      "sha256": "14f9d97d6fe72b21c9b8be86b56cfe4c4353089b4ce968405ad592145b4c4601"
+    },
+    {
+      "path": "city-atlas/tools/verify_residential_integration.py",
+      "bytes": 7391,
+      "sha256": "ee673c34bd2e4aaba45b329847015920e070905bf1eece415ddded63b57ca34b"
+    },
+    {
+      "path": "city-atlas/tools/verify_river_integration.py",
+      "bytes": 8869,
+      "sha256": "394f205ab2b566141c5888f0bf18e71cf444eb8e45617cd8dd32b30c10eee93c"
+    },
+    {
+      "path": "city-atlas/tools/verify_river_refinement.py",
+      "bytes": 10405,
+      "sha256": "2fbe3009ee8870c07ba1f547e600c778f738a58243663a77779b09f2fcb141db"
+    },
+    {
+      "path": "city-atlas/tools/verify_shanghai_integration.py",
+      "bytes": 7512,
+      "sha256": "3360a92bf6a264e59f2c8edc02edb1d7ae7199a7f8d278ee4a3bf9562ec279ca"
+    },
+    {
+      "path": "city-atlas/tools/verify_skyline_integration.py",
+      "bytes": 12368,
+      "sha256": "c8c9307c9b044c29b4e19895dd6830e7b60271b3f9f175e23b1bd735e21144fa"
+    },
+    {
+      "path": "city-atlas/tools/verify_slab_integration.py",
+      "bytes": 6739,
+      "sha256": "e3448c90fc4ef07940632298a7e114f48ef968d57826948b304eb70e659f322b"
+    },
+    {
+      "path": "city-atlas/tools/verify_sports_integration.py",
+      "bytes": 10249,
+      "sha256": "e7966b86c68324eed6cfc201f839faf1fb4b7b03b849a8fd221b65957a2536b7"
+    },
+    {
+      "path": "city-atlas/tools/verify_university_integration.py",
+      "bytes": 7629,
+      "sha256": "79ce7d4c68b0b8d596a3af9faa81b9d9b9b3262dbc94928998a77da833d28240"
+    },
+    {
+      "path": "city-atlas/tools/verify_web.py",
+      "bytes": 5698,
+      "sha256": "f7016736b49d36e169382927d06271f784c06aa4ed3f8ec03f84c82f637c937e"
+    },
+    {
+      "path": "city-atlas/启动小镇.cmd",
+      "bytes": 103,
+      "sha256": "ebe4d73af5085271c9df350aa83332ece87def99bf341b8bb5a505168fbafe04"
+    },
+    {
+      "path": "community-track/build.cjs",
+      "bytes": 830,
+      "sha256": "a1131f0fb9f790c43f326c6d817bd698bdca691cc446c651f9a0149a636da012"
+    },
+    {
+      "path": "community-track/integration-example.mjs",
+      "bytes": 1394,
+      "sha256": "1603b5cd4939b03a5d792e1b606dbebee5a80efdc7f30734c2759baa26ad6fc2"
+    },
+    {
+      "path": "community-track/model.mjs",
+      "bytes": 16516,
+      "sha256": "380cc746f2344ef53a07ec15af012e8499c81d2f6704c2bbe711f16a2414fe50"
+    },
+    {
+      "path": "community-track/package.json",
+      "bytes": 216,
+      "sha256": "8e2e947fe20f3af0046cd319e80cd8a6cb6079aef8783f76325bb9ca7156369b"
+    },
+    {
+      "path": "community-track/README.md",
+      "bytes": 5764,
+      "sha256": "a6122adda5463c9658907a14e3160dddf65cd92192b64f9a5a7ef53fedcbbc4a"
+    },
+    {
+      "path": "community-track/sports-manifest.json",
+      "bytes": 1545,
+      "sha256": "35f9a0fb5175f9eec422d71d494400a058ac8b26493b11184f3884f65b7fb1bb"
+    },
+    {
+      "path": "community-track/src/app.js",
+      "bytes": 6479,
+      "sha256": "df82d84e851fda063b00eecbc3d3e68ea5033e57a6a2e128a8f47e8da61e48a0"
+    },
+    {
+      "path": "community-track/src/model.js",
+      "bytes": 16516,
+      "sha256": "380cc746f2344ef53a07ec15af012e8499c81d2f6704c2bbe711f16a2414fe50"
+    },
+    {
+      "path": "community-track/src/shell.html",
+      "bytes": 2343,
+      "sha256": "ffde9b28cd4d6aa81a41f75b8972f149f551b76f6cb3aa3a86dd04ae1037be3f"
+    },
+    {
+      "path": "community-track/src/style.css",
+      "bytes": 3980,
+      "sha256": "6218d183c11a4544df2223c2c7f8927b19a6c78f6eca89c9db530e12cb53ff83"
+    },
+    {
+      "path": "community-track/THREE-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    {
+      "path": "community-track/tools/blender_import.py",
+      "bytes": 9628,
+      "sha256": "c689ab3c800b192f293634304f45c6e021cd870d06b3ce36b30442b2105f8aab"
+    },
+    {
+      "path": "community-track/tools/blender_mcp.py",
+      "bytes": 2136,
+      "sha256": "4bbd4584d6670861020e2a5d4dde23204af6ce700c5a4b8864323021b729fd75"
+    },
+    {
+      "path": "community-track/tools/inspect_model.py",
+      "bytes": 1957,
+      "sha256": "29340af5b13ae827a0a3e4fb2d5741c22acdb7e3b18fa823da3990ec81504a4e"
+    },
+    {
+      "path": "community-track/tools/package_delivery.py",
+      "bytes": 1853,
+      "sha256": "866ee228c5d4c54ff61199263bf41768861c5320993521579c56a66932e8b382"
+    },
+    {
+      "path": "community-track/tools/render_blender.py",
+      "bytes": 4985,
+      "sha256": "cda663721872f99472427d5b482a5df51c652e6495add3ab916703d4d9db638a"
+    },
+    {
+      "path": "community-track/tools/run_blender_mcp.py",
+      "bytes": 1242,
+      "sha256": "31e16d14e0903426cfb644dee1ca88fcc6b2b2e39d86e317f768e3b0778d3ada"
+    },
+    {
+      "path": "community-track/tools/show_scene.py",
+      "bytes": 635,
+      "sha256": "205538c2482c39cbb6e2ce30c4297821c0d003be00a7a90aa7e09efc0ca7495f"
+    },
+    {
+      "path": "community-track/tools/verify.py",
+      "bytes": 6069,
+      "sha256": "c87033df94b8f25a638c547be72dd29e51251013c7e84d181864be6c2c49cc7e"
+    },
+    {
+      "path": "community-track/tools/verify_blender.py",
+      "bytes": 1659,
+      "sha256": "f60bd48ee253169d365ec447e4c23a5163054523ced4115df7061f0a4749f6ea"
+    },
+    {
+      "path": "community-track/tools/verify_integration.py",
+      "bytes": 2866,
+      "sha256": "a07c85e5438b50b96d6ea4a178cfb5eddd4ed25307820922f42861b6ead98454"
+    },
+    {
+      "path": "dome-arena/arena-manifest.json",
+      "bytes": 2298,
+      "sha256": "6febc93e45092d6f0a46e66974d9e802f793d762948b6e8842e15b35fde6e91b"
+    },
+    {
+      "path": "dome-arena/arena-module.mjs",
+      "bytes": 25620,
+      "sha256": "545c81b906adcaa8ad97414e9cc813d955fd56e5283ae5d5e77439a9ef63aac3"
+    },
+    {
+      "path": "dome-arena/build.cjs",
+      "bytes": 842,
+      "sha256": "938cd7f470b182acb1dc22467f9ff6e22b0564f9d350942c3fdcd51b256a6068"
+    },
+    {
+      "path": "dome-arena/integration-example.mjs",
+      "bytes": 2317,
+      "sha256": "ac6cd8c4c7e83b7518c9e06f5455ed6bd12517e2e85090c9ccf62fc46ab4ae93"
+    },
+    {
+      "path": "dome-arena/package.json",
+      "bytes": 250,
+      "sha256": "ef1c2e95d4d58827a86915a13e0bbb43a2d36d376c18e565a508a9a44d7b2760"
+    },
+    {
+      "path": "dome-arena/README.md",
+      "bytes": 7470,
+      "sha256": "78848f3a5f6eece96ff7c1767a9f3d99f17a9f1937a1af465a63406f2638b4b9"
+    },
+    {
+      "path": "dome-arena/release-sha256.json",
+      "bytes": 4750,
+      "sha256": "71a2de01f1d216b3418aca8070b4c9808f97833a32b3ebbefeaa106741763dcb"
+    },
+    {
+      "path": "dome-arena/src/app.js",
+      "bytes": 21304,
+      "sha256": "b96677ce6ecec5de52370a0b8ddb6424075888c63031e25aad245ba060aaa239"
+    },
+    {
+      "path": "dome-arena/src/arena-model.js",
+      "bytes": 25620,
+      "sha256": "545c81b906adcaa8ad97414e9cc813d955fd56e5283ae5d5e77439a9ef63aac3"
+    },
+    {
+      "path": "dome-arena/src/shell.html",
+      "bytes": 5364,
+      "sha256": "9f519232631051d6448fd506954cd663d7b517f1e87a048ac1283722d2204f12"
+    },
+    {
+      "path": "dome-arena/src/style.css",
+      "bytes": 9734,
+      "sha256": "60fc17218b26aad382922f47b6f794fa99fd38183dc5fb75a09c4fa77e67713c"
+    },
+    {
+      "path": "dome-arena/THREE-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    {
+      "path": "dome-arena/tools/blender_import.py",
+      "bytes": 9621,
+      "sha256": "efab3b2ea6145a57389928d9e6586c874424c4c7fe9a7e56aff6b4f3b49819d5"
+    },
+    {
+      "path": "dome-arena/tools/blender_mcp.py",
+      "bytes": 1545,
+      "sha256": "20b1ad0a43b453e42f685abc3e0ed1d3bf56cf064941a581e5a60bda5f0a7052"
+    },
+    {
+      "path": "dome-arena/tools/finalize_blend.py",
+      "bytes": 955,
+      "sha256": "a986391872dac7e31353472cab0eaeb475aeb6a359e4b6f90cddc70707a61a29"
+    },
+    {
+      "path": "dome-arena/tools/inspect_arena.py",
+      "bytes": 2323,
+      "sha256": "69ce6fd6768beaad0b27a4ae8ad87dd0e3442e5e5a21661b985a9ccc0fc73b34"
+    },
+    {
+      "path": "dome-arena/tools/mcp_client.py",
+      "bytes": 890,
+      "sha256": "355b1e5c8112627a54684cc96c818d2e69ab0680e6f5fc4450c615196f530226"
+    },
+    {
+      "path": "dome-arena/tools/package_release.py",
+      "bytes": 1248,
+      "sha256": "2d466de19fab8555dc42bde6ec07f58f2e10a94ecb9374c300f8079898b518e7"
+    },
+    {
+      "path": "dome-arena/tools/render_blender.py",
+      "bytes": 5699,
+      "sha256": "31c0c61e1d7c3ded97f12f265bad63527d3d738990fb0a355a9b2a052bb5ee14"
+    },
+    {
+      "path": "dome-arena/tools/run_blender_mcp.py",
+      "bytes": 988,
+      "sha256": "0d7e1da0bb6a9318812f0b3e42785885aa383ec717a04dc25941b54a590222e8"
+    },
+    {
+      "path": "dome-arena/tools/verify_arena.py",
+      "bytes": 11486,
+      "sha256": "fb093b23d84a2610fff0d397d57f4d3ec8d6209039c48523e151b6de78a28d0f"
+    },
+    {
+      "path": "dome-arena/tools/verify_blend.py",
+      "bytes": 1387,
+      "sha256": "1c8fc0e826e3a18df3f8245dbf44716cba40d12f37009f3b223a2392790e2ad7"
+    },
+    {
+      "path": "dome-arena/tools/verify_integration.py",
+      "bytes": 2444,
+      "sha256": "39daac5d5c9cd516c31a3d73f49ac6be6add1f77157c06a8569fd8f9803e313a"
+    },
+    {
+      "path": "henglian-headquarters/build.cjs",
+      "bytes": 1205,
+      "sha256": "eb4bb5c1cdebce836c3d786ae8a785a8bf38d852804aa29778ecd7084ed72f60"
+    },
+    {
+      "path": "henglian-headquarters/ecology.js",
+      "bytes": 8788,
+      "sha256": "ce5a7a7eb11a18c191a28d6b1709056c6926b46410cf93380e59b6914d7529a1"
+    },
+    {
+      "path": "henglian-headquarters/headquarters-manifest.json",
+      "bytes": 6925,
+      "sha256": "e94f8be1451395fc42c55cfc122e6f48da7de6eb0f84a84ba2dad87f98a404dd"
+    },
+    {
+      "path": "henglian-headquarters/integration-example.mjs",
+      "bytes": 1445,
+      "sha256": "96908fda5dee1cba018379fc8cb416de27d88e9240a591f0466dcab9c824e7ba"
+    },
+    {
+      "path": "henglian-headquarters/model.mjs",
+      "bytes": 26243,
+      "sha256": "869ef0f30aabca7c72fc3a3085a94b2200fac623fbe4825ff5f3b5629cde707a"
+    },
+    {
+      "path": "henglian-headquarters/package.json",
+      "bytes": 274,
+      "sha256": "70a955e187c65aa778b5545502b884903a4fbfeddb8b4a2ca5763ac754b5380f"
+    },
+    {
+      "path": "henglian-headquarters/README.md",
+      "bytes": 6673,
+      "sha256": "c999024085ab5edcdd9a0111638dae12d3464a1ec3a7731eb023aa27182f869a"
+    },
+    {
+      "path": "henglian-headquarters/src/app.js",
+      "bytes": 18441,
+      "sha256": "ec1b7f98dff88cc01a466d0fc8b9a0c002b44139991e9aa5b880534438bbd52e"
+    },
+    {
+      "path": "henglian-headquarters/src/ecology.js",
+      "bytes": 8788,
+      "sha256": "ce5a7a7eb11a18c191a28d6b1709056c6926b46410cf93380e59b6914d7529a1"
+    },
+    {
+      "path": "henglian-headquarters/src/model.js",
+      "bytes": 26243,
+      "sha256": "869ef0f30aabca7c72fc3a3085a94b2200fac623fbe4825ff5f3b5629cde707a"
+    },
+    {
+      "path": "henglian-headquarters/src/shell.html",
+      "bytes": 4528,
+      "sha256": "532bb418809357d0871d17f61d831f113b416025c321611e979634bb74b5dfbd"
+    },
+    {
+      "path": "henglian-headquarters/src/stairs.js",
+      "bytes": 3898,
+      "sha256": "73dcdbb80ff89992a892b98838175adc4932fe41f84fc922a3f569ecff890468"
+    },
+    {
+      "path": "henglian-headquarters/src/style.css",
+      "bytes": 7837,
+      "sha256": "c52bf5a2c1c7d737369253808f4533b8c46731fe3238defbf715e35e1b1924aa"
+    },
+    {
+      "path": "henglian-headquarters/stairs.js",
+      "bytes": 3898,
+      "sha256": "73dcdbb80ff89992a892b98838175adc4932fe41f84fc922a3f569ecff890468"
+    },
+    {
+      "path": "henglian-headquarters/THREE-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+    },
+    {
+      "path": "henglian-headquarters/tools/architecture.txt",
+      "bytes": 11767,
+      "sha256": "98ba215a038827549e85f722bd9f89010995a137ef9d319ab5d87c079c7980f5"
+    },
+    {
+      "path": "henglian-headquarters/tools/blender_import.py",
+      "bytes": 13456,
+      "sha256": "14b5a11f575717c9aa6981492f620862639be0253aeb98dd1905ae14482a8052"
+    },
+    {
+      "path": "henglian-headquarters/tools/blender_mcp.py",
+      "bytes": 2527,
+      "sha256": "5ea4c091525022e0f3bb2bc5a662c04a6f29d54de669e1a794fd9dcc13b2c81c"
+    },
+    {
+      "path": "henglian-headquarters/tools/inspect_model.py",
+      "bytes": 3195,
+      "sha256": "df417e2f4bef4dc89fec70b741dfc05baeab53bdd1e20fb98b22e36ff887750e"
+    },
+    {
+      "path": "henglian-headquarters/tools/package_delivery.py",
+      "bytes": 2397,
+      "sha256": "7019f3d8a375bd7d308dccbfeeb70a620ca21cc09d54f04c3d691c17f75b66e1"
+    },
+    {
+      "path": "henglian-headquarters/tools/refine.py",
+      "bytes": 4353,
+      "sha256": "10118c99785354bf958a62535fb24bd77b010c32abf072e0cd2d624009f7a8c5"
+    },
+    {
+      "path": "henglian-headquarters/tools/render_blender.py",
+      "bytes": 7900,
+      "sha256": "b8f15b2ea2a6c471c1548fc96102c5e0a6738f34765fcf6d7dcf1795cf9ee105"
+    },
+    {
+      "path": "henglian-headquarters/tools/run_blender_mcp.py",
+      "bytes": 1484,
+      "sha256": "e2eed93fd9f95f799ae99d31dc0026d480fedb4fc06f64b3534e5f6b1add1976"
+    },
+    {
+      "path": "henglian-headquarters/tools/setup.py",
+      "bytes": 4215,
+      "sha256": "fb1a1d5cc6e49dab5d3a85e8bf951c6eafef712d74bb736379e88b8a18637d3c"
+    },
+    {
+      "path": "henglian-headquarters/tools/show_scene.py",
+      "bytes": 629,
+      "sha256": "7f745a3c4f6d5d2e9b0ffe00c5c647bf7a4e57be3af77718a029726bff3afa09"
+    },
+    {
+      "path": "henglian-headquarters/tools/upgrade_v2.py",
+      "bytes": 5740,
+      "sha256": "f0446d1ef7b0d0743958e5a512037a467b70a9714749eabb1be444e30ed3dc69"
+    },
+    {
+      "path": "henglian-headquarters/tools/verify.py",
+      "bytes": 8653,
+      "sha256": "6cec21ff5b76672ad463927d4cd49bc0df184ec32ad9debe32f5dca7da5f8124"
+    },
+    {
+      "path": "henglian-headquarters/tools/verify_blender.py",
+      "bytes": 2875,
+      "sha256": "d95d46f546c940c03eb8ff0835dcaa48920445c79598c0291c2b0fc3afc23e33"
+    },
+    {
+      "path": "henglian-headquarters/tools/verify_integration.py",
+      "bytes": 3203,
+      "sha256": "971cad35da34506aea34fa5d62fa0f2897470b472825b2d7c26afb3fad6b95e4"
+    },
+    {
+      "path": "hospital-campus/build.cjs",
+      "bytes": 883,
+      "sha256": "612a03353203c9ce3443977c061946b162d9c03d6d3a6ba632a8bc7cac9b88d2"
+    },
+    {
+      "path": "hospital-campus/hospital-manifest.json",
+      "bytes": 2309,
+      "sha256": "1176f43e5a0862c6dd240ef8cce9c33e825ba22e8e7ac1d6cb98c23f58ee440e"
+    },
+    {
+      "path": "hospital-campus/hospital-module.mjs",
+      "bytes": 24400,
+      "sha256": "cc85e5485e74a2759ea711ae2c36d9ad8dfbc3d3cc48067488d3eaeb6a233a95"
+    },
+    {
+      "path": "hospital-campus/package.json",
+      "bytes": 313,
+      "sha256": "a29a003ee6192adf3c9ba0155edbe0b54338d7625cd3149183c49a0b5d442693"
+    },
+    {
+      "path": "hospital-campus/src/app.js",
+      "bytes": 18904,
+      "sha256": "18e91ff196c33cfcd231c9f753f7db2621b7971530fc43bf25b8013ef17d7003"
+    },
+    {
+      "path": "hospital-campus/src/hospital-model.js",
+      "bytes": 24400,
+      "sha256": "cc85e5485e74a2759ea711ae2c36d9ad8dfbc3d3cc48067488d3eaeb6a233a95"
+    },
+    {
+      "path": "hospital-campus/src/shell.html",
+      "bytes": 6084,
+      "sha256": "eaf62ab5939e6dceb7455154a5c08184f27ee72aedb762f48920baf2f7f2f7de"
+    },
+    {
+      "path": "hospital-campus/src/style.css",
+      "bytes": 10750,
+      "sha256": "192d79286b695b0af22592afadf359490fd2277a168cab90bc9f934ca5931d82"
+    },
+    {
+      "path": "hospital-campus/THREE-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    {
+      "path": "hospital-campus/tools/audit_blend.py",
+      "bytes": 1385,
+      "sha256": "e79e5fa6f9aa225ef795adf50d67aeb3668e6f43fe4f7793efb187c386b7bdd1"
+    },
+    {
+      "path": "hospital-campus/tools/blender_import.py",
+      "bytes": 8322,
+      "sha256": "52d1ff07afb592e1d24c414263787db31623fc764aac8b61f38dafb128b76cd0"
+    },
+    {
+      "path": "hospital-campus/tools/inspect_hospital.py",
+      "bytes": 1883,
+      "sha256": "9305798244fa2cf2815770ded794b83e3b89d8631d949589105cb236c72bfa7f"
+    },
+    {
+      "path": "hospital-campus/tools/mcp_client.py",
+      "bytes": 874,
+      "sha256": "53126baaf3f1db907e23ae183705f7873629448a410870b4d2b2783f2ebdf225"
+    },
+    {
+      "path": "hospital-campus/tools/package_delivery.py",
+      "bytes": 1531,
+      "sha256": "374cff03a288a1f9c239c425bb2c2a2a63937629e7e173c8f56ef734120c8fae"
+    },
+    {
+      "path": "hospital-campus/tools/render_blender.py",
+      "bytes": 1900,
+      "sha256": "4764ff4511e4d6c6659c60dee933843f5afb02efe1d654f5beae3adced4156df"
+    },
+    {
+      "path": "hospital-campus/tools/start_render_mcp.py",
+      "bytes": 545,
+      "sha256": "375cbfdeed3c17f61700b8c778d125579c43a665dc0543f620f98fe114a3abcc"
+    },
+    {
+      "path": "hospital-campus/tools/verify_hospital.py",
+      "bytes": 7938,
+      "sha256": "a03686800e4e888068271f4b3dae61d5fdb8f59cfa6c216791b2332ae1356544"
+    },
+    {
+      "path": "hospital-campus/town-integration.example.mjs",
+      "bytes": 1554,
+      "sha256": "4c7fe49484dc8d62c856bd1232c310865719cefc27a3d56114410be31795560d"
+    },
+    {
+      "path": "hospital-campus/交付清单.json",
+      "bytes": 5911,
+      "sha256": "01ad13a909328d6eb38a87ca76e84da7a6156a53db3310d9f083f8fea988b236"
+    },
+    {
+      "path": "hospital-campus/使用与接入说明.txt",
+      "bytes": 6584,
+      "sha256": "34533c8d1487c0843a1870c45a6fd651b812ef150783899082ced0b03fec90a9"
+    },
+    {
+      "path": "jiheng-office/build.cjs",
+      "bytes": 981,
+      "sha256": "f15be4ae294079e7d017e084cfc5932a0b27a58944e1698611881756f0c52063"
+    },
+    {
+      "path": "jiheng-office/integration-example.mjs",
+      "bytes": 1343,
+      "sha256": "5f31a7e72904982b0779ff0d3d804444dd937ee5acfce5f591ecb947a4cfb7e9"
+    },
+    {
+      "path": "jiheng-office/model.mjs",
+      "bytes": 28687,
+      "sha256": "e89a2efb4b016f29c3ded454bb19be44c598f54f22020602fd7979306afeb7d5"
+    },
+    {
+      "path": "jiheng-office/office-manifest.json",
+      "bytes": 4531,
+      "sha256": "52573b545f4557d53f7d2682943459837f7455459c930b9eadd537fae4b89eb7"
+    },
+    {
+      "path": "jiheng-office/package.json",
+      "bytes": 280,
+      "sha256": "fc096987b8358046f506783b331ce0edf432b0556840478455321254ffc45692"
+    },
+    {
+      "path": "jiheng-office/README.md",
+      "bytes": 6618,
+      "sha256": "e12bf954b200e3955f5135d9c104c2104e52361b7c528f1f28a38a8cc4424513"
+    },
+    {
+      "path": "jiheng-office/src/app.js",
+      "bytes": 16657,
+      "sha256": "c1bcffb2a23e10100a0ad1e1e1216a77994646b7f92f464ac4e96b8f588343c1"
+    },
+    {
+      "path": "jiheng-office/src/model.js",
+      "bytes": 28687,
+      "sha256": "e89a2efb4b016f29c3ded454bb19be44c598f54f22020602fd7979306afeb7d5"
+    },
+    {
+      "path": "jiheng-office/src/shell.html",
+      "bytes": 4089,
+      "sha256": "ab426bb797a601d2a335bda04547fa05cc40379aa6198f0a1d2b4d6748f2f396"
+    },
+    {
+      "path": "jiheng-office/src/style.css",
+      "bytes": 6681,
+      "sha256": "d0da992f93b4c3f78c21d746f8626a0abe3432ed12a08ffe8382dc926ed0cdb1"
+    },
+    {
+      "path": "jiheng-office/THREE-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+    },
+    {
+      "path": "jiheng-office/tools/blender_import.py",
+      "bytes": 10862,
+      "sha256": "28b3206e5d2ee32dc7cef39ec5ae53686d1742a1d4b68e49bdf76d7a15c38eea"
+    },
+    {
+      "path": "jiheng-office/tools/blender_mcp.py",
+      "bytes": 2762,
+      "sha256": "e171c711f374660aac511ba68af9dae53ae180399d77e4edd2de40a4e3881907"
+    },
+    {
+      "path": "jiheng-office/tools/debug_zoom.py",
+      "bytes": 1555,
+      "sha256": "bbaca7e3df899122a0f4bb3b4e8e17ae3ea797e6c2b35bc7fe4ea9055fa796d1"
+    },
+    {
+      "path": "jiheng-office/tools/inspect_compositor.py",
+      "bytes": 306,
+      "sha256": "0f809ad1fd88124535175e7881654d52c1cd1764dab655f9565e8c51cb39f60d"
+    },
+    {
+      "path": "jiheng-office/tools/inspect_model.py",
+      "bytes": 2549,
+      "sha256": "e22841743d97c2ef5e3b97f81075078f6f1a690e6fe58a8a6613a8d2a100913e"
+    },
+    {
+      "path": "jiheng-office/tools/package_delivery.py",
+      "bytes": 2200,
+      "sha256": "7a421f168f11236a44fd1176adf9719188c367bad04171bdc52bfdf1048b9ce7"
+    },
+    {
+      "path": "jiheng-office/tools/render_blender.py",
+      "bytes": 5442,
+      "sha256": "2a66bc02853c9062dd81faacbd0137183d1df8fe136b6569d84c29e0a736461f"
+    },
+    {
+      "path": "jiheng-office/tools/render_white.py",
+      "bytes": 2940,
+      "sha256": "66bc79ec49227ca4ec3066184609049064a20388a2ff9e6825e2c0f47810b7a0"
+    },
+    {
+      "path": "jiheng-office/tools/run_blender_mcp.py",
+      "bytes": 1506,
+      "sha256": "67aed08cbafe553d1882974b325d8bfd95490717d0a953319f28c91ef38ee0db"
+    },
+    {
+      "path": "jiheng-office/tools/run_studio_mcp.py",
+      "bytes": 904,
+      "sha256": "f63a8cf35399aeb44cb26d1e80d17bd69ed8dc668fe78422f0fb3456bb0976d6"
+    },
+    {
+      "path": "jiheng-office/tools/studio_mcp.py",
+      "bytes": 1298,
+      "sha256": "83efe91969b09242308c1a55289aee41642f6c3a24a33152fff8146cd6221fc5"
+    },
+    {
+      "path": "jiheng-office/tools/verify.py",
+      "bytes": 10490,
+      "sha256": "31f489a7e0fea267d8be8a62ec6711432bc71ea9f294216b27bda769f120d7f3"
+    },
+    {
+      "path": "jiheng-office/tools/verify_blender.py",
+      "bytes": 2219,
+      "sha256": "ead271d4598305ef5207baa5a0e41a14cd1400692e989b2c9f22d60d60b2e864"
+    },
+    {
+      "path": "jiheng-office/tools/verify_integration.py",
+      "bytes": 3087,
+      "sha256": "08efa965869987c49c74538748f60b6a64b2c916836ca134aa38ca73eb44b486"
+    },
+    {
+      "path": "mall-complex/build.cjs",
+      "bytes": 1594,
+      "sha256": "431a9a9831315eb9d2ebd532b620532c7cdec243efb7d211917f24ec63195410"
+    },
+    {
+      "path": "mall-complex/mall-module.mjs",
+      "bytes": 29473,
+      "sha256": "a11fc19301034e5c6898f0ca5c24e260fc178205699a361e682a49224d0a97af"
+    },
+    {
+      "path": "mall-complex/package.json",
+      "bytes": 284,
+      "sha256": "ea698e2ed9738315216313f90b13dfda4289fd1be53d24dabe15b364250ffdd7"
+    },
+    {
+      "path": "mall-complex/src/app.js",
+      "bytes": 17371,
+      "sha256": "1a2d1a994efda1eae01cbc3489b938a343be5e953feebb62922dff6380a3adee"
+    },
+    {
+      "path": "mall-complex/src/demo.js",
+      "bytes": 2521,
+      "sha256": "3ec2b52440f5d3d3be46134f21e1a2dcffd1eb92de9c20ca59953238999ba747"
+    },
+    {
+      "path": "mall-complex/src/model.js",
+      "bytes": 29473,
+      "sha256": "a11fc19301034e5c6898f0ca5c24e260fc178205699a361e682a49224d0a97af"
+    },
+    {
+      "path": "mall-complex/src/shell.html",
+      "bytes": 5469,
+      "sha256": "255bbcde9a769830bb126190d8510b80f2769e3df5ecd1be5282c7ee95fe7657"
+    },
+    {
+      "path": "mall-complex/src/style.css",
+      "bytes": 10414,
+      "sha256": "59a5fd5179144c96dd041b871e5244b2631ccdda3b3220f7f33987879e12a412"
+    },
+    {
+      "path": "mall-complex/THREE-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    {
+      "path": "mall-complex/tools/blender_mcp.py",
+      "bytes": 2815,
+      "sha256": "22213882d9e864e5b6791fbda90effac1362295aa6e9b1154f8a3669dd96ba1f"
+    },
+    {
+      "path": "mall-complex/tools/blender_render.py",
+      "bytes": 10460,
+      "sha256": "cd8367968dab3e4e758c83de0838bc869e195b058a3b07656fbad0d642390389"
+    },
+    {
+      "path": "mall-complex/tools/capture.py",
+      "bytes": 2483,
+      "sha256": "06e3a4b89c05f4f557f69fe160bf0bdd9ae905e984b8469e7a84a19c162ddbf3"
+    },
+    {
+      "path": "mall-complex/tools/install_city.py",
+      "bytes": 5547,
+      "sha256": "30aaba801ff18b773f2f628850a9e3ff43d7207bd6722141ede5a0d43272ef4d"
+    },
+    {
+      "path": "mall-complex/tools/package.py",
+      "bytes": 2463,
+      "sha256": "974e2ba5dc95e38e9752e857615e451b764ae07863d41aa9f7122f613f9a7f42"
+    },
+    {
+      "path": "mall-complex/tools/review.py",
+      "bytes": 1620,
+      "sha256": "ed3fa3dacde03fc52a04d03bb45121dc711d017e076c342898860cf25faa3890"
+    },
+    {
+      "path": "mall-complex/tools/run_mcp.py",
+      "bytes": 1508,
+      "sha256": "60d4cd7be243cc4258513a81ba992c924514ab1272b749a8055fab78af10f26a"
+    },
+    {
+      "path": "mall-complex/tools/verify.py",
+      "bytes": 9809,
+      "sha256": "29cf35c1d506a3850c766fc4ab159b7247ed95c4c0b887c8ff8ec7e95b5a183f"
+    },
+    {
+      "path": "mall-complex/town-integration.example.mjs",
+      "bytes": 635,
+      "sha256": "3f59787be0406bf26778db91065b1a9ce1aa0a57ace2c18a9ca61da032777200"
+    },
+    {
+      "path": "mall-complex/交付清单.json",
+      "bytes": 6712,
+      "sha256": "782907c9222a123cc9228bec4f859b8c4511ca236c81d746e0552c8c7591fd2a"
+    },
+    {
+      "path": "mall-complex/使用说明.md",
+      "bytes": 6276,
+      "sha256": "81f39a761c8315f7fdd569c9f71add157db9dfe18b57e25814b2a9742e13cce3"
+    },
+    {
+      "path": "mixeduse-residential/build.cjs",
+      "bytes": 926,
+      "sha256": "d6e3bccb788633d59890f93df71746690de0626717123d8704a3de381b3307af"
+    },
+    {
+      "path": "mixeduse-residential/integration-example.mjs",
+      "bytes": 679,
+      "sha256": "24d84b72ac701825a506f88eee7a948d6cfd737cba8ee1ed652bad9b1646eefe"
+    },
+    {
+      "path": "mixeduse-residential/mixeduse-module.mjs",
+      "bytes": 21498,
+      "sha256": "f7a02d62c296b1e78956c16760ad8ffdeda148624be958cf92b83327eff8a2b3"
+    },
+    {
+      "path": "mixeduse-residential/package.json",
+      "bytes": 326,
+      "sha256": "7ecf7551aa7ebd4e5d9cca98b7916954bcccf9f282be5703cf17566d89cd7133"
+    },
+    {
+      "path": "mixeduse-residential/README.md",
+      "bytes": 2534,
+      "sha256": "c91d99b9b249b8c3f9b77bcadafa02654e621a84da5d4abef19a477ac43e3a92"
+    },
+    {
+      "path": "mixeduse-residential/residential-manifest.json",
+      "bytes": 4253,
+      "sha256": "dccce3565b3dc15f6641c3fd95f879eda25a21c22ba211bf5d27eb69828a1283"
+    },
+    {
+      "path": "mixeduse-residential/src/app.js",
+      "bytes": 13530,
+      "sha256": "9f8168493ab115a37eb51623c9dd415f30adfff23437ffc0116ff1f712edce18"
+    },
+    {
+      "path": "mixeduse-residential/src/model.js",
+      "bytes": 21498,
+      "sha256": "f7a02d62c296b1e78956c16760ad8ffdeda148624be958cf92b83327eff8a2b3"
+    },
+    {
+      "path": "mixeduse-residential/src/shell.html",
+      "bytes": 4223,
+      "sha256": "a8dbe539b39a2b939e62ca73331560a31eece5d5d5fcfae437832b69422ec4db"
+    },
+    {
+      "path": "mixeduse-residential/src/style.css",
+      "bytes": 8524,
+      "sha256": "3a665a5eb89a9a60e7146eadb91d6eaa09e464065c5e30f81212d2b1249064c9"
+    },
+    {
+      "path": "mixeduse-residential/tools/blender_import.py",
+      "bytes": 16196,
+      "sha256": "f65eaee7e841c97cf3c35021891f697ac78db3cedef21d886fd975b01a0a2039"
+    },
+    {
+      "path": "mixeduse-residential/tools/blender_mcp.py",
+      "bytes": 2551,
+      "sha256": "647ac11f2487e855015884df22421e62eb59a35cff157ca2fa96b39552b7c8cb"
+    },
+    {
+      "path": "mixeduse-residential/tools/BLENDER_WORKFLOW.md",
+      "bytes": 1735,
+      "sha256": "93b02d4abaee5a7ebc5cde59c08e9799f21cc4d4e517393a6340b8cc5a0a950d"
+    },
+    {
+      "path": "mixeduse-residential/tools/inspect_model.py",
+      "bytes": 1246,
+      "sha256": "f1466e6929821dfe052b1510cc9ccb74ebc924a165b8565ab64e13003f7bdeb9"
+    },
+    {
+      "path": "mixeduse-residential/tools/package_delivery.py",
+      "bytes": 2347,
+      "sha256": "8d8fbcc941df1b1f59c9d6580fc78f59a00bdbabcc04a525cd9507665fdd34c2"
+    },
+    {
+      "path": "mixeduse-residential/tools/render_blender.py",
+      "bytes": 7756,
+      "sha256": "6fd49f10f3c0be3669aad1356592d15e5f7874c6cdfdd15aeba020bd61c105d6"
+    },
+    {
+      "path": "mixeduse-residential/tools/run_blender_mcp.py",
+      "bytes": 2403,
+      "sha256": "0415ed002616921f52bb70146eab6e9082b0d7274eac9896e406f0dad2e62e79"
+    },
+    {
+      "path": "mixeduse-residential/tools/verify_model.py",
+      "bytes": 7821,
+      "sha256": "ab89432967f3304e240b345705830d76f1217b95d944f8e9cf89b99125630adb"
+    },
+    {
+      "path": "nuanting-garden/build.cjs",
+      "bytes": 808,
+      "sha256": "9c77e73ca0d3b39232e0bc7cb45ded2af8bc3e5e03dbfe8faf058f933aa88aa5"
+    },
+    {
+      "path": "nuanting-garden/garden-manifest.json",
+      "bytes": 4548,
+      "sha256": "3d18648bad0df70919a12db571f1ef3f4cb5414a9b2159d6d61f71efc02f604f"
+    },
+    {
+      "path": "nuanting-garden/integration-example.mjs",
+      "bytes": 1632,
+      "sha256": "e705ccac9e8dc2ba139dcf1b9a58f6064e1e185a194d18aeb6023d540c4d3b63"
+    },
+    {
+      "path": "nuanting-garden/model.mjs",
+      "bytes": 30899,
+      "sha256": "63f3142981b75b84a21b8756bcd1523331971db689399e3de506d7ab935adde3"
+    },
+    {
+      "path": "nuanting-garden/package.json",
+      "bytes": 260,
+      "sha256": "1d63fbf4a7795351f0df4164afada9f1e94c30691c37b42778044120d4b0b716"
+    },
+    {
+      "path": "nuanting-garden/README.md",
+      "bytes": 5522,
+      "sha256": "55ff54a283a97742966da0c068440be9ed2efaf3cf1773ed87e3367350d59d9c"
+    },
+    {
+      "path": "nuanting-garden/src/app.js",
+      "bytes": 12699,
+      "sha256": "9a02f467674b3cb3aaae6ede487234f189f17cc0f3b15fbea06ce17bcd9e4f08"
+    },
+    {
+      "path": "nuanting-garden/src/model.js",
+      "bytes": 30899,
+      "sha256": "63f3142981b75b84a21b8756bcd1523331971db689399e3de506d7ab935adde3"
+    },
+    {
+      "path": "nuanting-garden/src/shell.html",
+      "bytes": 3764,
+      "sha256": "bf7a79661936da66fbdc6a0855ce967b13a743b20b8cdbcf3ede1eb0ad08f15b"
+    },
+    {
+      "path": "nuanting-garden/src/style.css",
+      "bytes": 6960,
+      "sha256": "8b6e7e37b6fa6c298ef354bbbe7aafa4778530dd7922d56aba2cfc93b80c9759"
+    },
+    {
+      "path": "nuanting-garden/THREE-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    {
+      "path": "nuanting-garden/tools/blender_import.py",
+      "bytes": 10333,
+      "sha256": "5451433b452c1893d8441a92cc053a41ebc87c28d071f36dc5998e67179f61d2"
+    },
+    {
+      "path": "nuanting-garden/tools/blender_mcp.py",
+      "bytes": 2720,
+      "sha256": "5eea092124104d5cbdc79d56c0f94c0381400f31029a2bf416eb7d782fe8f0cf"
+    },
+    {
+      "path": "nuanting-garden/tools/inspect_model.py",
+      "bytes": 2548,
+      "sha256": "62406fb60e9cd174b2e230d397772f8c947300a5b92d2e9a6889afb57a964ca3"
+    },
+    {
+      "path": "nuanting-garden/tools/package_delivery.py",
+      "bytes": 1842,
+      "sha256": "868f7341ed6ebdcf121cdfd56f213e0e9f336602ad39d145ef79620ecc13329b"
+    },
+    {
+      "path": "nuanting-garden/tools/render_blender.py",
+      "bytes": 5705,
+      "sha256": "40ee36c75a7c82be3ed3e63968a5b8bb964f60b15ec5775573a0e473740b979f"
+    },
+    {
+      "path": "nuanting-garden/tools/run_blender_mcp.py",
+      "bytes": 1481,
+      "sha256": "186abaa23e1f0a9daa18460ea79dd1fc82b5bebae89cdfc3a212dd146caaf069"
+    },
+    {
+      "path": "nuanting-garden/tools/show_scene.py",
+      "bytes": 669,
+      "sha256": "c4147126ff2a2f21d953da56a97f334c77ffd04e96a3d61f89a7cdf3219ce24b"
+    },
+    {
+      "path": "nuanting-garden/tools/verify.py",
+      "bytes": 7838,
+      "sha256": "1386f621c3453f45c177d58ee04029cfe7054a0ba23e226abd5326b748c1abf4"
+    },
+    {
+      "path": "nuanting-garden/tools/verify_blender.py",
+      "bytes": 1922,
+      "sha256": "acdbbff16e6d6ef890c68c3ff40a7fdfb21ff07d00d75d1d3a1271f3457841ac"
+    },
+    {
+      "path": "nuanting-garden/tools/verify_integration.py",
+      "bytes": 2818,
+      "sha256": "c15b74c2e433eb7946cef488308b38c995dc6fd41a2d8e5b1daf215d691694d5"
+    },
+    {
+      "path": "quiet-city-park/build.cjs",
+      "bytes": 1585,
+      "sha256": "316b7fcd83d1982d28038b19680ad62f6c137eba9535cbb2f00ee2f47b417968"
+    },
+    {
+      "path": "quiet-city-park/package.json",
+      "bytes": 304,
+      "sha256": "f4b7601ee4d59d2406cbe2dc4ec1f46d4ac05a2047d820484155a5588691bb14"
+    },
+    {
+      "path": "quiet-city-park/quiet-park-module.mjs",
+      "bytes": 16413,
+      "sha256": "1f423d3bf4b8139bb576c2bffa66897bf2780af80694d078984fa014fc6d0f0a"
+    },
+    {
+      "path": "quiet-city-park/src/app.js",
+      "bytes": 18699,
+      "sha256": "578fd4ad5e14234f04cad37e787d77646e9e5190e079099b8895cf3475eaf7f7"
+    },
+    {
+      "path": "quiet-city-park/src/demo.js",
+      "bytes": 2526,
+      "sha256": "547d355ad5b95445a1e666cd3ad3c7e7d179605bf38131ea2afaf35e448936a6"
+    },
+    {
+      "path": "quiet-city-park/src/model.js",
+      "bytes": 16413,
+      "sha256": "1f423d3bf4b8139bb576c2bffa66897bf2780af80694d078984fa014fc6d0f0a"
+    },
+    {
+      "path": "quiet-city-park/src/shell.html",
+      "bytes": 5698,
+      "sha256": "8796f5d2b2646469b1e70deb80044469383d86f6e64d3106a2970c3d6b10ad9a"
+    },
+    {
+      "path": "quiet-city-park/src/style.css",
+      "bytes": 11851,
+      "sha256": "533fbb8e5f274ed1dbc78c2bad102497aed74fad503ff4c96bf472d60d5f7cfb"
+    },
+    {
+      "path": "quiet-city-park/THREE-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    {
+      "path": "quiet-city-park/tools/blender_mcp.py",
+      "bytes": 2021,
+      "sha256": "bf208c42015b3d7af07e765a57a42551f710cef4ebc379e8048131491c4b2c8d"
+    },
+    {
+      "path": "quiet-city-park/tools/blender_scene.py",
+      "bytes": 10751,
+      "sha256": "bb454089ef42b427ed2463d3243a895453409f7bce0bfba7a90bad8e75928da3"
+    },
+    {
+      "path": "quiet-city-park/tools/requirements.txt",
+      "bytes": 44,
+      "sha256": "917da3858081b93c07cbbc56a6daa4cbe8301440b1e1930752d10a29667016ad"
+    },
+    {
+      "path": "quiet-city-park/tools/run_mcp.py",
+      "bytes": 963,
+      "sha256": "25e2cbf81ae0352a519f187990b7a6853edcb5173c4a22b2e2b4e0603a44bf4d"
+    },
+    {
+      "path": "quiet-city-park/tools/verify.py",
+      "bytes": 7700,
+      "sha256": "54cc13493622c5a74009382dda12efbfcff631bb723ab8017a791ef5d803cf94"
+    },
+    {
+      "path": "quiet-city-park/tools/visible_render.py",
+      "bytes": 3151,
+      "sha256": "a7e6dbd07db809fd549aa8f9c7d680f2782f364a8ba17fb37a670a02d0e1416a"
+    },
+    {
+      "path": "quiet-city-park/town-integration.example.mjs",
+      "bytes": 839,
+      "sha256": "843b4682dda1c9079c90ca8a13c99d7d0779982b65ccc51d360f1e5185f9122f"
+    },
+    {
+      "path": "quiet-city-park/交付清单.json",
+      "bytes": 1796,
+      "sha256": "7a618f6f50a294332b3f692e679799e03ed33739064396d71919c269ed4fe0e6"
+    },
+    {
+      "path": "quiet-city-park/使用与接入说明.md",
+      "bytes": 4256,
+      "sha256": "06feea5ad99c1768d0dc3f5c588cf4e2fa6a30331aca75c59fdd6bf5fb420446"
+    },
+    {
+      "path": "residential-garden/build.cjs",
+      "bytes": 827,
+      "sha256": "93c7d4be3af7a037df90cef206b24a79159ff2063fff3af3a669113506b61ebe"
+    },
+    {
+      "path": "residential-garden/integration-example.mjs",
+      "bytes": 325,
+      "sha256": "af36bf05111063b7b2870cf8757cf7cbd0bdf40bdf7251230dc07cf52e8b2d0f"
+    },
+    {
+      "path": "residential-garden/model.mjs",
+      "bytes": 14929,
+      "sha256": "a0480aa1b098280ba21293e08e2d02562155ae9232eccf5a30be920297d66224"
+    },
+    {
+      "path": "residential-garden/package.json",
+      "bytes": 214,
+      "sha256": "92cf3ae145b8f0b8f0db5ac0014da51d31c0b7268a5abe6d6be798feca078bf7"
+    },
+    {
+      "path": "residential-garden/README.md",
+      "bytes": 4188,
+      "sha256": "c44bf6cfb1ed26938d61726994e2ace40f0db589dda1201825b791c89cc28e9e"
+    },
+    {
+      "path": "residential-garden/residential-manifest.json",
+      "bytes": 1378,
+      "sha256": "afe5c7dd5abc08ac1f2e42895e5ca65bd02e19225eb921c8c1e7e6e033bdecfb"
+    },
+    {
+      "path": "residential-garden/src/app.js",
+      "bytes": 6722,
+      "sha256": "9b6fd29d9d5d20e1472bbd1c9e821cb47c74932d9e9860afdb3278057cb3bb20"
+    },
+    {
+      "path": "residential-garden/src/model.js",
+      "bytes": 14929,
+      "sha256": "a0480aa1b098280ba21293e08e2d02562155ae9232eccf5a30be920297d66224"
+    },
+    {
+      "path": "residential-garden/src/shell.html",
+      "bytes": 2385,
+      "sha256": "89460ffffe2b99049fde691f6132d689670b7799b91c9c871c0bfa5ba3fa31e4"
+    },
+    {
+      "path": "residential-garden/src/style.css",
+      "bytes": 3922,
+      "sha256": "c3a7c03f52be94f59fac44cc039d06b483075c55232862ba1a86d612239b8906"
+    },
+    {
+      "path": "residential-garden/THREE-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    {
+      "path": "residential-garden/tools/blender_import.py",
+      "bytes": 9591,
+      "sha256": "affd717fd920e5691ede5eb3c9c7b1402c6f056a5b39d1d4e3ec614f82066f86"
+    },
+    {
+      "path": "residential-garden/tools/blender_mcp.py",
+      "bytes": 2011,
+      "sha256": "7dc59334bd03e9177f47f733b6cb8110d30a16c1280c4cd9c80d18bfc2d5f5f2"
+    },
+    {
+      "path": "residential-garden/tools/inspect_model.py",
+      "bytes": 1977,
+      "sha256": "1787d4f1ee4fda646d0f8e4408d48aacfee7e3dde2b80a5f43918aa6c6f4610e"
+    },
+    {
+      "path": "residential-garden/tools/open_blender_mcp.py",
+      "bytes": 753,
+      "sha256": "609ae7bbc42d0aecd8e9ff4c622f1a1ae0a977a8182c14d10e14c79ddbed4b1c"
+    },
+    {
+      "path": "residential-garden/tools/render_blender.py",
+      "bytes": 3867,
+      "sha256": "21ae2e70de9b13aa45e6818a6312ab7feb3e1eda8c7a15bb71f90d59d4b6052f"
+    },
+    {
+      "path": "residential-garden/tools/run_blender_mcp.py",
+      "bytes": 1016,
+      "sha256": "f9d674617d38a44d923fee2aa46ab2e1118a8802aaa964a4d9a0c2dc0049be09"
+    },
+    {
+      "path": "residential-garden/tools/show_scene.py",
+      "bytes": 635,
+      "sha256": "205538c2482c39cbb6e2ce30c4297821c0d003be00a7a90aa7e09efc0ca7495f"
+    },
+    {
+      "path": "residential-garden/tools/verify.py",
+      "bytes": 4736,
+      "sha256": "67e81c07dd7edf4621bf1d18dbc238b796c7e347dc320a30a6a65241d2e5f9cd"
+    },
+    {
+      "path": "river-corridor/build.cjs",
+      "bytes": 843,
+      "sha256": "7c0678794133afcddf1e08833a9e4b7db00c21799957c70773a5e2a2fe0e6dd2"
+    },
+    {
+      "path": "river-corridor/package.json",
+      "bytes": 271,
+      "sha256": "86946b28f09b663751afa51261a68b21e6631be4b1b2d9ed87cc38a1339e32fb"
+    },
+    {
+      "path": "river-corridor/README.md",
+      "bytes": 7573,
+      "sha256": "2593718fd122a94754f666e85f54bb5a56547cd72ee18cf4025ca82bcd475193"
+    },
+    {
+      "path": "river-corridor/release-sha256.json",
+      "bytes": 5380,
+      "sha256": "fdb55b22fc9e9e673a09da1d99f488d9669d2e0bd3ad8254ec09b1b0dd25a642"
+    },
+    {
+      "path": "river-corridor/river-manifest.json",
+      "bytes": 616,
+      "sha256": "fc5745fa15bbe7af6a422e12f4ce4e3cdd980ff714cb1c6fcc238339a14f9fb6"
+    },
+    {
+      "path": "river-corridor/river-model.mjs",
+      "bytes": 20057,
+      "sha256": "de9bb204fe4d39a2a842514fef269aa1591984dd8ef8d64bb5c42e134f8efb3a"
+    },
+    {
+      "path": "river-corridor/river-pass.mjs",
+      "bytes": 4081,
+      "sha256": "d426aa89e2e45ca9493433cba95d72db231a74c9aac9bd3d8ab94f9eb539b04c"
+    },
+    {
+      "path": "river-corridor/src/app.js",
+      "bytes": 6183,
+      "sha256": "61c7e925374a912a7862a8026391412a06d00f912a15aba997ecc4fe153a5af4"
+    },
+    {
+      "path": "river-corridor/src/river-model.js",
+      "bytes": 20057,
+      "sha256": "de9bb204fe4d39a2a842514fef269aa1591984dd8ef8d64bb5c42e134f8efb3a"
+    },
+    {
+      "path": "river-corridor/src/river-pass.js",
+      "bytes": 4081,
+      "sha256": "d426aa89e2e45ca9493433cba95d72db231a74c9aac9bd3d8ab94f9eb539b04c"
+    },
+    {
+      "path": "river-corridor/src/shell.html",
+      "bytes": 2160,
+      "sha256": "6c9b67b308c1cdd02dccd49bc7d5de504d27dd36c476dd0c50691df557adc433"
+    },
+    {
+      "path": "river-corridor/src/style.css",
+      "bytes": 3921,
+      "sha256": "d4cbdf3da8c7153446de56f4d54fda59da7b9f303c30200599fc27d8a2abe098"
+    },
+    {
+      "path": "river-corridor/THREE-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    {
+      "path": "river-corridor/tools/blender_mcp.py",
+      "bytes": 1570,
+      "sha256": "b346ac3eb75ea7f6fd26f6fab5def19cf84a30069128f75e7930f348e7db3c91"
+    },
+    {
+      "path": "river-corridor/tools/inspect_river.py",
+      "bytes": 1907,
+      "sha256": "b8e5474937f1d7c0270868684d8470278e44c4f81e4ae5c2a25164b3687bd4ec"
+    },
+    {
+      "path": "river-corridor/tools/package_release.py",
+      "bytes": 1320,
+      "sha256": "d9796111dda87b018d45f1c7b9dbdc062a47711878c214e7374e51f8655b3497"
+    },
+    {
+      "path": "river-corridor/tools/render_blender.py",
+      "bytes": 10206,
+      "sha256": "46e9292dfe63b74cf78a049aa1c866683f001460d69c68b787a4b6cf9ff362d1"
+    },
+    {
+      "path": "river-corridor/tools/run_blender_mcp.py",
+      "bytes": 1004,
+      "sha256": "fc49759c46443fa44c5e6a6291c76a2be8d4f4915a91aa3f3e38967885c2c4fc"
+    },
+    {
+      "path": "river-corridor/tools/verify_blend.py",
+      "bytes": 1226,
+      "sha256": "04ea407dc58d6d08c4b7b2028953f045ac2c8e58b57ff99bcc2ec44c23d529d8"
+    },
+    {
+      "path": "river-corridor/tools/verify_river.py",
+      "bytes": 8508,
+      "sha256": "e47b4317893f4902806c1988051b58e9970676bcf080fb4d222e90baa25e61ce"
+    },
+    {
+      "path": "river-corridor/town-integration.mjs",
+      "bytes": 1166,
+      "sha256": "c0d12d62fe24c8c2edbe7f2d27ff99d7a9dc53995b0d4f13e8c1a8ef551eabe8"
+    },
+    {
+      "path": "shanghai-tower/build.cjs",
+      "bytes": 1883,
+      "sha256": "8c06bc143626c60ade23b67ccbf7483fec5a0d50708271f9949ed957b979e64e"
+    },
+    {
+      "path": "shanghai-tower/manifest.json",
+      "bytes": 7071,
+      "sha256": "2b80312206084f481f5f1aeb93cf14094eba4f5d74775479eaefc0e9b2d9b34e"
+    },
+    {
+      "path": "shanghai-tower/package.json",
+      "bytes": 241,
+      "sha256": "66418dd2da12e9a8acc4ad96764383d18d277dd9cbfef9df37951815be5f8ae8"
+    },
+    {
+      "path": "shanghai-tower/README.md",
+      "bytes": 7749,
+      "sha256": "2b53ae39ad8cd33227f7dd660047a7aad5f9d8e41f8c33346095f1bf559c2a4c"
+    },
+    {
+      "path": "shanghai-tower/shanghai-tower-module.mjs",
+      "bytes": 17006,
+      "sha256": "38a800ee5166d6253e1966edeee05ee5507bc609d8c77acc33fd4dd9ac46462c"
+    },
+    {
+      "path": "shanghai-tower/src/app.js",
+      "bytes": 19518,
+      "sha256": "c6baa0baefa58b8eb6db784276d86f1e4165e745c812facc61353177abf4672f"
+    },
+    {
+      "path": "shanghai-tower/src/demo.js",
+      "bytes": 2688,
+      "sha256": "311447cdbb519a4f3b57b88f1283c103cb54b8fee2edd9ba68d789f7b7bc6e6f"
+    },
+    {
+      "path": "shanghai-tower/src/model.js",
+      "bytes": 17006,
+      "sha256": "38a800ee5166d6253e1966edeee05ee5507bc609d8c77acc33fd4dd9ac46462c"
+    },
+    {
+      "path": "shanghai-tower/src/shell.html",
+      "bytes": 5623,
+      "sha256": "af6ebda7da8735f6689027e87a007993c271fd19b60d8c89de4fc04e176133ff"
+    },
+    {
+      "path": "shanghai-tower/src/style.css",
+      "bytes": 9160,
+      "sha256": "4dbe54ba8484eb2e9463340c4cd8d01f6cf85900fd67fdd09f63d977f38eb90a"
+    },
+    {
+      "path": "shanghai-tower/THREE-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    {
+      "path": "shanghai-tower/tools/blender_mcp.py",
+      "bytes": 2796,
+      "sha256": "5c9b75a30f812ddc6dccbc21e5b6ca17f06a72bf7a89932946363925d432f378"
+    },
+    {
+      "path": "shanghai-tower/tools/blender_render.py",
+      "bytes": 11437,
+      "sha256": "adf7d9f106190d9d707d1bd1b466dc002f88d5ebb09e075323e05f7b630a6264"
+    },
+    {
+      "path": "shanghai-tower/tools/capture_video.py",
+      "bytes": 1478,
+      "sha256": "c950839368247bc0c799d356d8e49729308a5cc1759cf5f3349a7b29453f414f"
+    },
+    {
+      "path": "shanghai-tower/tools/package_delivery.py",
+      "bytes": 4107,
+      "sha256": "4d56d149d741d87736bcd91a76951c8ee5c815623f82984332801ff146b6575e"
+    },
+    {
+      "path": "shanghai-tower/tools/preview.mjs",
+      "bytes": 846,
+      "sha256": "6178dcf454074ae80cfc0de5f5f1267c7527055dc274f94765c23a9ef2c46e6c"
+    },
+    {
+      "path": "shanghai-tower/tools/requirements.txt",
+      "bytes": 30,
+      "sha256": "1f64a68affedbb5d01225b12e48cf6faad5b43dc50d196e21b48b06c4dc7e02e"
+    },
+    {
+      "path": "shanghai-tower/tools/review.py",
+      "bytes": 1629,
+      "sha256": "4aa511ee030a10c692e30ab2ef3a4dab857df618b879ab78be46b0f73eef4fcf"
+    },
+    {
+      "path": "shanghai-tower/tools/run_mcp.py",
+      "bytes": 1439,
+      "sha256": "97b24a9c683fc11cf7cdff79e46aa9c06c132cfd9831e894a3ca57235ec36a38"
+    },
+    {
+      "path": "shanghai-tower/tools/verify.py",
+      "bytes": 6900,
+      "sha256": "d153488a701f674d52e4c7099c262d65bc1a4e2bc8d7b8f1f16e4aa6efad9a5e"
+    },
+    {
+      "path": "shanghai-tower/tools/verify_touch.py",
+      "bytes": 2109,
+      "sha256": "92711410db8db99ae40f0b73ff51d1109e35a8f762b750b758a5982dc01517d4"
+    },
+    {
+      "path": "shanghai-tower/town-integration.example.mjs",
+      "bytes": 836,
+      "sha256": "e45a9ee0bd954d7d174a98c8f982a331f21024c85d5c7bff63e14eecc05a37ce"
+    },
+    {
+      "path": "shanghai-tower/交付与检查记录.txt",
+      "bytes": 2100,
+      "sha256": "eac9aab1a88626627c06e41f82a21c91498c16c01a2cf1a2531412c35d97b939"
+    },
+    {
+      "path": "skyline-one/build.cjs",
+      "bytes": 838,
+      "sha256": "a88297795be694d5bf7bd703b40463e47bcde1da95ad02b2c28684793b420149"
+    },
+    {
+      "path": "skyline-one/package.json",
+      "bytes": 235,
+      "sha256": "8491590a8d761a2a3943093f4e9062a901e0a67ccb0759b4c91adc772a865869"
+    },
+    {
+      "path": "skyline-one/README.md",
+      "bytes": 6011,
+      "sha256": "4e65225b059628423ab41b4718362a6f057a152a85ccb01f5c709023bd86086a"
+    },
+    {
+      "path": "skyline-one/skyline-manifest.json",
+      "bytes": 2265,
+      "sha256": "626d1391c28d5b89a276333ea03f6569837aa0743c4f732ca668f0ff3973171f"
+    },
+    {
+      "path": "skyline-one/skyline-module.mjs",
+      "bytes": 31735,
+      "sha256": "863bdf78f0b40d782b262baf92a61c217e49fff62fefc3e3181ed11e9411b8c2"
+    },
+    {
+      "path": "skyline-one/src/app.js",
+      "bytes": 21303,
+      "sha256": "27ca1f25ebb961d2f3d72c5daf661349fa66fa3989a088c0af07b1f60ad4ab6c"
+    },
+    {
+      "path": "skyline-one/src/shell.html",
+      "bytes": 5250,
+      "sha256": "5a6d52c7a00c839a878d44cd69612e55d66097fccd8d44936ee3bfdb421757fd"
+    },
+    {
+      "path": "skyline-one/src/style.css",
+      "bytes": 9740,
+      "sha256": "acd3809fd2fee0d67cb689411663b0e882135d3634db598ec4a08d22e62dbd36"
+    },
+    {
+      "path": "skyline-one/src/tower-model.js",
+      "bytes": 31735,
+      "sha256": "863bdf78f0b40d782b262baf92a61c217e49fff62fefc3e3181ed11e9411b8c2"
+    },
+    {
+      "path": "skyline-one/THREE-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    {
+      "path": "skyline-one/tools/blender_import.py",
+      "bytes": 9627,
+      "sha256": "a385b8102a27a1406edbb1fa305a4f3250aa4803c5aab8bc18c01d62adcf5b88"
+    },
+    {
+      "path": "skyline-one/tools/inspect_tower.py",
+      "bytes": 2320,
+      "sha256": "ec5996eaefdffa877785777b8e11a48b61448b6b4ef75f80788be2169d709492"
+    },
+    {
+      "path": "skyline-one/tools/mcp_client.py",
+      "bytes": 890,
+      "sha256": "355b1e5c8112627a54684cc96c818d2e69ab0680e6f5fc4450c615196f530226"
+    },
+    {
+      "path": "skyline-one/tools/package_delivery.py",
+      "bytes": 1303,
+      "sha256": "fcbcee5c09554820b787afd870f86b60de7a760fef5689acceb29cc00d26a7a4"
+    },
+    {
+      "path": "skyline-one/tools/render_blender.py",
+      "bytes": 6562,
+      "sha256": "7b7558db39e1940bddfb5a4ac11c5fb621f810a4702388cd4a30abe2267d357d"
+    },
+    {
+      "path": "skyline-one/tools/render_overview.py",
+      "bytes": 856,
+      "sha256": "8832b61e4179af2b7288f06dfee9f923dd4eac5e4cd343ba2c78df68599ce741"
+    },
+    {
+      "path": "skyline-one/tools/start_overview_mcp.py",
+      "bytes": 565,
+      "sha256": "848d82ad613338059d27cdca3e1a3bfa2b1df98f19b1f0d3b5424a79e7b4e3f4"
+    },
+    {
+      "path": "skyline-one/tools/start_render_mcp.py",
+      "bytes": 540,
+      "sha256": "7a5082307c7804aee513b959cc6dcf62b2df2533de0d1dde2999869cc29463df"
+    },
+    {
+      "path": "skyline-one/tools/verify_tower.py",
+      "bytes": 10086,
+      "sha256": "933b5cc1820e06eea4edc1f80a510ae0937eff134ae8a701cbbbd9a937f98575"
+    },
+    {
+      "path": "skyline-one/town-integration.example.mjs",
+      "bytes": 1543,
+      "sha256": "1e8c66a01f9dd7016557f86744c1100f8f2810f886d940f7b85f482ca1805754"
+    },
+    {
+      "path": "slab-residential/build.cjs",
+      "bytes": 781,
+      "sha256": "78937d3b7a521123c4eb3a7c02c9d8eff4c10e7962e8076f4db63a4f79baf382"
+    },
+    {
+      "path": "slab-residential/integration-example.mjs",
+      "bytes": 878,
+      "sha256": "acf2548e242f2155dbf1ecdd08d19425d383bcdd854f03a56401a882452402a8"
+    },
+    {
+      "path": "slab-residential/package-lock.json",
+      "bytes": 14380,
+      "sha256": "a0068eb8bd468db6af84193649c1726cb2fda0a2b131204ad32488e0fb8c9f09"
+    },
+    {
+      "path": "slab-residential/package.json",
+      "bytes": 258,
+      "sha256": "627bcf84e7a12f8f4b432b25f43c09607f00eb670c502154d0f0db8a0a68734b"
+    },
+    {
+      "path": "slab-residential/README.md",
+      "bytes": 2820,
+      "sha256": "a8e8a120159222671fd1079f8af1d0aca34629dd589dcd6da21fba1977910948"
+    },
+    {
+      "path": "slab-residential/residential-block.mjs",
+      "bytes": 23073,
+      "sha256": "97528e2770eff1f2ed8d01338630db2ced59ce665a779520a6e7df1d033f82c6"
+    },
+    {
+      "path": "slab-residential/residential-manifest.json",
+      "bytes": 4596,
+      "sha256": "6e6377e6e0ead9ade94cf199ce3d8203bd88a55cb62c5ad24f9512573b14fb28"
+    },
+    {
+      "path": "slab-residential/src/app.js",
+      "bytes": 12086,
+      "sha256": "a78565999a3323b5658f2f05be51f328eb22d8acca98e22fe0ad96df845ec06d"
+    },
+    {
+      "path": "slab-residential/src/model.js",
+      "bytes": 23073,
+      "sha256": "97528e2770eff1f2ed8d01338630db2ced59ce665a779520a6e7df1d033f82c6"
+    },
+    {
+      "path": "slab-residential/src/shell.html",
+      "bytes": 3938,
+      "sha256": "097662bb405cadce6aaa6d4e6f3b49312a7ce6e02b908725fa972a7ad3834b68"
+    },
+    {
+      "path": "slab-residential/src/style.css",
+      "bytes": 7795,
+      "sha256": "bf546317138270e47b326758f5425bf27498b6ca7fcdc3e763cf5bb5b9167a4d"
+    },
+    {
+      "path": "slab-residential/tools/blender_import.py",
+      "bytes": 14168,
+      "sha256": "36ba53e4d148472c81b530d36381ddae745501d03f0b6acf5b262c6a75c61c88"
+    },
+    {
+      "path": "slab-residential/tools/blender_mcp.py",
+      "bytes": 2490,
+      "sha256": "c70ffd7a1950bed9891ff7b1bb8441d3bea62d6c381c3c62b6c16485462b4c9a"
+    },
+    {
+      "path": "slab-residential/tools/BLENDER_WORKFLOW.md",
+      "bytes": 1686,
+      "sha256": "43cf8dc33dc8ad3f748cfbb432d5b10e930f853e5bf4493c930ce4bdf79d6b83"
+    },
+    {
+      "path": "slab-residential/tools/capture_views.py",
+      "bytes": 1443,
+      "sha256": "59bdbbca7b6b0652eef1a84bd8c0b476430d5e5d210db338345473948a3e4697"
+    },
+    {
+      "path": "slab-residential/tools/package_delivery.py",
+      "bytes": 2331,
+      "sha256": "ee019b14a3c89c62914933af56c365715ff5809744107adef12ed42bcd3c25d9"
+    },
+    {
+      "path": "slab-residential/tools/render_blender.py",
+      "bytes": 7486,
+      "sha256": "d6606c68e8de678bcca3de54e7ce0aee8cb1552f81048d9e1f192907700b196c"
+    },
+    {
+      "path": "slab-residential/tools/run_blender_mcp.py",
+      "bytes": 2345,
+      "sha256": "73561ad67c74102f6c677f240971a0c614bae75302188bb6598eff9e994dd7df"
+    },
+    {
+      "path": "slab-residential/tools/verify_model.py",
+      "bytes": 23641,
+      "sha256": "063e994f7f8d072c5ee7ff8dc09fadc0aa52634dbca8a47898e0f65de079d377"
+    },
+    {
+      "path": "university-campus/build.cjs",
+      "bytes": 1597,
+      "sha256": "59ee587b9a28f9e363cd5823db009c5f90cc83cf86544d38744c9c782c6aedee"
+    },
+    {
+      "path": "university-campus/package.json",
+      "bytes": 306,
+      "sha256": "f37d65e84bdb80467a02240210926bf938e61c78ef72deec3207403bef7aa8ee"
+    },
+    {
+      "path": "university-campus/src/app.js",
+      "bytes": 18581,
+      "sha256": "eb7267a763574772f980c74faa6d38363e426ed5d0119d13dfabda2201d33c1f"
+    },
+    {
+      "path": "university-campus/src/demo.js",
+      "bytes": 2545,
+      "sha256": "6061813409ab0d748579fd46c8bbdd448d9c4caf990926eb8a7a3a31e2c4b678"
+    },
+    {
+      "path": "university-campus/src/model.js",
+      "bytes": 19904,
+      "sha256": "a6f63d64bd22c832ce7cd23770bd7b983ca5e34caab3848fad7c0eb9f9d07315"
+    },
+    {
+      "path": "university-campus/src/shell.html",
+      "bytes": 5651,
+      "sha256": "553bb4f48f63348ce282eb8dbf3530e858ac85746ccf31b595ec0ffd318c3491"
+    },
+    {
+      "path": "university-campus/src/style.css",
+      "bytes": 11616,
+      "sha256": "87067616e9f680eb0bfca6f8fa07f519f45fe6a11f6e4689581a5e2f3e1f78ba"
+    },
+    {
+      "path": "university-campus/THREE-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    {
+      "path": "university-campus/tools/blender_mcp.py",
+      "bytes": 2840,
+      "sha256": "956f326899ee500b79eba10003f4675501674d555a1a6ec4393d8a53f04e7e86"
+    },
+    {
+      "path": "university-campus/tools/blender_render.py",
+      "bytes": 10557,
+      "sha256": "2ef74f269a6d176ec4173cf4687cc5ec1d0067a61b7de2a2c5fde1a1f2e02e66"
+    },
+    {
+      "path": "university-campus/tools/requirements.txt",
+      "bytes": 44,
+      "sha256": "917da3858081b93c07cbbc56a6daa4cbe8301440b1e1930752d10a29667016ad"
+    },
+    {
+      "path": "university-campus/tools/run_blender_mcp.py",
+      "bytes": 1281,
+      "sha256": "4a02604de6bc406d39c5930ef8132da75bb1617cea96b5913cf417e90db61640"
+    },
+    {
+      "path": "university-campus/tools/verify.py",
+      "bytes": 11952,
+      "sha256": "94dd9a646d48c4a4e43398bc99a14b99318fa3a6fcce1cda41d73ba5504cca1c"
+    },
+    {
+      "path": "university-campus/town-integration.example.mjs",
+      "bytes": 1149,
+      "sha256": "47900c7c2a3f2bb6b3a62fb29b28d509a111d01f212333e8e3a6f96b2fe549b1"
+    },
+    {
+      "path": "university-campus/university-module.mjs",
+      "bytes": 19904,
+      "sha256": "a6f63d64bd22c832ce7cd23770bd7b983ca5e34caab3848fad7c0eb9f9d07315"
+    },
+    {
+      "path": "university-campus/交付清单.json",
+      "bytes": 1868,
+      "sha256": "17dee102c875d379075693d7199c0b94c25705a9f3cc2e0e3a906670c8791677"
+    },
+    {
+      "path": "university-campus/使用与接入说明.md",
+      "bytes": 5870,
+      "sha256": "55e02ae42b53c27d14b1802750c1dfdad1e119506c19f07e29b45f13abedb72d"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"name":"chenghe-hospital-campus","version":"1.0.0","private":true,"type":"module","description":"112 m square hospital module for Qianren Town","scripts":{"build":"node build.cjs","check":"node --check src/hospital-model.js && node --check src/app.js"},"devDependencies":{"esbuild":"^0.25.0","three":"0.180.0"}}

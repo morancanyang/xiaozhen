@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="穹光体育中心 · 112米正方形街坊上的综合体育馆，交互式建筑模型。"><title>穹光体育中心 · DOME ARENA</title><style>__STYLE__</style></head>
+<body>
+<div id="viewport" aria-label="可拖拽旋转、平移与缩放的三维建筑模型"></div>
+<header><a class="brand" href="#" id="home" aria-label="恢复全景"><svg viewBox="0 0 40 46" aria-hidden="true"><path d="M3 35C3 5 37 5 37 35M7 35C7 12 33 12 33 35M3 35h34M12 35V23m8 12V17m8 18V23"/></svg><span>穹光体育中心<small>DOME ARENA</small></span></a><div class="project"><span class="dot"></span>千人小镇 / 建筑典藏 <span class="project-id">№ 05</span></div><button id="export-glb" class="text-button">导出模型 <span>↗</span></button></header>
+<section class="intro"><div class="eyebrow">ARCHITECTURE IN MOTION</div><h1>让热爱，<br>在此汇聚。</h1><p>银色穹顶下，每一次奔跑都有回响。<br>一座体育馆，一片共享的城市客厅。</p><div class="intro-meta"><span><b>78</b> m / 主体跨度</span><span><b>112²</b> m² / 完整街坊</span></div></section>
+<nav class="view-tabs" aria-label="观察视角"><button data-view="overview" class="active">全景</button><button data-view="low">仰望</button><button data-view="entrance">广场</button><button data-view="structure">钢构</button><button data-view="roof">屋顶</button><button data-view="interior">场馆</button></nav>
+<aside class="panel"><button id="collapse" aria-expanded="true"><span>光与生活 <small>SCENE ATELIER</small></span><span id="collapse-icon">−</span></button><div id="panel-body">
+<div class="time-title"><span id="time-note">晨光映铜</span><span id="clock">08:10</span></div>
+<div class="time-tabs"><button data-time="morning" class="active">晨光</button><button data-time="day">日间</button><button data-time="evening">黄昏</button><button data-time="night">夜景</button></div>
+<div class="separator"></div><div class="row"><label for="quality">画面品质</label><select id="quality"><option value="high">极致 · 全效果</option><option value="medium">均衡</option><option value="low">流畅</option></select></div>
+<div class="row"><label for="speed">时间流速</label><span id="speed-value">1×</span></div><input id="speed" type="range" min="0.25" max="3" step="0.25" value="1" aria-label="动画速度">
+<label class="toggle"><span>广场人流与车辆</span><input id="traffic" type="checkbox" checked></label><label class="toggle"><span>风动植物与飞鸟</span><input id="wind" type="checkbox" checked></label><label class="toggle"><span>显示完整屋面</span><input id="roof-visible" type="checkbox" checked></label><label class="toggle"><span>体积光与泛光</span><input id="atmosphere" type="checkbox" checked></label><label class="toggle"><span>昼夜时光流转</span><input id="timelapse" type="checkbox"></label>
+<div class="panel-actions"><button id="pause">Ⅱ 暂停动态</button><button id="tour">↻ 环绕巡游</button></div>
+<button id="export-module" class="module-link">下载千人小镇接入模块 ↗</button><div class="panel-foot">112 × 112 m <span>独立正方形街坊</span></div>
+</div></aside>
+<nav class="tools" aria-label="镜头工具"><button id="zoom-in" title="放大" aria-label="放大">＋</button><button id="zoom-out" title="缩小" aria-label="缩小">−</button><span></span><button id="projection" title="透视 / 正交" aria-label="切换投影">◇</button><button id="capture" title="保存画面" aria-label="保存PNG截图">▣</button><button id="help" title="操作说明" aria-label="操作说明">?</button></nav>
+<div class="site-label"><i></i><div>穹光广场<small>112 M · SQUARE PARCEL</small></div></div>
+<footer><div>拖拽旋转 <span>·</span> 右键平移 <span>·</span> 滚轮缩放</div><button id="stats-button">实时场景 <span class="dot"></span></button></footer><div class="compass"><span>N</span><svg viewBox="0 0 40 40" id="north-arrow"><path d="M20 5 13 31 20 25 27 31Z"/></svg></div>
+<div id="selection" class="selection" hidden><button id="close-selection" aria-label="关闭信息">×</button><small id="selection-code"></small><h2 id="selection-title"></h2><p id="selection-info"></p><button id="focus-selection">靠近观察 ↗</button></div>
+<pre id="stats" hidden></pre><div id="toast" role="status"></div>
+<dialog id="guide"><button id="close-guide" aria-label="关闭说明">×</button><div class="eyebrow">EXPLORE DOME ARENA</div><h2>向运动，敞开。</h2><p>左键拖拽旋转；右键或 Shift＋左键平移；滚轮缩放。触屏可单指旋转、双指缩放和平移。</p><p>上方视角可定位入口、钢构、屋顶与比赛大厅。点击建筑可查看部位信息，空格暂停动态，H 键回到全景。</p><p>“导出模型”保存完整 GLB 静态模型；接入模块保留动画与宿主控制接口。点击钢构或场馆可隐藏屋面，查看桁架与看台。</p></dialog>
+<div id="loading"><div class="load-logo">D<span>/</span>A</div><p>正在构筑穹光体育中心</p><small id="load-detail">穹顶 · 钢构 · 全民运动</small></div>
+<script>__APP__</script></body></html>

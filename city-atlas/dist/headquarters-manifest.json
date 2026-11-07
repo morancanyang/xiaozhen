@@ -1,0 +1,378 @@
+{
+  "id": "henglian-corporate-headquarters",
+  "name": "衡联总部",
+  "version": 2,
+  "units": "m",
+  "upAxis": "Y",
+  "front": "+Z",
+  "pivot": "ground-center",
+  "footprint": {
+    "width": 112,
+    "depth": 112
+  },
+  "nativeSize": 112,
+  "nativeBounds": {
+    "min": [
+      -56,
+      -0.4,
+      -56
+    ],
+    "max": [
+      56,
+      100,
+      56
+    ]
+  },
+  "surfacePolicy": "Stone / permeable pavers / lawn. No asphalt. External municipal roads belong to the host.",
+  "buildings": [
+    {
+      "id": "main",
+      "name": "总部主楼",
+      "x": -23,
+      "z": -6,
+      "w": 28,
+      "d": 30,
+      "floors": 24,
+      "height": 100,
+      "roofY": 96.8,
+      "lobbyHeight": 4.8,
+      "standardFloorHeight": 4,
+      "groundY": 0
+    },
+    {
+      "id": "annex",
+      "name": "总部辅楼",
+      "x": 24,
+      "z": 3,
+      "w": 24,
+      "d": 26,
+      "floors": 16,
+      "height": 68,
+      "roofY": 64.8,
+      "lobbyHeight": 4.8,
+      "standardFloorHeight": 4,
+      "groundY": 0
+    }
+  ],
+  "parts": [
+    {
+      "id": "site",
+      "name": "场地与透水铺装",
+      "buildingId": null
+    },
+    {
+      "id": "landscape",
+      "name": "草坪与庭院绿化",
+      "buildingId": null
+    },
+    {
+      "id": "playground",
+      "name": "商务休憩花园",
+      "buildingId": null
+    },
+    {
+      "id": "life",
+      "name": "居民与飞鸟",
+      "buildingId": null
+    },
+    {
+      "id": "main",
+      "name": "主楼 · 24层",
+      "buildingId": null
+    },
+    {
+      "id": "main-facade",
+      "name": "主楼 / 幕墙与楼板",
+      "buildingId": "main"
+    },
+    {
+      "id": "main-roof",
+      "name": "主楼 / 屋顶与机电",
+      "buildingId": "main"
+    },
+    {
+      "id": "main-entrance",
+      "name": "主楼 / 门厅与雨棚",
+      "buildingId": "main"
+    },
+    {
+      "id": "main-interior",
+      "name": "主楼 / 会议室与办公",
+      "buildingId": "main"
+    },
+    {
+      "id": "main-stairs",
+      "name": "主楼 · 连续疏散楼梯",
+      "buildingId": "main"
+    },
+    {
+      "id": "annex",
+      "name": "辅楼 · 16层",
+      "buildingId": null
+    },
+    {
+      "id": "annex-facade",
+      "name": "辅楼 / 幕墙与楼板",
+      "buildingId": "annex"
+    },
+    {
+      "id": "annex-roof",
+      "name": "辅楼 / 屋顶与机电",
+      "buildingId": "annex"
+    },
+    {
+      "id": "annex-entrance",
+      "name": "辅楼 / 门厅与雨棚",
+      "buildingId": "annex"
+    },
+    {
+      "id": "annex-interior",
+      "name": "辅楼 / 会议室与办公",
+      "buildingId": "annex"
+    },
+    {
+      "id": "annex-stairs",
+      "name": "辅楼 · 连续疏散楼梯",
+      "buildingId": "annex"
+    },
+    {
+      "id": "bridge",
+      "name": "空中连廊 · 第10层",
+      "buildingId": null
+    }
+  ],
+  "entrances": {
+    "public": {
+      "position": [
+        0,
+        0,
+        56
+      ],
+      "width": 8
+    },
+    "service": {
+      "position": [
+        46,
+        0,
+        56
+      ],
+      "width": 6
+    }
+  },
+  "lightFixtures": [
+    {
+      "position": [
+        -23,
+        3.5,
+        11
+      ],
+      "type": "point",
+      "power": 90,
+      "distance": 16
+    },
+    {
+      "position": [
+        24,
+        3.5,
+        18
+      ],
+      "type": "point",
+      "power": 90,
+      "distance": 16
+    },
+    {
+      "position": [
+        -4,
+        40,
+        3
+      ],
+      "type": "point",
+      "power": 45,
+      "distance": 10
+    },
+    {
+      "position": [
+        7,
+        40,
+        3
+      ],
+      "type": "point",
+      "power": 45,
+      "distance": 10
+    },
+    {
+      "position": [
+        -41,
+        3.55,
+        38
+      ],
+      "type": "point",
+      "power": 60,
+      "distance": 16
+    },
+    {
+      "position": [
+        41,
+        3.55,
+        38
+      ],
+      "type": "point",
+      "power": 60,
+      "distance": 16
+    },
+    {
+      "position": [
+        -41,
+        3.55,
+        -35
+      ],
+      "type": "point",
+      "power": 60,
+      "distance": 16
+    },
+    {
+      "position": [
+        41,
+        3.55,
+        -35
+      ],
+      "type": "point",
+      "power": 60,
+      "distance": 16
+    },
+    {
+      "position": [
+        -5,
+        3.55,
+        22
+      ],
+      "type": "point",
+      "power": 60,
+      "distance": 16
+    },
+    {
+      "position": [
+        5,
+        3.55,
+        22
+      ],
+      "type": "point",
+      "power": 60,
+      "distance": 16
+    },
+    {
+      "position": [
+        0,
+        3.55,
+        49
+      ],
+      "type": "point",
+      "power": 60,
+      "distance": 16
+    },
+    {
+      "position": [
+        0,
+        3.55,
+        -45
+      ],
+      "type": "point",
+      "power": 60,
+      "distance": 16
+    }
+  ],
+  "motion": {
+    "peopleCount": 22,
+    "birdCount": 5,
+    "vehicleCount": 0,
+    "walkwayCenterline": 41,
+    "bridgeFloor": 36.8,
+    "bridgeTop": 41.2
+  },
+  "recommendedHost": {
+    "pointLightBudget": 4,
+    "waterReflectionPasses": 0,
+    "transmissionPasses": 0
+  },
+  "stairs": {
+    "external": [
+      {
+        "building": "main",
+        "steps": 3,
+        "riser": 0.15,
+        "tread": 0.4,
+        "bottom": 0.24,
+        "landing": 0.69,
+        "ramp": {
+          "rise": 0.45,
+          "run": 5.4,
+          "width": 1.8,
+          "slope": "1:12"
+        }
+      },
+      {
+        "building": "annex",
+        "steps": 3,
+        "riser": 0.15,
+        "tread": 0.4,
+        "bottom": 0.24,
+        "landing": 0.69,
+        "ramp": {
+          "rise": 0.45,
+          "run": 5.4,
+          "width": 1.8,
+          "slope": "1:12"
+        }
+      }
+    ],
+    "internal": [
+      {
+        "building": "main",
+        "flights": 48,
+        "levels": 24,
+        "clearWidth": 1.8,
+        "tread": 0.27,
+        "firstLanding": 0.69,
+        "roofLanding": 96.89
+      },
+      {
+        "building": "annex",
+        "flights": 32,
+        "levels": 16,
+        "clearWidth": 1.8,
+        "tread": 0.27,
+        "firstLanding": 0.69,
+        "roofLanding": 64.89
+      }
+    ],
+    "riserMax": 0.15642857142857144,
+    "treadMin": 0.27
+  },
+  "bridge": {
+    "id": "bridge",
+    "floor": 36.8,
+    "top": 41.2,
+    "clearSpan": 21,
+    "width": 6,
+    "entrances": [
+      [
+        -9,
+        37.07,
+        3
+      ],
+      [
+        12,
+        37.07,
+        3
+      ]
+    ]
+  },
+  "ecology": {
+    "trees": 32,
+    "branches": 1927,
+    "leaves": 97863,
+    "shrubs": 27,
+    "grassTufts": 132000,
+    "grassBlades": 792000
+  }
+}

@@ -1,0 +1,83 @@
+import * as THREE from 'three';
+import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+import {GLTFExporter} from 'three/addons/exporters/GLTFExporter.js';
+import {createLandmarkOffice} from './model.js';
+
+const $=s=>document.querySelector(s),coarse=new URLSearchParams(location.search).has('coarse');
+const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true,powerPreference:'high-performance'});
+renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));renderer.setSize(innerWidth,innerHeight);renderer.outputColorSpace=THREE.SRGBColorSpace;
+renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=.97;renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;$('#viewport').appendChild(renderer.domElement);
+const scene=new THREE.Scene();scene.background=new THREE.Color(0xeaf0f3);scene.fog=new THREE.FogExp2(0xeaf0f3,.00042);
+const perspective=new THREE.PerspectiveCamera(43,innerWidth/innerHeight,.06,5000),ortho=new THREE.OrthographicCamera(-180,180,120,-120,.06,5000);
+let camera=ortho,span=244,controls;
+function bindControls(){controls?.dispose();controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.dampingFactor=.07;controls.minDistance=1;controls.maxDistance=1200;controls.minZoom=.15;controls.maxZoom=60;controls.maxPolarAngle=Math.PI*.495}
+bindControls();
+const model=createLandmarkOffice({THREE,coarse,quality:'high'});scene.add(model.root);
+const sun=new THREE.DirectionalLight(0xffe5c8,3.1);sun.position.set(-180,310,220);sun.target.position.set(0,72,0);sun.castShadow=true;
+sun.shadow.mapSize.set(4096,4096);Object.assign(sun.shadow.camera,{left:-135,right:135,top:165,bottom:-165,near:1,far:1200});sun.shadow.camera.updateProjectionMatrix();sun.shadow.normalBias=.025;sun.shadow.bias=-.00006;scene.add(sun,sun.target);
+const hemi=new THREE.HemisphereLight(0xdbe9f1,0x899395,1.65);scene.add(hemi);
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(5000,5000),new THREE.MeshStandardMaterial({color:0xe7ecee,roughness:.96}));floor.rotation.x=-Math.PI/2;floor.position.y=-.55;floor.receiveShadow=true;floor.name='Presentation floor - excluded from module';scene.add(floor);
+const skyMaterial=new THREE.ShaderMaterial({side:THREE.BackSide,uniforms:{time:{value:0},night:{value:0},warm:{value:0}},vertexShader:'varying vec3 dir;void main(){dir=position;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',fragmentShader:`varying vec3 dir;uniform float time,night,warm;float n(vec2 p){return sin(p.x*.7+sin(p.y*.83))*cos(p.y*.63+sin(p.x*.55));}void main(){vec3 d=normalize(dir);vec3 c=mix(vec3(.84,.91,.95),vec3(.33,.57,.74),pow(max(d.y,0.),.5));if(d.y>.01){vec2 p=d.xz/max(d.y,.035)*2.7+vec2(time*.015,0.);float cloud=smoothstep(.1,.85,n(p)+n(p*2.05)*.25);c=mix(c,vec3(.98,.98,.96),cloud*.82);}c=mix(c,vec3(.96,.69,.46),warm*pow(1.-max(0.,d.y),3.)*.6);c=mix(c,vec3(.015,.029,.052),night);gl_FragColor=vec4(c,1.);}`});
+const skyGeometry=new THREE.SphereGeometry(1800,32,20),sky=new THREE.Mesh(skyGeometry,skyMaterial);sky.name='Presentation sky';scene.add(sky);
+const reflectionScene=new THREE.Scene(),reflectionSky=new THREE.Mesh(skyGeometry,skyMaterial);reflectionScene.add(reflectionSky);
+const cubeTarget=new THREE.WebGLCubeRenderTarget(128,{generateMipmaps:true,minFilter:THREE.LinearMipmapLinearFilter,type:THREE.HalfFloatType});
+const cubeCamera=new THREE.CubeCamera(1,2200,cubeTarget);reflectionScene.add(cubeCamera);
+const pmrem=new THREE.PMREMGenerator(renderer);let reflection=null,lastReflection=-10;
+function updateReflection(){cubeCamera.update(renderer,reflectionScene);const next=pmrem.fromCubemap(cubeTarget.texture);scene.environment=next.texture;reflection?.dispose();reflection=next;lastReflection=cloudTime}
+const lights=model.manifest.lightFixtures.map(f=>{const light=new THREE.PointLight(f.color??0xffd8aa,0,f.distance??15,2);light.position.fromArray(f.position);scene.add(light);return{light,power:f.power}});
+const outline=new THREE.Box3Helper(new THREE.Box3(),0x7b9aa7);outline.visible=false;scene.add(outline);
+const views={overview:{p:[235,242,280],q:[0,85,0],span:268,orthographic:true},front:{p:[0,85,350],q:[0,85,0],span:280,orthographic:true},top:{p:[0,350,.01],q:[0,0,0],span:146,orthographic:true},low:{p:[75,10,100],q:[0,105,0],orthographic:false},entrance:{p:[16,8,66],q:[0,6,30],orthographic:false},terrace:{p:[35,79,43],q:[7,69.5,19],orthographic:false},roof:{p:[48,207,55],q:[0,175,0],orthographic:false}};
+const state={paused:false,speed:1,time:'morning',selected:null,isolated:null,free:false,wind:true,people:true,vehicles:true,mechanical:true};
+let currentView='overview',cloudTime=0,mobileLayout=innerWidth<800;
+function projectionBounds(){if(camera.isOrthographicCamera){const aspect=innerWidth/innerHeight;camera.left=-span*aspect/2;camera.right=span*aspect/2;camera.top=span/2;camera.bottom=-span/2}else camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix()}
+function setProjection(orthographic,preserve=true){
+ const old=camera,target=controls.target.clone(),position=old.position.clone();if((old===ortho)===orthographic)return;
+ if(preserve){if(orthographic){span=2*old.position.distanceTo(target)*Math.tan(THREE.MathUtils.degToRad(perspective.fov/2));ortho.zoom=1}else{const distance=span/ortho.zoom/(2*Math.tan(THREE.MathUtils.degToRad(perspective.fov/2)));position.copy(target).add(old.position.clone().sub(target).normalize().multiplyScalar(distance))}}
+ camera=orthographic?ortho:perspective;camera.position.copy(position);bindControls();controls.target.copy(target);projectionBounds();controls.update();$('#projection').textContent=orthographic?'正交视图':'透视视图';$('#projection').setAttribute('aria-pressed',String(orthographic));
+}
+function fit(object,direction=new THREE.Vector3(1,.7,1.2)){
+ const box=new THREE.Box3().setFromObject(object),center=box.getCenter(new THREE.Vector3()),sphere=box.getBoundingSphere(new THREE.Sphere()),aspect=innerWidth/innerHeight;
+ if(camera.isOrthographicCamera){span=sphere.radius*2*1.12/Math.min(1,aspect);camera.zoom=1;camera.position.copy(center).add(direction.normalize().multiplyScalar(360))}else{const a=Math.min(THREE.MathUtils.degToRad(camera.fov/2),Math.atan(Math.tan(THREE.MathUtils.degToRad(camera.fov/2))*aspect));camera.position.copy(center).add(direction.normalize().multiplyScalar(sphere.radius/Math.sin(a)*1.12))}
+ controls.target.copy(center);projectionBounds();controls.update();
+}
+function showAll(){for(const g of model.groups.values())g.visible=true;model.root.visible=true;model.setQuality(model.quality);state.isolated=null}
+function select(id=null){const group=model.groups.get(id);state.selected=group?id:null;$('#part').value=state.selected||'';$('#isolate').disabled=!group;$('#export-part').disabled=!group;$('#selection-note').textContent=group?group.userData.name+' / 可独立导出':'双击模型定位 · 可独立查看构件';outline.visible=!!group;if(group)outline.box.setFromObject(group);return group}
+function isolate(id){const g=model.groups.get(id);if(!g)return;showAll();model.groups.forEach((group,key)=>group.visible=key===id);state.isolated=id;select(id);setProjection(false);fit(g);$('.intro').classList.add('hidden')}
+function view(name='overview'){
+ currentView=name;const v=views[name]||views.overview;state.free=false;$('#free').setAttribute('aria-pressed','false');$('#gesture').textContent='拖拽旋转 · 右键平移 · 滚轮缩放';showAll();select(null);setProjection(v.orthographic,false);
+ span=v.span||244;camera.zoom=1;camera.position.fromArray(v.p);controls.target.fromArray(v.q);projectionBounds();controls.update();if(innerWidth<800&&['overview','front','top'].includes(name))fit(model.root,new THREE.Vector3(...v.p).sub(new THREE.Vector3(...v.q)));
+ $('.intro').classList.toggle('hidden',name!=='overview');document.querySelectorAll('[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===name));return name;
+}
+model.manifest.parts.forEach(p=>{const option=document.createElement('option');option.value=p.id;option.textContent=p.name;$('#part').appendChild(option)});
+document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>view(b.dataset.view));$('#reset').onclick=()=>view('overview');
+$('#part').onchange=e=>{showAll();select(e.target.value)};$('#isolate').onclick=()=>isolate(state.selected);
+$('#projection').onclick=()=>{setProjection(!camera.isOrthographicCamera);state.free=false;$('#free').setAttribute('aria-pressed','false')};
+$('#free').onclick=()=>{state.free=!state.free;if(state.free){setProjection(false);controls.maxPolarAngle=Math.PI;$('.intro').classList.add('hidden')}else controls.maxPolarAngle=Math.PI*.495;$('#free').setAttribute('aria-pressed',String(state.free));$('#gesture').textContent=state.free?'WASD 移动 · Q/E 升降 · Shift 加速 · 拖拽转向':'拖拽旋转 · 右键平移 · 滚轮缩放'};
+const keys=new Set();window.addEventListener('keydown',ev=>{if(!state.free||/INPUT|SELECT|TEXTAREA|BUTTON/.test(ev.target.tagName))return;if(['w','a','s','d','q','e','shift'].includes(ev.key.toLowerCase())){keys.add(ev.key.toLowerCase());ev.preventDefault()}});window.addEventListener('keyup',ev=>keys.delete(ev.key.toLowerCase()));window.addEventListener('blur',()=>keys.clear());
+const raycaster=new THREE.Raycaster(),pointer=new THREE.Vector2();let down={x:0,y:0};
+function hit(ev){pointer.set(ev.clientX/innerWidth*2-1,-ev.clientY/innerHeight*2+1);raycaster.setFromCamera(pointer,camera);return raycaster.intersectObject(model.root,true).find(h=>{let o=h.object;while(o!==model.root){if(!o.visible)return false;o=o.parent}return true})}
+renderer.domElement.addEventListener('pointerdown',ev=>down={x:ev.clientX,y:ev.clientY});renderer.domElement.addEventListener('click',ev=>{if(Math.hypot(ev.clientX-down.x,ev.clientY-down.y)>5)return;let o=hit(ev)?.object;while(o&&o!==model.root&&!o.userData.partId)o=o.parent;select(o?.userData.partId)});
+renderer.domElement.addEventListener('dblclick',ev=>{const h=hit(ev);if(!h)return;controls.target.copy(h.point);const distance=camera.position.distanceTo(h.point);if(!camera.isOrthographicCamera&&distance>16)camera.position.lerp(h.point,.4);controls.update()});
+$('#pause').onclick=()=>{state.paused=!state.paused;model.setDynamicsEnabled(!state.paused);$('#pause').textContent=state.paused?'继续动态':'暂停动态';$('#pause').setAttribute('aria-pressed',String(state.paused))};
+$('#speed').oninput=ev=>{state.speed=+ev.target.value;$('#speed-value').textContent=state.speed.toFixed(2)+'×'};
+for(const key of ['wind','people','vehicles','mechanical'])$('#'+key).onchange=ev=>{state[key]=ev.target.checked;model.setActivity({[key]:ev.target.checked});model.update(0)};
+$('#quality').onchange=ev=>{const value=ev.target.value;model.setQuality(value);renderer.setPixelRatio(Math.min(devicePixelRatio,value==='low'?1:1.5));renderer.setSize(innerWidth,innerHeight);const size=value==='high'?4096:value==='medium'?2048:1024;sun.shadow.mapSize.set(size,size);if(sun.shadow.map){sun.shadow.map.dispose();sun.shadow.map=null}};
+const presets={morning:{night:0,color:0xffe4c4,sun:3.1,hemi:1.65,env:1.05,bg:0xeaf0f3,ground:0xe4eaec,position:[-180,310,220],warm:.1,clock:'08:30'},day:{night:0,color:0xfff5e7,sun:3.1,hemi:1.7,env:1,bg:0xe6eef3,ground:0xe3e9ec,position:[-120,370,100],warm:0,clock:'12:00'},evening:{night:.4,color:0xffbf82,sun:2,hemi:.8,env:.55,bg:0xd6c9ba,ground:0xc4c4bb,position:[-280,130,140],warm:1,clock:'17:40'},night:{night:1,color:0xb2d0ea,sun:.15,hemi:.33,env:.16,bg:0x192b3c,ground:0x334351,position:[-160,320,120],warm:0,clock:'20:30'},white:{night:0,color:0xffffff,sun:2.5,hemi:1.8,env:1,bg:0xffffff,ground:0xffffff,position:[-200,340,200],warm:0,clock:'STUDIO'}};
+function setTime(name){const a=presets[name]||presets.morning;state.time=name;sun.color.setHex(a.color);sun.intensity=a.sun;sun.position.fromArray(a.position);hemi.intensity=a.hemi;scene.environmentIntensity=a.env;scene.fog.color.setHex(a.bg);scene.background.setHex(a.bg);floor.material.color.setHex(a.ground);sky.visible=name!=='white';skyMaterial.uniforms.night.value=a.night;skyMaterial.uniforms.warm.value=a.warm;lights.forEach(({light,power})=>light.intensity=power*a.night);model.setTimeOfDay(a.night);$('#time').value=name;$('#clock').textContent=a.clock;document.body.classList.toggle('night',name==='night');updateReflection()}
+$('#time').onchange=ev=>setTime(ev.target.value);
+function download(blob,name){const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=name;link.click();setTimeout(()=>URL.revokeObjectURL(url),5000)}
+async function exportGLB(partId=null){const visibility=[...model.groups].map(([id,g])=>[id,g.visible]),quality=model.quality,isolated=state.isolated;let copy;try{showAll();model.setQuality('high');copy=(partId?model.groups.get(partId):model.root).clone(true);copy.position.set(0,0,0)}finally{model.setQuality(quality);visibility.forEach(([id,v])=>model.groups.get(id).visible=v);state.isolated=isolated}copy.updateMatrixWorld(true);const data=await new GLTFExporter().parseAsync(copy,{binary:true});download(new Blob([data]),partId?'jiheng-'+partId+'.glb':'jiheng-landmark-office.glb');return data.byteLength}
+$('#export').onclick=()=>exportGLB().catch(e=>$('#selection-note').textContent='导出失败：'+e.message);$('#export-part').onclick=()=>exportGLB(state.selected).catch(e=>$('#selection-note').textContent='导出失败：'+e.message);
+$('#capture').onclick=()=>{renderer.render(scene,camera);renderer.domElement.toBlob(b=>b&&download(b,'霁衡中心.png'))};
+$('#collapse').onclick=()=>{const hidden=!$('#panel-body').hidden;$('#panel-body').hidden=hidden;$('#collapse').setAttribute('aria-expanded',String(!hidden));$('#collapse-icon').textContent=hidden?'+':'−'};
+window.addEventListener('resize',()=>{projectionBounds();renderer.setSize(innerWidth,innerHeight);if(innerWidth<800){if(!mobileLayout){$('#panel-body').hidden=true;$('#collapse-icon').textContent='+';$('#collapse').setAttribute('aria-expanded','false')}if(['overview','front','top'].includes(currentView)&&!state.isolated){const v=views[currentView];fit(model.root,new THREE.Vector3(...v.p).sub(new THREE.Vector3(...v.q)))}}mobileLayout=innerWidth<800});
+let last=performance.now(),stamp=last,frames=0,fps=0;
+function tick(now){requestAnimationFrame(tick);const dt=Math.min(.08,Math.max(0,(now-last)/1000));last=now;model.update(dt*state.speed);
+ if(state.wind&&!state.paused)cloudTime+=dt*state.speed;skyMaterial.uniforms.time.value=cloudTime;if(cloudTime-lastReflection>6&&model.quality!=='low')updateReflection();
+ if(state.free&&keys.size){const forward=new THREE.Vector3();camera.getWorldDirection(forward);forward.y=0;forward.normalize();const right=new THREE.Vector3().crossVectors(forward,camera.up).normalize(),move=new THREE.Vector3();if(keys.has('w'))move.add(forward);if(keys.has('s'))move.sub(forward);if(keys.has('d'))move.add(right);if(keys.has('a'))move.sub(right);if(keys.has('e'))move.y++;if(keys.has('q'))move.y--;move.normalize().multiplyScalar(dt*(keys.has('shift')?55:15));camera.position.add(move);controls.target.add(move)}
+ controls.update();camera.updateMatrixWorld();sky.position.copy(camera.position);renderer.render(scene,camera);if(outline.visible&&state.selected)outline.box.setFromObject(model.groups.get(state.selected));
+ frames++;if(now-stamp>1000){fps=frames*1000/(now-stamp);stamp=now;frames=0;$('#stats').textContent=Math.round(fps)+' FPS';const right=new THREE.Vector3(1,0,0).applyQuaternion(camera.quaternion),a=controls.target.clone().project(camera),b=controls.target.clone().addScaledVector(right,20).project(camera);$('.scale-bar i').style.width=Math.abs(b.x-a.x)*innerWidth/2+'px'}
+}
+view('overview');setTime('morning');if(innerWidth<800){$('#panel-body').hidden=true;$('#collapse-icon').textContent='+';$('#collapse').setAttribute('aria-expanded','false')}
+window.LandmarkOfficeModule={create:createLandmarkOffice};window.officeApp={THREE,model,scene,renderer,get camera(){return camera},get controls(){return controls},state,views,view,select,isolate,setTime,setProjection,exportGLB,exportScene:()=>{const vis=[...model.groups].map(([id,g])=>[id,g.visible]),quality=model.quality,isolated=state.isolated;try{showAll();model.setQuality('high');return model.exportScene()}finally{model.setQuality(quality);vis.forEach(([id,v])=>model.groups.get(id).visible=v);state.isolated=isolated}},ready:true,metrics:()=>({fps,triangles:renderer.info.render.triangles,calls:renderer.info.render.calls})};
+$('#loading').remove();requestAnimationFrame(tick);

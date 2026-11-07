@@ -1,0 +1,8 @@
+{
+  "name":"nuanting-garden-housing",
+  "version":"1.0.0",
+  "type":"module",
+  "private":true,
+  "scripts":{"build":"node build.cjs","check":"node --check src/model.js && node --check src/app.js"},
+  "devDependencies":{"three":"0.180.0","esbuild":"0.25.0"}
+}

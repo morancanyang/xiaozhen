@@ -1,0 +1,438 @@
+{
+  "id": "chengxu-residential-courtyard",
+  "name": "澄序住区",
+  "version": 1,
+  "units": "m",
+  "upAxis": "Y",
+  "front": "+Z",
+  "pivot": "ground-center",
+  "footprint": {
+    "width": 112,
+    "depth": 112
+  },
+  "nativeSize": 112,
+  "nativeBounds": {
+    "min": [
+      -56,
+      -0.4,
+      -56
+    ],
+    "max": [
+      56,
+      78,
+      56
+    ]
+  },
+  "surfacePolicy": "Stone / permeable pavers / lawn. No asphalt. External municipal roads belong to the host.",
+  "buildings": [
+    {
+      "id": "A",
+      "name": "A栋",
+      "x": -26,
+      "z": -26,
+      "w": 22,
+      "d": 20,
+      "floors": 20,
+      "height": 65.6,
+      "roofY": 63.1,
+      "groundY": 0,
+      "lobbyHeight": 4.2,
+      "standardFloorHeight": 3.1
+    },
+    {
+      "id": "B",
+      "name": "B栋",
+      "x": 26,
+      "z": -26,
+      "w": 22,
+      "d": 20,
+      "floors": 22,
+      "height": 71.80000000000001,
+      "roofY": 69.30000000000001,
+      "groundY": 0,
+      "lobbyHeight": 4.2,
+      "standardFloorHeight": 3.1
+    },
+    {
+      "id": "C",
+      "name": "C栋",
+      "x": -26,
+      "z": 26,
+      "w": 22,
+      "d": 20,
+      "floors": 22,
+      "height": 71.80000000000001,
+      "roofY": 69.30000000000001,
+      "groundY": 0,
+      "lobbyHeight": 4.2,
+      "standardFloorHeight": 3.1
+    },
+    {
+      "id": "D",
+      "name": "D栋",
+      "x": 26,
+      "z": 26,
+      "w": 22,
+      "d": 20,
+      "floors": 24,
+      "height": 78,
+      "roofY": 75.5,
+      "groundY": 0,
+      "lobbyHeight": 4.2,
+      "standardFloorHeight": 3.1
+    }
+  ],
+  "parts": [
+    {
+      "id": "site",
+      "name": "场地与透水铺装",
+      "buildingId": null
+    },
+    {
+      "id": "landscape",
+      "name": "草坪与庭院绿化",
+      "buildingId": null
+    },
+    {
+      "id": "playground",
+      "name": "儿童与休憩花园",
+      "buildingId": null
+    },
+    {
+      "id": "life",
+      "name": "居民与飞鸟",
+      "buildingId": null
+    },
+    {
+      "id": "A",
+      "name": "A栋 · 20层",
+      "buildingId": null
+    },
+    {
+      "id": "A-facade",
+      "name": "A栋 / 立面与窗框",
+      "buildingId": "A"
+    },
+    {
+      "id": "A-roof",
+      "name": "A栋 / 屋顶与机电",
+      "buildingId": "A"
+    },
+    {
+      "id": "A-entrance",
+      "name": "A栋 / 门厅与雨棚",
+      "buildingId": "A"
+    },
+    {
+      "id": "B",
+      "name": "B栋 · 22层",
+      "buildingId": null
+    },
+    {
+      "id": "B-facade",
+      "name": "B栋 / 立面与窗框",
+      "buildingId": "B"
+    },
+    {
+      "id": "B-roof",
+      "name": "B栋 / 屋顶与机电",
+      "buildingId": "B"
+    },
+    {
+      "id": "B-entrance",
+      "name": "B栋 / 门厅与雨棚",
+      "buildingId": "B"
+    },
+    {
+      "id": "C",
+      "name": "C栋 · 22层",
+      "buildingId": null
+    },
+    {
+      "id": "C-facade",
+      "name": "C栋 / 立面与窗框",
+      "buildingId": "C"
+    },
+    {
+      "id": "C-roof",
+      "name": "C栋 / 屋顶与机电",
+      "buildingId": "C"
+    },
+    {
+      "id": "C-entrance",
+      "name": "C栋 / 门厅与雨棚",
+      "buildingId": "C"
+    },
+    {
+      "id": "D",
+      "name": "D栋 · 24层",
+      "buildingId": null
+    },
+    {
+      "id": "D-facade",
+      "name": "D栋 / 立面与窗框",
+      "buildingId": "D"
+    },
+    {
+      "id": "D-roof",
+      "name": "D栋 / 屋顶与机电",
+      "buildingId": "D"
+    },
+    {
+      "id": "D-entrance",
+      "name": "D栋 / 门厅与雨棚",
+      "buildingId": "D"
+    }
+  ],
+  "entrances": {
+    "public": {
+      "position": [
+        0,
+        0,
+        56
+      ],
+      "width": 8
+    },
+    "service": {
+      "position": [
+        46,
+        0,
+        56
+      ],
+      "width": 6
+    }
+  },
+  "lightFixtures": [
+    {
+      "position": [
+        -29.2,
+        2.3,
+        -15.4
+      ],
+      "type": "point",
+      "power": 50,
+      "distance": 12
+    },
+    {
+      "position": [
+        22.8,
+        2.3,
+        -15.4
+      ],
+      "type": "point",
+      "power": 50,
+      "distance": 12
+    },
+    {
+      "position": [
+        -29.2,
+        2.3,
+        36.6
+      ],
+      "type": "point",
+      "power": 50,
+      "distance": 12
+    },
+    {
+      "position": [
+        22.8,
+        2.3,
+        36.6
+      ],
+      "type": "point",
+      "power": 50,
+      "distance": 12
+    },
+    {
+      "position": [
+        -41,
+        3.5,
+        -38
+      ],
+      "type": "point",
+      "power": 70,
+      "distance": 16
+    },
+    {
+      "position": [
+        41,
+        3.5,
+        -38
+      ],
+      "type": "point",
+      "power": 70,
+      "distance": 16
+    },
+    {
+      "position": [
+        -41,
+        3.5,
+        0
+      ],
+      "type": "point",
+      "power": 70,
+      "distance": 16
+    },
+    {
+      "position": [
+        41,
+        3.5,
+        0
+      ],
+      "type": "point",
+      "power": 70,
+      "distance": 16
+    },
+    {
+      "position": [
+        -41,
+        3.5,
+        38
+      ],
+      "type": "point",
+      "power": 70,
+      "distance": 16
+    },
+    {
+      "position": [
+        41,
+        3.5,
+        38
+      ],
+      "type": "point",
+      "power": 70,
+      "distance": 16
+    },
+    {
+      "position": [
+        -9,
+        3.5,
+        -10
+      ],
+      "type": "point",
+      "power": 70,
+      "distance": 16
+    },
+    {
+      "position": [
+        9,
+        3.5,
+        10
+      ],
+      "type": "point",
+      "power": 70,
+      "distance": 16
+    },
+    {
+      "position": [
+        0,
+        3.5,
+        49
+      ],
+      "type": "point",
+      "power": 70,
+      "distance": 16
+    },
+    {
+      "position": [
+        0,
+        3.5,
+        -49
+      ],
+      "type": "point",
+      "power": 70,
+      "distance": 16
+    },
+    {
+      "position": [
+        -3,
+        0.95,
+        -32
+      ],
+      "type": "point",
+      "power": 12,
+      "distance": 7
+    },
+    {
+      "position": [
+        -3,
+        0.95,
+        -20
+      ],
+      "type": "point",
+      "power": 12,
+      "distance": 7
+    },
+    {
+      "position": [
+        -3,
+        0.95,
+        20
+      ],
+      "type": "point",
+      "power": 12,
+      "distance": 7
+    },
+    {
+      "position": [
+        -3,
+        0.95,
+        32
+      ],
+      "type": "point",
+      "power": 12,
+      "distance": 7
+    },
+    {
+      "position": [
+        3,
+        0.95,
+        -32
+      ],
+      "type": "point",
+      "power": 12,
+      "distance": 7
+    },
+    {
+      "position": [
+        3,
+        0.95,
+        -20
+      ],
+      "type": "point",
+      "power": 12,
+      "distance": 7
+    },
+    {
+      "position": [
+        3,
+        0.95,
+        20
+      ],
+      "type": "point",
+      "power": 12,
+      "distance": 7
+    },
+    {
+      "position": [
+        3,
+        0.95,
+        32
+      ],
+      "type": "point",
+      "power": 12,
+      "distance": 7
+    }
+  ],
+  "motion": {
+    "peopleCount": 22,
+    "birdCount": 5,
+    "vehicleCount": 0,
+    "walkwayCenterline": 41
+  },
+  "recommendedHost": {
+    "pointLightBudget": 4,
+    "waterReflectionPasses": 0,
+    "transmissionPasses": 0
+  }
+}

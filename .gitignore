@@ -1,0 +1,21 @@
+node_modules/
+.venv/
+venv/
+__pycache__/
+.cache/
+.openai/
+.env
+.env.*
+!.env.example
+outputs/
+backups/
+*.blend
+*.blend1
+*.glb
+*.gltf
+*.zip
+*.tar.gz
+*.log
+# Root-level standalone HTML files are generated. Keep src templates and city runtime.
+/*/*.html
+!city-atlas/dist/**

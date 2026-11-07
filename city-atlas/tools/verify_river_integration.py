@@ -1,0 +1,45 @@
+import json,struct
+from pathlib import Path
+from playwright.sync_api import sync_playwright
+ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'outputs/river-integration';OUT.mkdir(parents=True,exist_ok=True);checks=[];errors=[]
+def check(name,value):
+    checks.append({'check':name,'passed':bool(value)});print(('PASS ' if value else 'FAIL ')+name,flush=True)
+    if not value:raise AssertionError(name)
+def glb(path):
+    raw=path.read_bytes();assert raw[:4]==b'glTF';n=struct.unpack_from('<I',raw,12)[0];return json.loads(raw[20:20+n])
+with sync_playwright() as p:
+    browser=p.chromium.launch(channel='msedge',headless=True,args=['--enable-webgl','--enable-unsafe-swiftshader']);page=browser.new_page(viewport={'width':1700,'height':1100},accept_downloads=True);page.on('pageerror',lambda e:errors.append(str(e)));page.on('console',lambda m:errors.append(m.text) if m.type=='error' else None)
+    page.goto('http://127.0.0.1:5173',wait_until='networkidle');page.wait_for_function('window.cityApp?.ready',timeout=60000);page.wait_for_timeout(1400)
+    check('river installed into exact central corridor',page.evaluate("cityApp.plan.corridor.moduleId==='qinglan-river'&&cityApp.riverSite.minX===-32&&cityApp.riverSite.maxX===32&&cityApp.riverSite.minZ===-300&&cityApp.riverSite.maxZ===300"))
+    check('16 blocks and 49 building records retained',page.evaluate('cityApp.plan.blocks.length===16&&cityApp.plan.buildings.length===49'))
+    baseline=(ROOT.parent/'river-corridor/outputs/city-before-river.js').read_text(encoding='utf8')
+    same=page.evaluate("""async source=>{const T=await import('three'),url=URL.createObjectURL(new Blob([source],{type:'text/javascript'})),m=await import(url);URL.revokeObjectURL(url);const before=m.buildCity(new T.Scene()).plan.buildings,after=cityApp.plan.buildings.filter(b=>!b.moduleId);return before.length===after.length&&before.every(b=>after.some(a=>JSON.stringify(a)===JSON.stringify(b)))}""",baseline)
+    check('all remaining residential records unchanged',same)
+    check('all six prior landmark modules retained',page.evaluate("['hospital-campus','skyline-one','mall-complex','shanghai-tower','university-campus','dome-arena'].every(id=>cityApp.plan.buildings.some(b=>b.moduleId===id))"))
+    data=page.evaluate('cityApp.exportCity()');ground=[i for b in data['batches'] if b['owner']=='world' and b['material'] in ['base','soil','asphalt'] for i in b['items']]
+    check('host ground fully excavated throughout river corridor',all(i['p'][0]+i['s'][0]/2<=-32.00001+0.001 or i['p'][0]-i['s'][0]/2>=31.999 or i['p'][2]+i['s'][2]/2<=-299.999 or i['p'][2]-i['s'][2]/2>=299.999 for i in ground))
+    module=next(m for m in data['modules'] if m['id']=='qinglan-river');check('city JSON includes complete river snapshot',module['snapshotSpace']=='world' and len(module['snapshot']['objects'])>15000 and 'water' in module['snapshot']['manifest']['components'])
+    hit=page.evaluate("async()=>{const T=await import('three'),r=new T.Raycaster(new T.Vector3(0,2,0),new T.Vector3(0,-1,0));return r.intersectObjects(cityApp.scene.children,true).filter(h=>h.object.isMesh).slice(0,3).map(h=>({name:h.object.name,y:h.point.y}))}")
+    check('water is visible below street level without old slab above it',bool(hit) and hit[0]['name']=='Dynamic river surface' and abs(hit[0]['y']+.75)<.01)
+    bounds=page.evaluate("async()=>{const T=await import('three'),b=new T.Box3().setFromObject(cityApp.river.root);return{min:b.min.toArray(),max:b.max.toArray()}}")
+    check('landscape remains inside reserved boundary',bounds['min'][0]>=-32.001 and bounds['max'][0]<=32.001 and bounds['min'][2]>=-300.001 and bounds['max'][2]<=300.001)
+    check('real reflection and depth buffers available in town',page.evaluate('cityApp.riverPass.metrics.updates>0&&!!cityApp.river.waterUniforms.uDepth.value&&!!cityApp.river.waterUniforms.uReflection.value'))
+    page.screenshot(path=str(OUT/'city-overview.png'));page.locator('#river-view').click();page.wait_for_timeout(2200);page.screenshot(path=str(OUT/'river-context.png'))
+    check('river shortcut frames corridor',page.evaluate('Math.abs(cityApp.controls().target.x)<.1&&Math.abs(cityApp.controls().target.z-25)<.1'))
+    page.locator('#river-fish-view').click();page.wait_for_timeout(1900);page.screenshot(path=str(OUT/'river-fish.png'));check('fish shortcut positions camera near shallow school',page.evaluate('cityApp.camera().position.y<10&&Math.abs(cityApp.controls().target.z-39)<.1'))
+    page.locator('#pause').click();t=page.evaluate('cityApp.river.simulationTime');page.wait_for_timeout(250);check('global pause freezes river and fish',t==page.evaluate('cityApp.river.simulationTime'));page.locator('#pause').click();page.wait_for_timeout(250);check('resume advances river and fish',t<page.evaluate('cityApp.river.simulationTime'))
+    page.locator('#river-fish').uncheck();check('fish switch hides only aquatic group',not page.evaluate('cityApp.river.groups.get("fish").visible'));page.locator('#river-fish').check()
+    page.locator('#river-flow').evaluate('(el)=>{el.value="2";el.dispatchEvent(new Event("input",{bubbles:true}))}');check('river flow multiplier propagates',page.evaluate('cityApp.river.flowSpeed===2'));page.locator('#river-flow').evaluate('(el)=>{el.value="1";el.dispatchEvent(new Event("input",{bubbles:true}))}')
+    page.locator('#wind').uncheck();page.wait_for_timeout(120);wt=page.evaluate('cityApp.river.windTime');ft=page.evaluate('cityApp.river.simulationTime');page.wait_for_timeout(250);check('global wind freezes foliage while fish continue',wt==page.evaluate('cityApp.river.windTime') and ft<page.evaluate('cityApp.river.simulationTime'));page.locator('#wind').check()
+    page.locator('#speed').evaluate('(el)=>{el.value="2";el.dispatchEvent(new Event("input",{bubbles:true}))}');t=page.evaluate('({r:cityApp.river.simulationTime,a:cityApp.arena.simulationTime})');page.wait_for_timeout(300);speed=page.evaluate('({r:cityApp.river.simulationTime,a:cityApp.arena.simulationTime})');check('river shares city simulation time scale',abs((speed['r']-t['r'])-(speed['a']-t['a']))<.002);page.locator('#speed').evaluate('(el)=>{el.value="1";el.dispatchEvent(new Event("input",{bubbles:true}))}')
+    page.locator('#quality').select_option('fast');page.wait_for_timeout(200);check('fast quality lowers river buffer resolution',page.evaluate("cityApp.river.quality==='low'&&cityApp.riverPass.metrics.width===512"));page.locator('#quality').select_option('cinema');page.wait_for_timeout(200);check('cinema quality enables full river detail',page.evaluate("cityApp.river.quality==='high'&&cityApp.riverPass.metrics.width===1280"));page.locator('#quality').select_option('balanced')
+    page.locator('[data-time=night]').click();page.wait_for_timeout(1800);check('night shading follows town lighting',page.evaluate('cityApp.river.waterUniforms.uNight.value>.99'));page.screenshot(path=str(OUT/'river-night.png'));page.locator('[data-time=morning]').click();page.wait_for_timeout(1700)
+    page.evaluate("cityApp.select('ARENA-DOME')");page.locator('#focus-building').click();page.wait_for_timeout(1900);check('arena remains selectable after river integration',page.evaluate("cityApp.state.selected.id==='ARENA-DOME'"))
+    with page.expect_download(timeout=180000) as result:page.locator('#export').click()
+    result.value.save_as(OUT/'town-with-river.glb');doc=glb(OUT/'town-with-river.glb');names=[n.get('name','') for n in doc['nodes']];check('full GLB includes river and prior landmarks',all(n in names for n in ['RIVER-QINGLAN','Dynamic river surface','Schooling fish bodies','ARENA-DOME','SKY-ONE','MALL-TAOLI','SHANGHAI-TOWER','UNIVERSITY-CAMPUS']))
+    check('GLB replaces custom water shader with PBR material',any(m.get('name')=='River water static PBR' for m in doc['materials']))
+    page.locator('#home').click();page.wait_for_timeout(1800);page.locator('[data-view=free]').click();page.wait_for_timeout(150);check('free view works alongside river pass',page.evaluate('cityApp.state.freeView'));page.keyboard.press('Escape');page.wait_for_timeout(120)
+    page.set_viewport_size({'width':420,'height':880});page.wait_for_timeout(300)
+    if page.locator('#panel-content').is_hidden():page.locator('#collapse').click()
+    page.locator('#river-view').click();page.wait_for_timeout(1900);check('mobile river shortcut closes panel without overflow',page.locator('#panel-content').is_hidden() and page.evaluate('document.documentElement.scrollWidth===420'));page.screenshot(path=str(OUT/'river-mobile.png'))
+    check('no browser or WebGL errors',not errors);(OUT/'verification.json').write_text(json.dumps({'checks':checks,'errors':errors,'bounds':bounds,'raycast':hit,'metrics':page.evaluate('cityApp.metrics()'),'riverPass':page.evaluate('cityApp.riverPass.metrics')},indent=2),encoding='utf8');browser.close();print(json.dumps({'passed':len(checks)}))

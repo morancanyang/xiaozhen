@@ -1,0 +1,44 @@
+{
+  "id": "qinglan-river",
+  "name": "青岚河",
+  "version": "1.0.0",
+  "units": "m",
+  "upAxis": "Y",
+  "footprint": {
+    "width": 64,
+    "length": 600
+  },
+  "bounds": {
+    "min": [
+      -32,
+      -7.3,
+      -300
+    ],
+    "max": [
+      32,
+      13,
+      300
+    ]
+  },
+  "waterLevel": -0.75,
+  "channelWidth": [
+    38.4,
+    45.6
+  ],
+  "flowDirection": "+Z",
+  "waterGrid": {
+    "x": 40,
+    "z": 420
+  },
+  "fishCount": 72,
+  "components": [
+    "terrain",
+    "water",
+    "stones",
+    "grass",
+    "trees",
+    "reeds",
+    "fish",
+    "details"
+  ]
+}

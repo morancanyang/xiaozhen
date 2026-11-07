@@ -1,0 +1,17 @@
+{
+  "name": "city-atlas",
+  "version": "1.0.0",
+  "description": "鍗冧汉灏忛晣 路 妯″潡鍖栧疄鏃朵笁缁村煄甯傚伐浣滃彴",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.mjs",
+    "check": "node --check dist/main.js && node --check dist/city.js && node --check dist/hospital-model.js && node --check dist/hospital-site.js && node --check dist/skyline-model.js && node --check dist/skyline-site.js && node --check dist/mall-model.js && node --check dist/mall-site.js && node --check dist/free-view.js && node --check dist/shanghai-model.js && node --check dist/shanghai-site.js && node --check dist/university-model.js && node --check dist/university-site.js && node --check dist/arena-model.js && node --check dist/arena-site.js && node --check dist/river-model.js && node --check dist/river-pass.js && node --check dist/river-site.js && node --check dist/park-model.js && node --check dist/park-site.js && node --check dist/residential-model.js && node --check dist/residential-site.js && node --check dist/forest-model.js && node --check dist/forest-site.js && node --check dist/sports-model.js && node --check dist/sports-site.js && node --check dist/slab-model.js && node --check dist/slab-site.js && node --check dist/garden-model.js && node --check dist/garden-site.js && node --check dist/office-model.js && node --check dist/office-site.js && node --check dist/mixed-model.js && node --check dist/mixed-site.js && node --check dist/render-budget.js && node --check dist/courtyard-model.js && node --check dist/courtyard-site.js && node --check dist/headquarters-model.js && node --check dist/headquarters-ecology.js && node --check dist/headquarters-stairs.js && node --check dist/headquarters-site.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "three": "^0.180.0"
+  }
+}

@@ -1,0 +1,283 @@
+{
+  "id": "jiheng-landmark-office",
+  "name": "霁衡中心",
+  "version": "1.0.0",
+  "units": "m",
+  "upAxis": "Y",
+  "nativeBlockSize": 112,
+  "blockSize": 112,
+  "height": 184,
+  "footprint": {
+    "width": 112,
+    "depth": 112
+  },
+  "buildings": [
+    {
+      "id": "JH-01",
+      "name": "霁衡中心",
+      "x": 0,
+      "z": 0,
+      "w": 72,
+      "d": 64,
+      "floors": 46,
+      "officeFloors": 42,
+      "height": 184
+    }
+  ],
+  "parts": [
+    {
+      "id": "lower",
+      "name": "下段办公塔楼",
+      "buildingId": "JH-01"
+    },
+    {
+      "id": "middle",
+      "name": "中段办公塔楼",
+      "buildingId": "JH-01"
+    },
+    {
+      "id": "upper",
+      "name": "上段办公塔楼",
+      "buildingId": "JH-01"
+    },
+    {
+      "id": "podium",
+      "name": "石材商业裙楼",
+      "buildingId": "JH-01"
+    },
+    {
+      "id": "roof",
+      "name": "屋顶设备",
+      "buildingId": "JH-01"
+    },
+    {
+      "id": "terraces",
+      "name": "退台花园",
+      "buildingId": "JH-01"
+    },
+    {
+      "id": "site",
+      "name": "城市广场",
+      "buildingId": null
+    },
+    {
+      "id": "landscape",
+      "name": "绿化与设施",
+      "buildingId": null
+    },
+    {
+      "id": "life",
+      "name": "广场日常",
+      "buildingId": null
+    }
+  ],
+  "entrances": [
+    {
+      "id": "public",
+      "position": [
+        0,
+        0.16,
+        56
+      ],
+      "width": 12
+    },
+    {
+      "id": "vehicle",
+      "position": [
+        48,
+        0.055,
+        56
+      ],
+      "width": 6
+    },
+    {
+      "id": "service",
+      "position": [
+        -48,
+        0.055,
+        -56
+      ],
+      "width": 6
+    }
+  ],
+  "lightFixtures": [
+    {
+      "position": [
+        -51.2,
+        5.95,
+        -36
+      ],
+      "power": 110,
+      "distance": 19,
+      "color": 16767148
+    },
+    {
+      "position": [
+        -51.2,
+        5.95,
+        -12
+      ],
+      "power": 110,
+      "distance": 19,
+      "color": 16767148
+    },
+    {
+      "position": [
+        -51.2,
+        5.95,
+        12
+      ],
+      "power": 110,
+      "distance": 19,
+      "color": 16767148
+    },
+    {
+      "position": [
+        -51.2,
+        5.95,
+        36
+      ],
+      "power": 110,
+      "distance": 19,
+      "color": 16767148
+    },
+    {
+      "position": [
+        51.2,
+        5.95,
+        -36
+      ],
+      "power": 110,
+      "distance": 19,
+      "color": 16767148
+    },
+    {
+      "position": [
+        51.2,
+        5.95,
+        -12
+      ],
+      "power": 110,
+      "distance": 19,
+      "color": 16767148
+    },
+    {
+      "position": [
+        51.2,
+        5.95,
+        12
+      ],
+      "power": 110,
+      "distance": 19,
+      "color": 16767148
+    },
+    {
+      "position": [
+        51.2,
+        5.95,
+        36
+      ],
+      "power": 110,
+      "distance": 19,
+      "color": 16767148
+    },
+    {
+      "position": [
+        -28,
+        1.24,
+        35
+      ],
+      "power": 12,
+      "distance": 7
+    },
+    {
+      "position": [
+        -28,
+        1.24,
+        42
+      ],
+      "power": 12,
+      "distance": 7
+    },
+    {
+      "position": [
+        -14,
+        1.24,
+        35
+      ],
+      "power": 12,
+      "distance": 7
+    },
+    {
+      "position": [
+        -14,
+        1.24,
+        42
+      ],
+      "power": 12,
+      "distance": 7
+    },
+    {
+      "position": [
+        14,
+        1.24,
+        35
+      ],
+      "power": 12,
+      "distance": 7
+    },
+    {
+      "position": [
+        14,
+        1.24,
+        42
+      ],
+      "power": 12,
+      "distance": 7
+    },
+    {
+      "position": [
+        28,
+        1.24,
+        35
+      ],
+      "power": 12,
+      "distance": 7
+    },
+    {
+      "position": [
+        28,
+        1.24,
+        42
+      ],
+      "power": 12,
+      "distance": 7
+    }
+  ],
+  "sections": [
+    {
+      "id": "lower",
+      "bottom": 16.8,
+      "top": 68.6,
+      "w": 48,
+      "d": 42,
+      "floors": 14
+    },
+    {
+      "id": "middle",
+      "bottom": 68.6,
+      "top": 120.4,
+      "w": 40,
+      "d": 36,
+      "floors": 14
+    },
+    {
+      "id": "upper",
+      "bottom": 120.4,
+      "top": 172.2,
+      "w": 32,
+      "d": 30,
+      "floors": 14
+    }
+  ]
+}

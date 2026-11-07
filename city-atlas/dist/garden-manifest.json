@@ -1,0 +1,303 @@
+{
+  "id": "nuanting-garden-housing",
+  "name": "暖庭花园",
+  "units": "m",
+  "upAxis": "Y",
+  "front": "+Z",
+  "pivot": "ground-center",
+  "footprint": {
+    "width": 112,
+    "depth": 112
+  },
+  "nativeBounds": {
+    "min": [
+      -56,
+      -0.4,
+      -56
+    ],
+    "max": [
+      56,
+      23,
+      56
+    ]
+  },
+  "buildings": [
+    {
+      "id": "A",
+      "name": "A栋",
+      "x": -25,
+      "z": -25,
+      "w": 26,
+      "d": 16,
+      "floors": 4,
+      "height": 16.43,
+      "groundY": 0.3
+    },
+    {
+      "id": "B",
+      "name": "B栋",
+      "x": 25,
+      "z": -25,
+      "w": 26,
+      "d": 16,
+      "floors": 5,
+      "height": 19.53,
+      "groundY": 0.3
+    },
+    {
+      "id": "C",
+      "name": "C栋",
+      "x": -25,
+      "z": 25,
+      "w": 26,
+      "d": 16,
+      "floors": 5,
+      "height": 19.53,
+      "groundY": 0.3
+    },
+    {
+      "id": "D",
+      "name": "D栋",
+      "x": 25,
+      "z": 25,
+      "w": 26,
+      "d": 16,
+      "floors": 6,
+      "height": 22.630000000000003,
+      "groundY": 0.3
+    }
+  ],
+  "entrances": {
+    "public": {
+      "position": [
+        0,
+        0,
+        56
+      ],
+      "width": 8
+    },
+    "vehicle": {
+      "position": [
+        46,
+        0,
+        56
+      ],
+      "width": 6
+    },
+    "service": {
+      "position": [
+        -46,
+        0,
+        -56
+      ],
+      "width": 5
+    }
+  },
+  "lightFixtures": [
+    {
+      "position": [
+        -26.5,
+        2.1,
+        -16.5
+      ],
+      "type": "point",
+      "power": 45
+    },
+    {
+      "position": [
+        23.5,
+        2.1,
+        -16.5
+      ],
+      "type": "point",
+      "power": 45
+    },
+    {
+      "position": [
+        -26.5,
+        2.1,
+        33.5
+      ],
+      "type": "point",
+      "power": 45
+    },
+    {
+      "position": [
+        23.5,
+        2.1,
+        33.5
+      ],
+      "type": "point",
+      "power": 45
+    },
+    {
+      "position": [
+        -39.6,
+        3.25,
+        0
+      ],
+      "type": "point",
+      "power": 70
+    },
+    {
+      "position": [
+        40.4,
+        3.25,
+        0
+      ],
+      "type": "point",
+      "power": 70
+    },
+    {
+      "position": [
+        -39.6,
+        3.25,
+        -37
+      ],
+      "type": "point",
+      "power": 70
+    },
+    {
+      "position": [
+        40.4,
+        3.25,
+        -37
+      ],
+      "type": "point",
+      "power": 70
+    },
+    {
+      "position": [
+        -39.6,
+        3.25,
+        37
+      ],
+      "type": "point",
+      "power": 70
+    },
+    {
+      "position": [
+        40.4,
+        3.25,
+        37
+      ],
+      "type": "point",
+      "power": 70
+    },
+    {
+      "position": [
+        -8.6,
+        3.25,
+        -11
+      ],
+      "type": "point",
+      "power": 70
+    },
+    {
+      "position": [
+        9.4,
+        3.25,
+        11
+      ],
+      "type": "point",
+      "power": 70
+    },
+    {
+      "position": [
+        0.4,
+        3.25,
+        49
+      ],
+      "type": "point",
+      "power": 70
+    },
+    {
+      "position": [
+        0.4,
+        3.25,
+        -49
+      ],
+      "type": "point",
+      "power": 70
+    },
+    {
+      "position": [
+        -3,
+        0.92,
+        -32
+      ],
+      "type": "point",
+      "power": 12
+    },
+    {
+      "position": [
+        -3,
+        0.92,
+        -20
+      ],
+      "type": "point",
+      "power": 12
+    },
+    {
+      "position": [
+        -3,
+        0.92,
+        20
+      ],
+      "type": "point",
+      "power": 12
+    },
+    {
+      "position": [
+        -3,
+        0.92,
+        32
+      ],
+      "type": "point",
+      "power": 12
+    },
+    {
+      "position": [
+        3,
+        0.92,
+        -32
+      ],
+      "type": "point",
+      "power": 12
+    },
+    {
+      "position": [
+        3,
+        0.92,
+        -20
+      ],
+      "type": "point",
+      "power": 12
+    },
+    {
+      "position": [
+        3,
+        0.92,
+        20
+      ],
+      "type": "point",
+      "power": 12
+    },
+    {
+      "position": [
+        3,
+        0.92,
+        32
+      ],
+      "type": "point",
+      "power": 12
+    }
+  ],
+  "motion": {
+    "roadCenterline": 46,
+    "roadCornerRadius": 6,
+    "walkwayCenterline": 40.5,
+    "peopleCount": 16,
+    "vehicleCount": 2
+  }
+}

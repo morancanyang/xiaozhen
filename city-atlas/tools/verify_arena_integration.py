@@ -1,0 +1,56 @@
+import json,math,struct
+from pathlib import Path
+from playwright.sync_api import sync_playwright
+ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'outputs/arena-integration';OUT.mkdir(parents=True,exist_ok=True);checks=[]
+def check(name,value):
+    checks.append({'check':name,'passed':bool(value)});print(('PASS ' if value else 'FAIL ')+name,flush=True)
+    if not value:raise AssertionError(name)
+def glb(path):
+    raw=path.read_bytes();assert raw[:4]==b'glTF';size=struct.unpack_from('<I',raw,12)[0];return json.loads(raw[20:20+size])
+with sync_playwright() as p:
+    browser=p.chromium.launch(channel='msedge',headless=True,args=['--enable-webgl','--enable-unsafe-swiftshader']);page=browser.new_page(viewport={'width':1700,'height':1100});errors=[]
+    page.on('pageerror',lambda e:errors.append(str(e)));page.on('console',lambda m:errors.append(m.text) if m.type=='error' else None)
+    page.goto('http://127.0.0.1:5173',wait_until='networkidle');page.wait_for_function('window.cityApp?.ready',timeout=60000);page.wait_for_timeout(1500)
+    check('BLK-4 at (-112,210) is a sports center',page.evaluate("cityApp.arenaSite.blockId==='BLK-4'&&cityApp.arenaSite.x===-112&&cityApp.arenaSite.z===210&&cityApp.plan.blocks.find(b=>b.id==='BLK-4').type==='sports-center'"))
+    check('only one arena record replaces QR-013 through QR-016',page.evaluate("['QR-013','QR-014','QR-015','QR-016'].every(id=>!cityApp.scene.getObjectByName(id))&&cityApp.plan.buildings.filter(b=>b.blockId==='BLK-4').map(b=>b.id).join()==='ARENA-DOME'"))
+    check('old parcel furniture removed from city instance batches',page.evaluate("cityApp.exportCity('QR-010').batches.every(b=>b.items.every(i=>i.blockId!=='BLK-4'))"))
+    baseline=(OUT/'city-before-arena.js').read_text(encoding='utf8')
+    same=page.evaluate("""async source=>{const T=await import('three'),url=URL.createObjectURL(new Blob([source],{type:'text/javascript'})),base=await import(url);URL.revokeObjectURL(url);const prior=base.buildCity(new T.Scene()),expected=prior.plan.buildings.filter(b=>b.blockId!=='BLK-4'),actual=cityApp.plan.buildings.filter(b=>!b.moduleId);return expected.length===actual.length&&expected.every(b=>actual.some(a=>JSON.stringify(a)===JSON.stringify(b)));}""",baseline)
+    check('all other residential records unchanged',same)
+    check('existing hospital skyline mall Shanghai and university retained',page.evaluate("['hospital-campus','skyline-one','mall-complex','shanghai-tower','university-campus'].every(id=>cityApp.plan.buildings.some(b=>b.moduleId===id))"))
+    bounds=page.evaluate("async()=>{const T=await import('three'),b=new T.Box3();for(const c of cityApp.arena.root.children)if(c.name!=='Arena road connections')b.expandByObject(c);return {min:b.min.toArray(),max:b.max.toArray()}}")
+    check('complete arena fits 112m square without river intrusion',bounds['min'][0]>=-168.001 and bounds['max'][0]<=-55.999 and bounds['min'][2]>=153.999 and bounds['max'][2]<=266.001)
+    check('three sloped approaches connect existing roads',page.evaluate("['Arena public entrance connection','Arena dropoff road connection','Arena service road connection'].every(n=>cityApp.arena.root.getObjectByName(n))"))
+    check('native silver blue glass copper palette retained',page.evaluate("(()=>{const names=new Set();cityApp.arena.root.traverse(o=>{if(o.material)names.add(o.material.name)});return ['silver-0','glass','copper','navy','teal'].every(n=>names.has(n))})()"))
+    check('shared town reflection supplied to metal and glass',page.evaluate("!!cityApp.arena.root.getObjectByName('Standing seam roof panels 0').material.envMap"))
+    check('3142 seats and semantic structure preserved',page.evaluate("cityApp.arena.manifest.seatCount===3142&&cityApp.arena.groups.get('structure').children.length>0"))
+    page.screenshot(path=str(OUT/'city-overview.png'));page.locator('#arena-view').click();page.wait_for_timeout(2200)
+    check('arena shortcut selects and frames BLK-4',page.evaluate("cityApp.state.selected.id==='ARENA-DOME'&&Math.abs(cityApp.controls().target.x+112)<.1"));page.screenshot(path=str(OUT/'arena-context.png'))
+    page.locator('#arena-roof').uncheck();page.wait_for_timeout(300);check('cutaway reveals internal structure',not page.evaluate('cityApp.arena.groups.get("roof").visible'));page.screenshot(path=str(OUT/'arena-cutaway.png'))
+    page.locator('#focus-building').click();page.wait_for_timeout(2000);page.screenshot(path=str(OUT/'arena-isolated.png'))
+    check('single building view fits whole arena',page.evaluate("async()=>{const T=await import('three'),c=cityApp.camera(),root=cityApp.arena.root,box=new T.Box3().setFromObject(root);return [box.min.x,box.max.x].every(x=>[box.min.y,box.max.y].every(y=>[box.min.z,box.max.z].every(z=>{const p=new T.Vector3(x,y,z).project(c);return Math.abs(p.x)<1.05&&Math.abs(p.y)<1.05}))) }"))
+    with page.expect_download(timeout=120000) as result:page.locator('#export-building').click()
+    result.value.save_as(OUT/'Arena-BLK-4.glb');doc=glb(OUT/'Arena-BLK-4.glb');names=[n.get('name','') for n in doc['nodes']]
+    check('single GLB contains roof seats and road approaches',all(n in names for n in ['ARENA-DOME','Standing seam roof panels 0','Arena public entrance connection','interior']))
+    page.locator('#arena-view').click();page.wait_for_timeout(2000)
+    page.locator('#pause').click();before=page.evaluate('cityApp.arena.simulationTime');page.wait_for_timeout(350);check('global pause freezes arena',before==page.evaluate('cityApp.arena.simulationTime'));page.locator('#pause').click();page.wait_for_timeout(300);check('resume advances arena',before<page.evaluate('cityApp.arena.simulationTime'))
+    page.locator('#traffic').uncheck();page.wait_for_timeout(150);check('traffic switch controls people and cars',page.evaluate("!cityApp.arena.root.getObjectByName('Visitor 0').visible&&!cityApp.arena.root.getObjectByName('Service or dropoff EV 0').visible"));page.locator('#traffic').check()
+    page.locator('#wind').uncheck();page.wait_for_timeout(150);check('wind switch controls birds',not page.evaluate("cityApp.arena.root.getObjectByName('Bird').visible"));page.locator('#wind').check()
+    page.locator('#quality').select_option('fast');check('low quality propagates',page.evaluate("cityApp.arena.quality==='low'"));page.locator('#quality').select_option('balanced');check('balanced quality restores medium',page.evaluate("cityApp.arena.quality==='medium'"))
+    page.locator('#arena-roof').check();page.locator('[data-time=night]').click();page.wait_for_timeout(1900)
+    check('night lamps and spotlights synchronize',page.evaluate("(()=>{let lamp=false;cityApp.arena.root.traverse(o=>{if(o.material?.name==='lamp'&&o.material.emissiveIntensity>1)lamp=true});return lamp&&cityApp.arena.root.getObjectByName('Arena city lighting').children.filter(o=>o.isSpotLight&&o.intensity>0).length===4})()"));page.screenshot(path=str(OUT/'arena-night.png'));page.locator('[data-time=morning]').click();page.wait_for_timeout(1700)
+    page.evaluate("cityApp.select('QR-010')");page.locator('#focus-building').click();page.wait_for_timeout(1800)
+    snapshot=page.evaluate("(()=>{const m=cityApp.exportCity().modules.find(m=>m.id==='dome-arena');return {id:m.blockId,space:m.snapshotSpace,owners:[...new Set(m.snapshot.objects.map(o=>o.owner))],objects:m.snapshot.objects.length,finite:m.snapshot.objects.every(o=>o.matrix.every(Number.isFinite)),roof:Object.values(m.snapshot.geometries).length>100}})()")
+    check('JSON exports complete arena while another building is isolated',snapshot['id']=='BLK-4' and snapshot['space']=='world' and snapshot['objects']>1000 and snapshot['finite'] and snapshot['roof'] and snapshot['owners']==['ARENA-DOME'])
+    with page.expect_download(timeout=180000) as result:page.locator('#export').click()
+    result.value.save_as(OUT/'town-with-arena.glb');doc=glb(OUT/'town-with-arena.glb');names=[n.get('name','') for n in doc['nodes']]
+    check('full city GLB retains arena and previous landmarks',all(n in names for n in ['ARENA-DOME','Standing seam roof panels 0','SKY-ONE','MALL-TAOLI','SHANGHAI-TOWER','UNIVERSITY-CAMPUS']) and any(n.startswith('HOSP-') for n in names))
+    page.locator('#home').click();page.wait_for_timeout(1800);page.locator('[data-view=free]').click();page.wait_for_timeout(150)
+    check('existing free view still works',page.evaluate('cityApp.state.freeView'));page.keyboard.press('Escape');page.wait_for_timeout(150);check('free view can exit',not page.evaluate('cityApp.state.freeView'))
+    page.set_viewport_size({'width':420,'height':880});page.wait_for_timeout(700)
+    if page.locator('#panel-content').is_hidden():page.locator('#collapse').click()
+    page.locator('#arena-view').click();page.wait_for_timeout(2000)
+    check('mobile shortcut locates arena and collapses panel',page.locator('#panel-content').is_hidden() and page.evaluate('document.documentElement.scrollWidth===420&&cityApp.state.selected.id==="ARENA-DOME"'));page.screenshot(path=str(OUT/'arena-mobile.png'))
+    check('no JavaScript or WebGL errors',not errors)
+    (OUT/'verification.json').write_text(json.dumps({'checks':checks,'errors':errors,'bounds':bounds,'snapshot':snapshot,'metrics':page.evaluate('cityApp.metrics()')},ensure_ascii=False,indent=2),encoding='utf8');browser.close()
+    print(json.dumps({'passed':len(checks),'bounds':bounds},ensure_ascii=True))

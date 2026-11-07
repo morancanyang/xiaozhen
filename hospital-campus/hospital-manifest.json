@@ -1,0 +1,148 @@
+{
+  "id": "hospital-campus",
+  "name": "澄和医院",
+  "version": "1.0.0",
+  "units": "m",
+  "upAxis": "Y",
+  "footprint": {
+    "width": 112,
+    "depth": 112
+  },
+  "pivot": "ground-center",
+  "front": "+Z",
+  "excavations": [
+    {
+      "id": "garage-excavation",
+      "min": [
+        -42,
+        -4.5,
+        -40
+      ],
+      "max": [
+        -28,
+        0,
+        -20
+      ],
+      "purpose": "host ground cutout required"
+    }
+  ],
+  "buildingIds": [
+    "inpatient",
+    "outpatient",
+    "emergency",
+    "medical-tech"
+  ],
+  "bounds": {
+    "min": [
+      -56,
+      -4.5,
+      -56
+    ],
+    "max": [
+      56,
+      46,
+      56
+    ]
+  },
+  "entrances": {
+    "public": {
+      "position": [
+        0,
+        0,
+        56
+      ],
+      "direction": [
+        0,
+        0,
+        1
+      ],
+      "width": 9
+    },
+    "emergency": {
+      "position": [
+        56,
+        0,
+        43
+      ],
+      "direction": [
+        1,
+        0,
+        0
+      ],
+      "width": 6
+    },
+    "service": {
+      "position": [
+        -56,
+        0,
+        -43
+      ],
+      "direction": [
+        -1,
+        0,
+        0
+      ],
+      "width": 5
+    },
+    "garage": {
+      "position": [
+        -35,
+        0,
+        -20
+      ],
+      "direction": [
+        0,
+        0,
+        1
+      ],
+      "width": 9
+    }
+  },
+  "buildings": [
+    {
+      "id": "inpatient",
+      "name": "住院中心",
+      "x": 0,
+      "z": -30,
+      "w": 40,
+      "d": 18,
+      "floors": 10,
+      "story": 4,
+      "height": 41
+    },
+    {
+      "id": "outpatient",
+      "name": "门诊中心",
+      "x": -28,
+      "z": 28,
+      "w": 34,
+      "d": 22,
+      "floors": 4,
+      "story": 4,
+      "height": 17
+    },
+    {
+      "id": "emergency",
+      "name": "急诊中心",
+      "x": 29,
+      "z": 29,
+      "w": 28,
+      "d": 20,
+      "floors": 3,
+      "story": 3.7,
+      "height": 12.100000000000001
+    },
+    {
+      "id": "medical-tech",
+      "name": "医技中心",
+      "x": 32,
+      "z": -11,
+      "w": 24,
+      "d": 24,
+      "floors": 4,
+      "story": 4.1,
+      "height": 17.4
+    }
+  ],
+  "embedded": false
+}

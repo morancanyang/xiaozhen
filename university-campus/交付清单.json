@@ -1,0 +1,85 @@
+{
+  "name": "大学主教学楼 · 细节精修版",
+  "version": "1.1.0",
+  "parcel_metres": [
+    112,
+    112
+  ],
+  "standalone": true,
+  "city_modified": false,
+  "browser_checks": 37,
+  "blender_engine": "CYCLES",
+  "samples": 96,
+  "blend_reopened_and_verified": true,
+  "renders": [
+    {
+      "file": "outputs\\polished-overview.png",
+      "pixels": [
+        3840,
+        2880
+      ]
+    },
+    {
+      "file": "outputs\\polished-front.png",
+      "pixels": [
+        2560,
+        1707
+      ]
+    },
+    {
+      "file": "outputs\\polished-entry.png",
+      "pixels": [
+        2560,
+        1707
+      ]
+    },
+    {
+      "file": "outputs\\polished-flag.png",
+      "pixels": [
+        2560,
+        1707
+      ]
+    },
+    {
+      "file": "outputs\\polished-facade.png",
+      "pixels": [
+        2560,
+        1920
+      ]
+    },
+    {
+      "file": "outputs\\polished-plaza.png",
+      "pixels": [
+        2560,
+        1707
+      ]
+    }
+  ],
+  "files": [
+    {
+      "file": "大学主教学楼.html",
+      "bytes": 873429,
+      "sha256": "00d51d5655d874e83030124c46043167ec6b6d7f36bf78a6662067ee587e92f5"
+    },
+    {
+      "file": "大学主教学楼.glb",
+      "bytes": 1503576,
+      "sha256": "7d2af2272b77ecf2c9c7ac0a4c823210ba6d996e18036891cc51507970574158"
+    },
+    {
+      "file": "大学主教学楼.blend",
+      "bytes": 10371149,
+      "sha256": "03574c1574d6504ebccf395910dfdce6ba00c2af27d70a84f8e3a4a3182ae68b"
+    },
+    {
+      "file": "university-module.mjs",
+      "bytes": 19904,
+      "sha256": "a6f63d64bd22c832ce7cd23770bd7b983ca5e34caab3848fad7c0eb9f9d07315"
+    },
+    {
+      "file": "town-integration.example.mjs",
+      "bytes": 1149,
+      "sha256": "47900c7c2a3f2bb6b3a62fb29b28d509a111d01f212333e8e3a6f96b2fe549b1"
+    }
+  ]
+}

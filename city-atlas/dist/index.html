@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f3f2ed"><meta name="description" content="千人小镇 · 一座可以慢慢建造的城市。可交互的模块化三维城市工作台。">
+  <title>千人小镇 — 城市构筑工作台</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%232e6255'/%3E%3Cpath d='M10 28V16l9-6v18m4 0V18l7-4v14' fill='none' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}</script>
+</head>
+<body>
+  <div id="viewport" aria-label="可旋转、平移和缩放的三维城市"></div>
+  <div id="loading"><div class="load-mark">仟</div><span>正在构筑你的小镇</span><div class="load-track"><i id="progress"></i></div><small id="load-message">准备城市模块…</small></div>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="千人小镇首页"><span class="brand-mark"><svg viewBox="0 0 32 32"><path d="M6 25V12l10-6v19M20 25V15l7-4v14M3 26h26"/></svg></span><span><strong>千人小镇</strong><small>QIANREN · CITY ATELIER</small></span></a>
+    <nav class="view-tabs" aria-label="浏览模式"><button class="active" data-view="overview">城市总览</button><button data-view="street">街区漫游</button><button data-view="architecture">建筑观察</button><button data-view="free" aria-pressed="false">自由视角</button></nav>
+    <div class="top-meta"><span class="live-dot"></span><span>可编辑场景</span><span class="divider"></span><button id="export" class="export-btn" title="导出可在 Blender 中重建的场景">导出场景 <span>↗</span></button></div>
+  </header>
+  <aside class="toolbar" aria-label="场景工具">
+    <button id="home" title="恢复全景" aria-label="恢复全景"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10H3Z M9 20v-7h6v7"/></svg></button>
+    <button id="projection" title="切换正交 / 透视" aria-label="切换正交投影"><svg viewBox="0 0 24 24"><path d="m12 2 9 5v10l-9 5-9-5V7Zm0 10 9-5M12 12 3 7m9 5v10"/></svg></button>
+    <span></span>
+    <button id="zoom-in" title="放大" aria-label="放大"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
+    <button id="zoom-out" title="缩小" aria-label="缩小"><svg viewBox="0 0 24 24"><path d="M5 12h14"/></svg></button>
+    <span></span>
+    <button id="capture" title="保存画面" aria-label="保存画面"><svg viewBox="0 0 24 24"><path d="M3 7h5l2-3h4l2 3h5v13H3Z"/><circle cx="12" cy="13" r="4"/></svg></button>
+    <button id="help" title="操作指南" aria-label="操作指南"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9a3 3 0 1 1 4 3c-1 .5-1 1-1 2m0 3v.1"/></svg></button>
+  </aside>
+  <section class="scene-caption"><div class="eyebrow"><span></span> 城市构筑计划 / VOL. 01</div><h1>把日常，<br>筑成一座城<span>。</span></h1><p>晨光穿过楼宇，生活正在发生。<br>一片街区，一千种未来。</p><div class="scene-tags"><span>模块化街区</span><span>64 × 600 m 青岚河</span></div></section>
+  <aside class="control-panel">
+    <div class="panel-heading"><div><span class="eyebrow">SCENE SETTINGS</span><h2>场景氛围</h2></div><button id="collapse" aria-label="收起场景设置" aria-expanded="true">−</button></div>
+    <div id="panel-content">
+      <div class="time-options" aria-label="光照时段"><button data-time="morning" class="active"><span>◒</span>晨光</button><button data-time="day"><span>☀</span>日间</button><button data-time="evening"><span>◓</span>黄昏</button><button data-time="night"><span>☾</span>夜景</button></div>
+      <div class="time-readout"><span id="time-clock">07:30</span><span id="time-description">柔和晨光 · 长阴影</span></div>
+      <div class="rule"></div>
+      <label class="control-label" for="quality">渲染画质 <span id="quality-hint">拖动时优先流畅</span></label><select id="quality"><option value="cinema">电影画质</option><option value="balanced" selected>精致画质 · 推荐</option><option value="fast">流畅画质</option></select>
+      <div class="switch-row"><label for="traffic">城市交通 <small>车辆与行人</small></label><input id="traffic" type="checkbox" checked role="switch"></div>
+      <div class="switch-row"><label for="wind">自然动态 <small>树木、云与飞鸟</small></label><input id="wind" type="checkbox" checked role="switch"></div>
+      <div class="switch-row"><label for="reserve">河道范围边界</label><input id="reserve" type="checkbox" role="switch"></div>
+      <div class="switch-row"><label for="timelapse">时光流转</label><input id="timelapse" type="checkbox" role="switch"></div>
+      <div class="speed-control"><label for="speed">动态速度</label><input id="speed" type="range" min="0.25" max="3" step="0.25" value="1"><span id="speed-value">1×</span></div>
+      <button id="tour" class="tour-button"><span>▷</span> 开始城市巡游 <span>↗</span></button>
+      <button id="hospital-view" class="hospital-jump">澄和医院 · 查看院区 ↗</button><button id="skyline-view" class="hospital-jump">云际中心 · 查看地标 ↗</button><button id="office-view" class="hospital-jump">霁衡中心 · BLK-9 ↗</button><details class="park-controls"><summary>霁衡中心动态</summary><label class="skyline-flight-toggle"><span>广场行人</span><input id="office-people" type="checkbox" checked role="switch"></label><label class="skyline-flight-toggle"><span>车辆与道闸</span><input id="office-vehicles" type="checkbox" checked role="switch"></label><label class="skyline-flight-toggle"><span>电梯与机电</span><input id="office-mechanical" type="checkbox" checked role="switch"></label></details><button id="mall-view" class="hospital-jump">陶里汇商城 · BLK-10 ↗</button><button id="shanghai-view" class="hospital-jump">上海中心 · BLK-11 ↗</button><button id="university-view" class="hospital-jump">大学主教学楼 · BLK-8 ↗</button><button id="arena-view" class="hospital-jump">穹光体育中心 · BLK-4 ↗</button><label class="skyline-flight-toggle"><span>显示体育馆屋面</span><input id="arena-roof" type="checkbox" checked role="switch"></label><label class="skyline-flight-toggle"><span>地标直升机起降</span><input id="skyline-flight" type="checkbox" checked role="switch"></label><button id="sports-view" class="hospital-jump">青禾运动场 · BLK-7 ↗</button><details class="park-controls"><summary>运动场动态</summary><label class="skyline-flight-toggle"><span>跑步演示</span><input id="sports-runners" type="checkbox" checked role="switch"></label><label class="skyline-flight-toggle"><span>足球演示</span><input id="sports-football" type="checkbox" checked role="switch"></label></details><button id="slab-view" class="hospital-jump">浅序住区 · BLK-12 ↗</button><button id="headquarters-view" class="hospital-jump">衡联总部 · BLK-3 ↗</button><details class="park-controls"><summary>总部生活动态</summary><label class="skyline-flight-toggle"><span>总部员工</span><input id="headquarters-people" type="checkbox" checked role="switch"></label><label class="skyline-flight-toggle"><span>连廊通行</span><input id="headquarters-bridge" type="checkbox" checked role="switch"></label><label class="skyline-flight-toggle"><span>庭院飞鸟</span><input id="headquarters-birds" type="checkbox" checked role="switch"></label><label class="skyline-flight-toggle"><span>电梯与风机</span><input id="headquarters-mechanical" type="checkbox" checked role="switch"></label></details><button id="courtyard-view" class="hospital-jump">澄序住区 · BLK-14 ↗</button><details class="park-controls"><summary>澄序住区动态</summary><label class="skyline-flight-toggle"><span>庭院居民</span><input id="courtyard-people" type="checkbox" checked role="switch"></label><label class="skyline-flight-toggle"><span>庭院飞鸟</span><input id="courtyard-birds" type="checkbox" checked role="switch"></label><label class="skyline-flight-toggle"><span>屋顶风机</span><input id="courtyard-mechanical" type="checkbox" checked role="switch"></label></details><button id="garden-view" class="hospital-jump">暖庭花园 · BLK-6 ↗</button><details class="park-controls"><summary>花园生活动态</summary><label class="skyline-flight-toggle"><span>居民日常</span><input id="garden-people" type="checkbox" checked role="switch"></label><label class="skyline-flight-toggle"><span>内部车辆</span><input id="garden-vehicles" type="checkbox" checked role="switch"></label></details><button id="residential-view" class="hospital-jump">林序住区 · BLK-5 ↗</button><button id="park-view" class="hospital-jump">晴空游乐园 · BLK-16 ↗</button><details class="park-controls"><summary>游乐设施运行</summary><label class="skyline-flight-toggle"><span>摩天轮</span><input id="park-ferrisWheel" type="checkbox" checked role="switch"></label><label class="skyline-flight-toggle"><span>过山车</span><input id="park-rollerCoaster" type="checkbox" checked role="switch"></label><label class="skyline-flight-toggle"><span>旋转木马</span><input id="park-carousel" type="checkbox" checked role="switch"></label><label class="skyline-flight-toggle"><span>海盗船</span><input id="park-pirateShip" type="checkbox" checked role="switch"></label></details><button id="mixed-view" class="hospital-jump">棕屿里 · BLK-15 ↗</button><label class="skyline-flight-toggle"><span>棕屿里商铺门演示</span><input id="mixed-doors" type="checkbox" checked role="switch"></label><div class="river-jumps"><button id="river-view">青岚河 · 沿岸 ↗</button><button id="river-fish-view">观察游鱼 ↗</button></div><label class="skyline-flight-toggle"><span>河流鱼群</span><input id="river-fish" type="checkbox" checked role="switch"></label><div class="speed-control"><label for="river-flow">水流速度</label><input id="river-flow" type="range" min="0" max="3" step=".25" value="1"><span id="river-flow-value">1.00×</span></div><div class="panel-foot"><span class="live-dot"></span> 实时 Three.js 场景 <button id="stats-toggle" title="显示性能数据">⌁</button></div>
+    </div>
+  </aside>
+  <div class="compass"><svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="24"/><path id="compass-arrow" d="m30 13 6 21-6-3-6 3Z"/></svg><span>N</span></div>
+  <footer class="bottom-bar"><div class="project-info"><span class="status-square"></span><strong>晨曦住区</strong><span>概念城区 / 01</span><span class="footer-divider"></span><span id="city-count">构筑中</span></div><div class="interactions"><span>↔ 拖拽旋转</span><span>⇧ 平移</span><span>⊕ 滚轮缩放</span></div><button id="pause" aria-label="暂停所有动态">Ⅱ <span>暂停动态</span></button></footer>
+  <section id="selection" class="selection hidden" aria-live="polite"><button id="close-selection" aria-label="关闭建筑信息">×</button><span class="eyebrow">BUILDING MODULE</span><h2 id="building-name"></h2><p id="building-detail"></p><div id="building-id"></div><button id="focus-building">单栋观察 ↗</button><button id="export-building">导出 GLB ↓</button><button id="replace-building">替换 GLB ↑</button><button id="restore-building">恢复原型 ↺</button><input id="model-file" type="file" accept=".glb" hidden></section>
+  <section id="free-view-hud" class="free-view-hud hidden" aria-label="自由视角控制">
+    <div class="free-view-heading"><span class="live-dot"></span><strong>自由视角</strong><span class="free-altitude">高度 <output id="free-altitude">0 m</output></span><button id="free-view-exit">退出 <kbd>Esc</kbd></button></div>
+    <p class="free-keyboard-hint">拖动画面转向 · <kbd>WASD</kbd> 移动 · <kbd>Q / E</kbd> 降 / 升 · <kbd>Shift</kbd> 加速</p><p class="free-touch-hint">左摇杆移动 · 右摇杆转向 · 中间按钮升降</p>
+    <label class="free-speed-label" for="free-speed">移动速度 <input id="free-speed" type="range" min="1" max="120" step="1" value="24"><output id="free-speed-value">24 m/s</output><span>滚轮可微调</span></label>
+  </section>
+  <div id="free-touch-controls" class="free-touch-controls hidden" aria-label="触屏自由视角">
+    <div id="free-move-pad" class="free-pad" aria-label="移动摇杆"><span>移动</span><i></i><b aria-hidden="true">↑</b></div>
+    <div class="free-rise"><button data-free-rise="up" aria-label="上升">↑<span>升</span></button><button data-free-rise="down" aria-label="下降">↓<span>降</span></button></div>
+    <div id="free-look-pad" class="free-pad" aria-label="转向摇杆"><span>转向</span><i></i><b aria-hidden="true">✥</b></div>
+  </div>
+  <div id="stats" class="hidden"></div><div id="toast" role="status"></div>
+  <dialog id="guide"><button id="close-guide" aria-label="关闭操作指南">×</button><span class="eyebrow">A LITTLE GUIDE</span><h2>自在探索这座城</h2><p>鼠标左键拖拽旋转，右键或 Shift + 左键平移，滚轮缩放。触屏使用单指旋转、双指缩放和平移。</p><p>单击建筑查看模块信息，双击进入单栋观察。按空格暂停动态，按 H 回到全景。</p><p>自由视角：拖动画面转向，WASD 移动，Q/E 下降与上升，Shift 加速，滚轮调节移动速度。手机使用屏幕双摇杆和升降按钮。Esc 退出并返回进入前的位置；F 键可切换自由视角。</p><p>中央 64 × 600 米青岚河可观察水流、浅滩与鱼群。每栋建筑均拥有独立编号，可以单独导出 GLB、替换与继续制作。替换暂存在本次浏览中，可导出整个城市 GLB 保存成果。</p><p>车辆和行人为程序化交通演示，云层采用体积采样，树木与飞鸟随风运动。光照与动态可在场景设置中调整。</p><small>当前为程序化建筑原型；场景采用米制尺度。GLB 导出保存静态模型，实时动画保留在网站源码中。</small></dialog>
+  <script type="module" src="./main.js"></script>
+</body></html>

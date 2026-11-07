@@ -1,0 +1,1 @@
+{"name":"qinglan-river","version":"1.0.0","private":true,"type":"module","scripts":{"build":"node build.cjs","check":"node --check src/river-model.js && node --check src/river-pass.js && node --check src/app.js"},"devDependencies":{"three":"0.180.0","esbuild":"0.25.0"}}

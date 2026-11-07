@@ -1,0 +1,240 @@
+{
+  "id": "qianxu-slab-residential",
+  "name": "浅序住区",
+  "version": "1.0.0",
+  "units": "m",
+  "upAxis": "Y",
+  "front": "+Z",
+  "pivot": "ground-center",
+  "footprint": {
+    "width": 112,
+    "depth": 112
+  },
+  "nativeFootprint": 112,
+  "connectionLevel": 0,
+  "buildings": [
+    {
+      "id": "SLAB-A",
+      "name": "A 栋",
+      "x": 0,
+      "z": -33,
+      "width": 64,
+      "depth": 14,
+      "floors": 16,
+      "height": 53.800000000000004,
+      "front": "+Z",
+      "units": 3
+    },
+    {
+      "id": "SLAB-B",
+      "name": "B 栋",
+      "x": 0,
+      "z": 0,
+      "width": 64,
+      "depth": 14,
+      "floors": 18,
+      "height": 60.00000000000001,
+      "front": "+Z",
+      "units": 3
+    },
+    {
+      "id": "SLAB-C",
+      "name": "C 栋",
+      "x": 0,
+      "z": 33,
+      "width": 64,
+      "depth": 14,
+      "floors": 20,
+      "height": 66.2,
+      "front": "+Z",
+      "units": 3
+    }
+  ],
+  "containsPeople": false,
+  "containsRoads": false,
+  "treeCount": 8,
+  "treeSites": [
+    [
+      -51,
+      -44
+    ],
+    [
+      -51,
+      -12
+    ],
+    [
+      -51,
+      20
+    ],
+    [
+      -51,
+      47
+    ],
+    [
+      51,
+      -44
+    ],
+    [
+      51,
+      -12
+    ],
+    [
+      51,
+      20
+    ],
+    [
+      51,
+      47
+    ]
+  ],
+  "shrubSites": [
+    [
+      -31,
+      -16.5
+    ],
+    [
+      -22,
+      -16.5
+    ],
+    [
+      22,
+      -16.5
+    ],
+    [
+      31,
+      -16.5
+    ],
+    [
+      -31,
+      16.5
+    ],
+    [
+      -22,
+      16.5
+    ],
+    [
+      22,
+      16.5
+    ],
+    [
+      31,
+      16.5
+    ]
+  ],
+  "entrances": [
+    {
+      "position": [
+        6,
+        0,
+        56
+      ],
+      "width": 11,
+      "direction": "+Z"
+    }
+  ],
+  "components": [
+    "site",
+    "landscape",
+    "SLAB-A",
+    "SLAB-B",
+    "SLAB-C"
+  ],
+  "nativeBounds": {
+    "min": [
+      -56,
+      -0.44,
+      -56
+    ],
+    "max": [
+      56,
+      66.2,
+      56
+    ]
+  },
+  "integration": {
+    "factory": "createResidentialBlock",
+    "module": "residential-block.mjs",
+    "example": "integration-example.mjs",
+    "hostOwns": [
+      "THREE",
+      "renderer",
+      "scene",
+      "camera",
+      "animationLoop"
+    ],
+    "methods": [
+      "update",
+      "setQuality",
+      "setTimeOfDay",
+      "getBounds",
+      "exportGLB",
+      "exportScene",
+      "dispose"
+    ]
+  },
+  "verification": {
+    "passed": 42,
+    "file": "outputs/verification.json"
+  },
+  "render": {
+    "status": "complete",
+    "engine": "CYCLES",
+    "device": "GPU",
+    "devices": [
+      "NVIDIA GeForce RTX 5060 Laptop GPU"
+    ],
+    "blender_version": "5.2.2 LTS",
+    "samples": 64,
+    "blend": "C:\\Users\\33864\\Desktop\\千人小镇\\slab-residential\\浅序住区.blend",
+    "renders": [
+      {
+        "view": "overview",
+        "path": "C:\\Users\\33864\\Desktop\\千人小镇\\slab-residential\\outputs\\blender-overview.png",
+        "resolution": [
+          3840,
+          2880
+        ],
+        "samples": 64
+      },
+      {
+        "view": "facade",
+        "path": "C:\\Users\\33864\\Desktop\\千人小镇\\slab-residential\\outputs\\blender-facade.png",
+        "resolution": [
+          2560,
+          1920
+        ],
+        "samples": 64
+      },
+      {
+        "view": "entry",
+        "path": "C:\\Users\\33864\\Desktop\\千人小镇\\slab-residential\\outputs\\blender-entry.png",
+        "resolution": [
+          2560,
+          1920
+        ],
+        "samples": 64
+      },
+      {
+        "view": "twilight",
+        "path": "C:\\Users\\33864\\Desktop\\千人小镇\\slab-residential\\outputs\\blender-twilight.png",
+        "resolution": [
+          2560,
+          1920
+        ],
+        "samples": 64
+      }
+    ],
+    "visible_gui": true,
+    "source_snapshot": "C:\\Users\\33864\\Desktop\\千人小镇\\slab-residential\\outputs\\scene.json",
+    "model_batches": 102,
+    "model_objects": 34731,
+    "vertices": 926276,
+    "triangles": 448362
+  },
+  "sha256": {
+    "浅序住区.html": "67f083b8d8b91d40f6c95ad8fba566ac5d50279c42aaed4863ca4f6a59593472",
+    "浅序住区.glb": "92684e8f6b3fe922f01a545d6ed1156111c1d9ceef0ecb015692ef80cb208ebe",
+    "浅序住区.blend": "d2639f1fde9b4bb537ef790af8f71b193638340757ca7c42b821491e68744d63",
+    "residential-block.mjs": "97528e2770eff1f2ed8d01338630db2ced59ce665a779520a6e7df1d033f82c6"
+  }
+}

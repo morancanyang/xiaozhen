@@ -1,0 +1,84 @@
+{
+  "name": "森隐公园",
+  "version": "1.0.0",
+  "standalone": true,
+  "parcel": [
+    112,
+    112
+  ],
+  "checks": 30,
+  "render_engine": "CYCLES",
+  "rendered_in_visible_blender": true,
+  "blend_reopened_and_verified": true,
+  "files": [
+    {
+      "file": "森隐公园.html",
+      "bytes": 872364,
+      "sha256": "03f6538b9fc65dc4afade4d035b9446187be9aa32417a840631d1acf49bff9a3"
+    },
+    {
+      "file": "森隐公园.glb",
+      "bytes": 6923432,
+      "sha256": "3ce42068e0068f8b13ea331b60f94bbeef2a3f589ed58c2ce367ed947a5913f1"
+    },
+    {
+      "file": "森隐公园.blend",
+      "bytes": 68380181,
+      "sha256": "018eff0e3aa153678c70e5599e413fc6e6d2f9ef7227bccd601142df1010161f"
+    },
+    {
+      "file": "quiet-park-module.mjs",
+      "bytes": 16413,
+      "sha256": "1f423d3bf4b8139bb576c2bffa66897bf2780af80694d078984fa014fc6d0f0a"
+    },
+    {
+      "file": "town-integration.example.mjs",
+      "bytes": 839,
+      "sha256": "843b4682dda1c9079c90ca8a13c99d7d0779982b65ccc51d360f1e5185f9122f"
+    }
+  ],
+  "renders": [
+    {
+      "file": "outputs\\blender-overview.png",
+      "pixels": [
+        3840,
+        2880
+      ]
+    },
+    {
+      "file": "outputs\\blender-path.png",
+      "pixels": [
+        1920,
+        1280
+      ]
+    },
+    {
+      "file": "outputs\\blender-lake.png",
+      "pixels": [
+        1920,
+        1280
+      ]
+    },
+    {
+      "file": "outputs\\blender-bench.png",
+      "pixels": [
+        1920,
+        1280
+      ]
+    },
+    {
+      "file": "outputs\\blender-detail.png",
+      "pixels": [
+        1920,
+        1280
+      ]
+    },
+    {
+      "file": "outputs\\blender-night.png",
+      "pixels": [
+        1920,
+        1440
+      ]
+    }
+  ]
+}

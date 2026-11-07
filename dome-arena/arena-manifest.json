@@ -1,0 +1,154 @@
+{
+  "id": "dome-arena",
+  "name": "穹光体育中心",
+  "version": "1.0.0",
+  "units": "m",
+  "upAxis": "Y",
+  "front": "+Z",
+  "pivot": "ground-center",
+  "footprint": {
+    "width": 112,
+    "depth": 112
+  },
+  "scale": 1,
+  "height": 38.4,
+  "buildingHeight": 33,
+  "coordinateSpace": "native-local-metres; use root.localToWorld for scaled world coordinates",
+  "bounds": {
+    "min": [
+      -56,
+      -0.4,
+      -56
+    ],
+    "max": [
+      56,
+      38.4,
+      56
+    ]
+  },
+  "animatedBounds": {
+    "min": [
+      -56,
+      -0.4,
+      -56
+    ],
+    "max": [
+      56,
+      41,
+      56
+    ]
+  },
+  "buildings": [
+    {
+      "id": "architecture",
+      "name": "穹光综合体育馆",
+      "x": 0,
+      "z": -6,
+      "w": 78,
+      "d": 66,
+      "height": 33,
+      "floors": 3
+    }
+  ],
+  "entrances": {
+    "public": {
+      "position": [
+        0,
+        0,
+        56
+      ],
+      "direction": [
+        0,
+        0,
+        1
+      ],
+      "width": 14
+    },
+    "service": {
+      "position": [
+        -56,
+        0,
+        -35
+      ],
+      "direction": [
+        -1,
+        0,
+        0
+      ],
+      "width": 6
+    },
+    "dropoff": {
+      "position": [
+        56,
+        0,
+        37
+      ],
+      "direction": [
+        1,
+        0,
+        0
+      ],
+      "width": 6
+    }
+  },
+  "lightFixtures": [
+    {
+      "id": "flood--49--43",
+      "position": [
+        -49,
+        37,
+        -43
+      ],
+      "target": [
+        0,
+        0,
+        -6
+      ],
+      "power": 1200
+    },
+    {
+      "id": "flood--49-43",
+      "position": [
+        -49,
+        37,
+        43
+      ],
+      "target": [
+        0,
+        0,
+        -6
+      ],
+      "power": 1200
+    },
+    {
+      "id": "flood-49--43",
+      "position": [
+        49,
+        37,
+        -43
+      ],
+      "target": [
+        0,
+        0,
+        -6
+      ],
+      "power": 1200
+    },
+    {
+      "id": "flood-49-43",
+      "position": [
+        49,
+        37,
+        43
+      ],
+      "target": [
+        0,
+        0,
+        -6
+      ],
+      "power": 1200
+    }
+  ],
+  "seatCount": 3142,
+  "embedded": false
+}

@@ -1,0 +1,170 @@
+{
+  "澄和医院.html": {
+    "bytes": 792287,
+    "sha256": "1b7ed3121dbc0043a477e45ac1b4222522eb5e1587f41faa03b1ceb2aa230138"
+  },
+  "澄和医院.blend": {
+    "bytes": 15023377,
+    "sha256": "19ef058dcb715455bd39340bf10c30f946b597aa493ebbdf5172720838fc1f02"
+  },
+  "hospital-campus.glb": {
+    "bytes": 781836,
+    "sha256": "5da336d8c203b89d39eb37320297b865e2a34ced7b3e5ca5b0e9b92bab80f7fc"
+  },
+  "hospital-emergency.glb": {
+    "bytes": 122024,
+    "sha256": "e3e9b2e71945849d7f01b17911bdfd6c116c5f06aac7156e6f58e30bc00f487c"
+  },
+  "hospital-module.mjs": {
+    "bytes": 24400,
+    "sha256": "cc85e5485e74a2759ea711ae2c36d9ad8dfbc3d3cc48067488d3eaeb6a233a95"
+  },
+  "hospital-manifest.json": {
+    "bytes": 2309,
+    "sha256": "1176f43e5a0862c6dd240ef8cce9c33e825ba22e8e7ac1d6cb98c23f58ee440e"
+  },
+  "town-integration.example.mjs": {
+    "bytes": 1554,
+    "sha256": "4c7fe49484dc8d62c856bd1232c310865719cefc27a3d56114410be31795560d"
+  },
+  "使用与接入说明.txt": {
+    "bytes": 6584,
+    "sha256": "34533c8d1487c0843a1870c45a6fd651b812ef150783899082ced0b03fec90a9"
+  },
+  "THREE-LICENSE.txt": {
+    "bytes": 1081,
+    "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+  },
+  "package.json": {
+    "bytes": 313,
+    "sha256": "a29a003ee6192adf3c9ba0155edbe0b54338d7625cd3149183c49a0b5d442693"
+  },
+  "build.cjs": {
+    "bytes": 965,
+    "sha256": "6d88da4a1e6e83e00ce82c192732c419a7ca1d14dd293d7b2c86e4a80fc569bb"
+  },
+  "src/app.js": {
+    "bytes": 18904,
+    "sha256": "18e91ff196c33cfcd231c9f753f7db2621b7971530fc43bf25b8013ef17d7003"
+  },
+  "src/hospital-model.js": {
+    "bytes": 24400,
+    "sha256": "cc85e5485e74a2759ea711ae2c36d9ad8dfbc3d3cc48067488d3eaeb6a233a95"
+  },
+  "src/shell.html": {
+    "bytes": 6084,
+    "sha256": "eaf62ab5939e6dceb7455154a5c08184f27ee72aedb762f48920baf2f7f2f7de"
+  },
+  "src/style.css": {
+    "bytes": 10750,
+    "sha256": "192d79286b695b0af22592afadf359490fd2277a168cab90bc9f934ca5931d82"
+  },
+  "tools/audit_blend.py": {
+    "bytes": 1385,
+    "sha256": "e79e5fa6f9aa225ef795adf50d67aeb3668e6f43fe4f7793efb187c386b7bdd1"
+  },
+  "tools/blender_import.py": {
+    "bytes": 8322,
+    "sha256": "52d1ff07afb592e1d24c414263787db31623fc764aac8b61f38dafb128b76cd0"
+  },
+  "tools/inspect_hospital.py": {
+    "bytes": 1883,
+    "sha256": "9305798244fa2cf2815770ded794b83e3b89d8631d949589105cb236c72bfa7f"
+  },
+  "tools/mcp_client.py": {
+    "bytes": 874,
+    "sha256": "53126baaf3f1db907e23ae183705f7873629448a410870b4d2b2783f2ebdf225"
+  },
+  "tools/package_delivery.py": {
+    "bytes": 1531,
+    "sha256": "374cff03a288a1f9c239c425bb2c2a2a63937629e7e173c8f56ef734120c8fae"
+  },
+  "tools/render_blender.py": {
+    "bytes": 1900,
+    "sha256": "4764ff4511e4d6c6659c60dee933843f5afb02efe1d654f5beae3adced4156df"
+  },
+  "tools/start_render_mcp.py": {
+    "bytes": 545,
+    "sha256": "375cbfdeed3c17f61700b8c778d125579c43a665dc0543f620f98fe114a3abcc"
+  },
+  "tools/verify_hospital.py": {
+    "bytes": 7938,
+    "sha256": "a03686800e4e888068271f4b3dae61d5fdb8f59cfa6c216791b2332ae1356544"
+  },
+  "outputs/01-graybox.png": {
+    "bytes": 237677,
+    "sha256": "8a51208118ea9df951bd115ddcc62b013c9a5a33267383ebd01d4645eabb2946"
+  },
+  "outputs/02-overview.png": {
+    "bytes": 368255,
+    "sha256": "0c171527621193678b9f0f46a4a7ce01d6a7642ff74da6f6aa5ecc1435a9037f"
+  },
+  "outputs/04-overview-final.png": {
+    "bytes": 367895,
+    "sha256": "707353953805a41ff7926a9a89a71469b2ddfee92f73893e7688c9371f2b6fb7"
+  },
+  "outputs/04-mobile.png": {
+    "bytes": 113611,
+    "sha256": "ffcceae1fc8be97740b3fae542cb41b0ad5c1b7c65cc1e865b4770f45b2ad06c"
+  },
+  "outputs/03-night.png": {
+    "bytes": 402950,
+    "sha256": "0e3ca72b8d86c94141c55ea31772364dafd04c280062af18cad8b3a433ff10ef"
+  },
+  "outputs/verification.json": {
+    "bytes": 2528,
+    "sha256": "ef2cc1ebcc77c7e353e0a8257321802452a2a1071c412f67a4e569221ce8c1a4"
+  },
+  "outputs/first-inspection.json": {
+    "bytes": 20,
+    "sha256": "1d23e2c2a64b9ed3112d1d209cea1be980602d96fa8668060f66b98085e6f81f"
+  },
+  "outputs/hospital-scene.json": {
+    "bytes": 2409934,
+    "sha256": "673f32f5a7ad7ca6b61e6df7307e1dae409e1a9853fd1a99102f69a521feb532"
+  },
+  "outputs/blender-result.json": {
+    "bytes": 203,
+    "sha256": "d8843c1ee6d12da15ee22c7c17d949b2141cfcde287895372a623eb5c4ca2430"
+  },
+  "outputs/blend-verification.json": {
+    "bytes": 548,
+    "sha256": "76e32517d4a6b81dd46267255a918fd43425a1193aafcb5e2890aa6738d30f71"
+  },
+  "outputs/mcp-import-result.json": {
+    "bytes": 383,
+    "sha256": "b2e4bfd003d128b8b058b337c8dc7b0f30791dfd8ca200fd38405da88489f739"
+  },
+  "outputs/mcp-render-start-result.json": {
+    "bytes": 285,
+    "sha256": "3aea38c444dbe6b6f2f94f4f1f67849b6dc2fc74b6078dd68b5ece0e2fe7607e"
+  },
+  "outputs/blender-render.log": {
+    "bytes": 1385,
+    "sha256": "5250dcec53daa8460cceb2036dd13b0b121ad8f8533036a8b84bcadab485dffc"
+  },
+  "outputs/blender-emergency.png": {
+    "bytes": 3143382,
+    "sha256": "6fd1db194eee949f8c6fd4b97d74e861fa8441390d35f047008f6b24bb8eab6f"
+  },
+  "outputs/blender-garage.png": {
+    "bytes": 2800518,
+    "sha256": "c60c73966d6e4299efd42911bec1d4aab5cc133e7b17dd12fb56941d7c30d565"
+  },
+  "outputs/blender-garden.png": {
+    "bytes": 3122699,
+    "sha256": "dd4ed207cfd27674add2b78ada44a5f1517c0d73d0c72214ebf696106d1bafa9"
+  },
+  "outputs/blender-outpatient.png": {
+    "bytes": 2875595,
+    "sha256": "6e6c3e5608fb74ea0cc7c3732b2b75ee59ed9a2d9e8e0001913e6876f69fbb69"
+  },
+  "outputs/blender-overview.png": {
+    "bytes": 2655354,
+    "sha256": "e1a495d9235aaf6b6bc269faaeabfc9edbd729293614e216b96f59c8b62880e0"
+  },
+  "outputs/blender-roof.png": {
+    "bytes": 2925568,
+    "sha256": "3bbcfa0ccb47c1b932bdefada99bd52c60d713a76282e926935ebd3a1668c124"
+  }
+}

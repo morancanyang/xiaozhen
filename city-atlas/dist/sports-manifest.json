@@ -1,0 +1,107 @@
+{
+  "id": "qinghe-sports-field",
+  "name": "青禾运动场",
+  "units": "m",
+  "upAxis": "Y",
+  "front": "+Z",
+  "pivot": "ground-center",
+  "footprint": {
+    "width": 112,
+    "depth": 112
+  },
+  "nativeBounds": {
+    "min": [
+      -56,
+      -0.4,
+      -56
+    ],
+    "max": [
+      56,
+      16,
+      56
+    ]
+  },
+  "track": {
+    "straight": 52,
+    "innerRadius": 23,
+    "lanes": 4,
+    "laneWidth": 1.1,
+    "outerWidth": 54.8,
+    "outerLength": 106.8,
+    "measurementOffset": 0.3,
+    "insideLaneLength": 250.39821765728436
+  },
+  "pitch": {
+    "width": 42,
+    "length": 68
+  },
+  "buildings": [],
+  "entrances": {
+    "public": {
+      "position": [
+        40,
+        0,
+        56
+      ],
+      "width": 6
+    },
+    "service": {
+      "position": [
+        -40,
+        0,
+        -56
+      ],
+      "width": 5
+    }
+  },
+  "lightFixtures": [
+    {
+      "position": [
+        -48.4,
+        13.4,
+        -38.4
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "position": [
+        -48.4,
+        13.4,
+        38.4
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "position": [
+        48.4,
+        13.4,
+        -38.4
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "position": [
+        48.4,
+        13.4,
+        38.4
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

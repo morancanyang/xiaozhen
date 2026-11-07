@@ -1,0 +1,92 @@
+{
+  "id": "linxu-residential",
+  "name": "林序住区",
+  "units": "m",
+  "upAxis": "Y",
+  "front": "+Z",
+  "pivot": "ground-center",
+  "footprint": {
+    "width": 112,
+    "depth": 112
+  },
+  "nativeBounds": {
+    "min": [
+      -56,
+      -0.4,
+      -56
+    ],
+    "max": [
+      56,
+      73,
+      56
+    ]
+  },
+  "buildings": [
+    {
+      "id": "A",
+      "name": "A栋",
+      "x": -24,
+      "z": -23,
+      "w": 22,
+      "d": 20,
+      "floors": 22,
+      "height": 68.3
+    },
+    {
+      "id": "B",
+      "name": "B栋",
+      "x": 24,
+      "z": -23,
+      "w": 22,
+      "d": 20,
+      "floors": 20,
+      "height": 62.2
+    },
+    {
+      "id": "C",
+      "name": "C栋",
+      "x": -24,
+      "z": 23,
+      "w": 22,
+      "d": 20,
+      "floors": 18,
+      "height": 56.1
+    },
+    {
+      "id": "D",
+      "name": "D栋",
+      "x": 24,
+      "z": 23,
+      "w": 22,
+      "d": 20,
+      "floors": 16,
+      "height": 50
+    }
+  ],
+  "entrances": {
+    "public": {
+      "position": [
+        0,
+        0,
+        56
+      ],
+      "width": 10
+    },
+    "vehicle": {
+      "position": [
+        46,
+        0,
+        56
+      ],
+      "width": 6
+    },
+    "service": {
+      "position": [
+        -46,
+        0,
+        -56
+      ],
+      "width": 6
+    }
+  }
+}

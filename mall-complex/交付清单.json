@@ -1,0 +1,193 @@
+{
+  "parcel_metres": [
+    112,
+    112
+  ],
+  "height_metres": 31.175,
+  "browser_checks": 35,
+  "render_engine": "CYCLES",
+  "samples": 64,
+  "device": "GPU",
+  "hero_pixels": [
+    7680,
+    4320
+  ],
+  "files": {
+    "商城综合体.html": {
+      "bytes": 878847,
+      "sha256": "6cdeaf9bff0e7d66ee5acd86be0db72b597ad4308843aa7feb7544d37850b71e"
+    },
+    "接入演示.html": {
+      "bytes": 707643,
+      "sha256": "0d9d808b3e2e471aed531316a978c200adc2d8c005fe2ffe46015061c5c67468"
+    },
+    "mall-module.mjs": {
+      "bytes": 29473,
+      "sha256": "a11fc19301034e5c6898f0ca5c24e260fc178205699a361e682a49224d0a97af"
+    },
+    "town-integration.example.mjs": {
+      "bytes": 635,
+      "sha256": "3f59787be0406bf26778db91065b1a9ce1aa0a57ace2c18a9ca61da032777200"
+    },
+    "陶里汇商城.glb": {
+      "bytes": 952092,
+      "sha256": "1b26e2eaee1218c529553ff21be35e2a298ee987283419f0b6119a828fb93b3e"
+    },
+    "陶里汇商城.blend": {
+      "bytes": 3569876,
+      "sha256": "8772bc0fa2ecba1743647cfabdcc729b353a90719226bb31810105834dd66ffc"
+    },
+    "使用说明.md": {
+      "bytes": 6276,
+      "sha256": "81f39a761c8315f7fdd569c9f71add157db9dfe18b57e25814b2a9742e13cce3"
+    },
+    "THREE-LICENSE.txt": {
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    "build.cjs": {
+      "bytes": 1677,
+      "sha256": "b21af39a9bd281e616d1cfa9245bae44e20ba69feb60f8dc9c2a3255956ef3be"
+    },
+    "package.json": {
+      "bytes": 284,
+      "sha256": "ea698e2ed9738315216313f90b13dfda4289fd1be53d24dabe15b364250ffdd7"
+    },
+    "src\\app.js": {
+      "bytes": 17371,
+      "sha256": "1a2d1a994efda1eae01cbc3489b938a343be5e953feebb62922dff6380a3adee"
+    },
+    "src\\demo.js": {
+      "bytes": 2521,
+      "sha256": "3ec2b52440f5d3d3be46134f21e1a2dcffd1eb92de9c20ca59953238999ba747"
+    },
+    "src\\model.js": {
+      "bytes": 29473,
+      "sha256": "a11fc19301034e5c6898f0ca5c24e260fc178205699a361e682a49224d0a97af"
+    },
+    "src\\shell.html": {
+      "bytes": 5469,
+      "sha256": "255bbcde9a769830bb126190d8510b80f2769e3df5ecd1be5282c7ee95fe7657"
+    },
+    "src\\style.css": {
+      "bytes": 10414,
+      "sha256": "59a5fd5179144c96dd041b871e5244b2631ccdda3b3220f7f33987879e12a412"
+    },
+    "tools\\blender_mcp.py": {
+      "bytes": 2815,
+      "sha256": "22213882d9e864e5b6791fbda90effac1362295aa6e9b1154f8a3669dd96ba1f"
+    },
+    "tools\\blender_render.py": {
+      "bytes": 10460,
+      "sha256": "cd8367968dab3e4e758c83de0838bc869e195b058a3b07656fbad0d642390389"
+    },
+    "tools\\capture.py": {
+      "bytes": 2483,
+      "sha256": "06e3a4b89c05f4f557f69fe160bf0bdd9ae905e984b8469e7a84a19c162ddbf3"
+    },
+    "tools\\package.py": {
+      "bytes": 2463,
+      "sha256": "974e2ba5dc95e38e9752e857615e451b764ae07863d41aa9f7122f613f9a7f42"
+    },
+    "tools\\review.py": {
+      "bytes": 1620,
+      "sha256": "ed3fa3dacde03fc52a04d03bb45121dc711d017e076c342898860cf25faa3890"
+    },
+    "tools\\run_mcp.py": {
+      "bytes": 1508,
+      "sha256": "60d4cd7be243cc4258513a81ba992c924514ab1272b749a8055fab78af10f26a"
+    },
+    "tools\\verify.py": {
+      "bytes": 9809,
+      "sha256": "29cf35c1d506a3850c766fc4ab159b7247ed95c4c0b887c8ff8ec7e95b5a183f"
+    },
+    "outputs\\01-rough.png": {
+      "bytes": 146879,
+      "sha256": "079bc1bfef7319cc223634b84fb2543f893d7460024cd9c20e7d7880fd8a6b7b"
+    },
+    "outputs\\blender-entry.png": {
+      "bytes": 3231307,
+      "sha256": "6a69c1bbbb26e2b58973b735ea7bc498cfc3bd295261b32d71ed1926b797a0b5"
+    },
+    "outputs\\blender-hero-8k.png": {
+      "bytes": 37033081,
+      "sha256": "616faf7ac1cc58b4b85f23e5ca7c22197ab9962e7443680217947c2989e4ad23"
+    },
+    "outputs\\blender-overview.png": {
+      "bytes": 3399706,
+      "sha256": "24f618b6bb3e3781a67820d1e948f33357f97430da4c31530ec43f7197825eea"
+    },
+    "outputs\\blender-result.json": {
+      "bytes": 794,
+      "sha256": "502e1314a7e55b6e4125047f7a3c419d58aae74201a6b0cc76b829989087ced9"
+    },
+    "outputs\\blender-terrace.png": {
+      "bytes": 4223616,
+      "sha256": "6a3e885ae33510fb596930a3dbe8e9838898754385f4f53aade1a12bcfe98439"
+    },
+    "outputs\\blender-twilight.png": {
+      "bytes": 3075927,
+      "sha256": "b0abcc9e9e43536c8dce64be3d94b9ff1a02ceab772a7312e3238bc47b96d7f8"
+    },
+    "outputs\\blender.log": {
+      "bytes": 5262,
+      "sha256": "d3ac097d89334b7c3ff57f15623d92e388ee824cc5104f72b9e4c397a7c98dc3"
+    },
+    "outputs\\browser-4k.png": {
+      "bytes": 2646980,
+      "sha256": "76cee3236ca1d93b13dafecf3ae5c9820d08ceaffa3e303093bbe33716ccaca8"
+    },
+    "outputs\\final-atrium.png": {
+      "bytes": 717945,
+      "sha256": "a98ba7b6b3475aa6231fa4a4b9683261de50e1b12172174820e204cb984f6da2"
+    },
+    "outputs\\final-entry.png": {
+      "bytes": 752845,
+      "sha256": "d2d0fc40fb1c24cad4f93c9c8e27105dcea1f7f6694eecbed01159320cbc4f0a"
+    },
+    "outputs\\final-mobile.png": {
+      "bytes": 90968,
+      "sha256": "755878b1dd7d73eae22fa735e27e5abc4f4411a1591e2b405c45e91bda90105b"
+    },
+    "outputs\\final-night.png": {
+      "bytes": 443869,
+      "sha256": "24a51692d84f1d21ee6a336d96e92b595eafd7fde9ae7c55b3460b982a7af829"
+    },
+    "outputs\\final-overview.png": {
+      "bytes": 565026,
+      "sha256": "3d0f489ac2b700034b44529546074c2e880aa2bce4f592b35345ae587e5722a7"
+    },
+    "outputs\\final-roof.png": {
+      "bytes": 850364,
+      "sha256": "63230a31e72fab487cc92316d3d199b17944dec46753371f9fce6c84a4bb0727"
+    },
+    "outputs\\final-terrace.png": {
+      "bytes": 1148755,
+      "sha256": "63d84339e3ff1162433d6c369a6627da7ca7f6dda8468f8393928c209dae33aa"
+    },
+    "outputs\\integration-demo.png": {
+      "bytes": 359374,
+      "sha256": "3f1ca065a8e4bef3dec8dd54cee30edd6894b57e12c5a062c062683aeb629079"
+    },
+    "outputs\\mcp-result.json": {
+      "bytes": 2277,
+      "sha256": "a17468929ac9ff338d6cbea40fb860f971f384c440688c0f32d1c0154c565a95"
+    },
+    "outputs\\review.json": {
+      "bytes": 485,
+      "sha256": "beec6e5602d4c0791be641fb17fccfb5565b60426dcca3ff4b9caa24fafe9b3d"
+    },
+    "outputs\\scene.json": {
+      "bytes": 3824335,
+      "sha256": "795eda1ef0e6f05b492aa32cbfc8b580a856f868b97f1f2b299fa0914be4f067"
+    },
+    "outputs\\verification.json": {
+      "bytes": 1900,
+      "sha256": "3aa635979de1993656e9def58c8a7f9eb0b6745d1178db0a3bf57fff28c8ebcc"
+    },
+    "outputs\\商城动态巡游.webm": {
+      "bytes": 6407290,
+      "sha256": "7b9496f8350992dbb70204490b57c2306723bf2f211f196f961d129a791e4911"
+    }
+  }
+}

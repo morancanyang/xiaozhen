@@ -1,0 +1,47 @@
+import json,time
+from pathlib import Path
+from playwright.sync_api import sync_playwright
+ROOT=Path(__file__).resolve().parents[1]
+checks=[]
+def record(name,ok):
+    checks.append({'check':name,'passed':bool(ok)})
+    if not ok:raise AssertionError(name)
+with sync_playwright() as p:
+    browser=p.chromium.launch(channel='msedge',headless=True,args=['--enable-webgl','--enable-unsafe-swiftshader'])
+    page=browser.new_page(viewport={'width':1600,'height':1000})
+    errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
+    page.on('console',lambda m:errors.append(m.text) if m.type=='error' else None)
+    page.goto('http://127.0.0.1:5173',wait_until='networkidle');page.wait_for_function('window.cityApp?.ready')
+    page.wait_for_timeout(1500)
+    record('61 independent building groups',page.evaluate('cityApp.plan.buildings.every(b=>cityApp.scene.getObjectByName(b.id)) && cityApp.plan.buildings.length===61'))
+    record('64 m corridor free of buildings',page.evaluate('cityApp.plan.buildings.every(b=>Math.abs(b.x)-b.width/2>32)'))
+    record('16 square blocks',page.evaluate('cityApp.plan.blocks.length===16 && cityApp.plan.blocks.every(b=>b.size===112)'))
+    with page.expect_download(timeout=60000) as full:page.locator('#export').click()
+    full.value.save_as(ROOT/'outputs'/'qianren-city.glb');record('full city GLB export',(ROOT/'outputs'/'qianren-city.glb').read_bytes()[:4]==b'glTF')
+    before=page.evaluate('cityApp.camera().position.toArray()');page.mouse.move(900,500);page.mouse.down();page.mouse.move(1020,550,steps=10);page.mouse.up();page.wait_for_timeout(400)
+    record('drag rotates camera',before!=page.evaluate('cityApp.camera().position.toArray()'))
+    page.locator('#home').click();page.wait_for_timeout(1900)
+    before=page.evaluate('cityApp.camera().position.distanceTo(cityApp.controls().target)');page.locator('#zoom-in').click();page.wait_for_timeout(150)
+    record('zoom control',page.evaluate('cityApp.camera().position.distanceTo(cityApp.controls().target)')<before)
+    page.locator('#projection').click();record('orthographic camera',page.evaluate('cityApp.camera().isOrthographicCamera'));page.locator('#projection').click()
+    page.evaluate("cityApp.select('QR-010')");record('building selection',page.locator('#building-id').inner_text().startswith('QR-010'))
+    record('single building export isolation',page.evaluate("cityApp.exportCity('QR-010').batches.every(b=>b.owner==='QR-010')"))
+    with page.expect_download() as dl:page.locator('#export-building').click()
+    dl.value.save_as(ROOT/'outputs'/'QR-010.glb');record('independent GLB download',(ROOT/'outputs'/'QR-010.glb').read_bytes()[:4]==b'glTF')
+    page.locator('#model-file').set_input_files(str(ROOT/'outputs'/'QR-010.glb'));page.wait_for_timeout(1200);record('GLB module replacement',page.evaluate("cityApp.scene.getObjectByName('QR-010').children.some(o=>o.isGroup)"))
+    page.locator('#restore-building').click();record('prototype restore',page.evaluate("cityApp.scene.getObjectByName('QR-010').children.every(o=>o.visible)"))
+    page.locator('#close-selection').click();page.locator('#reserve').check();record('corridor overlay',page.evaluate("cityApp.scene.getObjectByName('future-river-boundary').visible"));page.locator('#reserve').uncheck()
+    page.locator('#pause').click();record('pause',page.evaluate('cityApp.state.paused'));page.locator('#pause').click()
+    page.locator('#traffic').uncheck();record('traffic off',not page.evaluate('cityApp.state.traffic'));page.locator('#traffic').check()
+    page.locator('#tour').click();record('tour on',page.evaluate('cityApp.state.tour'));page.mouse.move(850,500);page.mouse.down();page.mouse.move(870,510);page.mouse.up();record('interaction stops tour',not page.evaluate('cityApp.state.tour'))
+    page.locator('[data-time=night]').click();page.wait_for_timeout(1800);record('night preset',page.locator('#time-clock').inner_text()=='20:30');record('night lighting updates',page.evaluate('cityApp.scene.children.find(o=>o.isDirectionalLight).intensity<1'));page.screenshot(path=str(ROOT/'outputs'/'web-night.png'))
+    page.locator('[data-time=morning]').click();page.locator('#quality').select_option('cinema');page.wait_for_timeout(2000);page.screenshot(path=str(ROOT/'outputs'/'web-cinema.png'));record('cinema mode',page.evaluate("cityApp.state.quality==='cinema'"))
+    page.locator('#quality').select_option('balanced');page.locator('#home').click();page.wait_for_timeout(1900);page.screenshot(path=str(ROOT/'outputs'/'web-overview.png'))
+    page.locator('[data-view=architecture]').click();page.wait_for_timeout(1900);page.screenshot(path=str(ROOT/'outputs'/'web-building.png'));page.locator('#close-selection').click()
+    page.locator('#help').click();record('help dialog',page.locator('#guide').evaluate('(el)=>el.open'));page.locator('#close-guide').click()
+    page.set_viewport_size({'width':390,'height':844});page.locator('#home').click();page.wait_for_timeout(1900);page.screenshot(path=str(ROOT/'outputs'/'web-mobile.png'));record('mobile width',page.evaluate('document.documentElement.scrollWidth===390'))
+    record('mobile settings collapsed by default',page.locator('#panel-content').evaluate('(el)=>el.hidden'))
+    page.locator('#collapse').click();record('mobile settings expandable',not page.locator('#panel-content').evaluate('(el)=>el.hidden'))
+    record('no JS or WebGL errors',not errors)
+    result={'checks':checks,'errors':errors,'metrics':page.evaluate('cityApp.metrics()'),'browser':browser.version}
+    (ROOT/'outputs'/'verification.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(result,ensure_ascii=True));browser.close()

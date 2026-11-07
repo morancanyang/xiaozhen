@@ -1,0 +1,1 @@
+{"name": "linxu-residential", "type": "module", "scripts": {"build": "node build.cjs", "check": "node --check src/model.js && node --check src/app.js"}, "devDependencies": {"three": "0.180.0", "esbuild": "0.25.0"}}
